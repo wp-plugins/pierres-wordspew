@@ -81,7 +81,8 @@ Open your wp-config.php file (at the root of your blog) and search for : define 
 
 = I wanted to add the shoutbox to a "new page" instead of my sidebar. How can i do that ?
 Create a template in your theme folder and name it Shoutbox for example. It should be like this if you use the WP default theme...
-    <?php
+`    
+<?php
     /*
     Template Name: ShoutBox
     */
@@ -105,6 +106,7 @@ Create a template in your theme folder and name it Shoutbox for example. It shou
     </div>
 
     <?php get_footer(); ?>
+`
 
 Now create a new page name it as you want and choose "Shoutbox" as template for this page. You, now, have your shoutbox in a page.
 
