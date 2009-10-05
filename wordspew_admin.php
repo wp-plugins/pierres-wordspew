@@ -5,7 +5,7 @@ Plugin URI: http://pierre.dommiers.com/categorie/shoutbox/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Version: 4.32
-Author URI: http://blog.jalenack.com
+Author URI: http://pierre.dommiers.com/
 */
 // Version of this plugin. Not very useful for you, but for the dev
 $jal_version = "4.32";
