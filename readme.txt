@@ -149,4 +149,4 @@ Comment this line and all will be ok.
 == Changelog ==
 
 = 4.32 =
-* (05 Nov 2009) - First Release.
+* (05 Oct 2009) - First Release.
