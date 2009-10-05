@@ -37,7 +37,7 @@ Features:
 1. Upload the folder "pierres-wordspew" to the "/wp-content/plugins/" directory
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. Use the Widget interface to place the shoutbox where you want it. Otherwise, if you use an old version of WP (before 2.x) call the function (usually in sidebar.php) by this way : 
-<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>
+`<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
  
 
 == Frequently Asked Questions ==
@@ -50,9 +50,9 @@ Yes, all you have to do is to name your wav file as "msg.mp3". Be careful with t
 
 = My smileys have borders around them. How to remove them ?
 Edit css.php, at line 54 you'll find :
-    #chatoutput .wp-smiley { vertical-align: middle; }
+    `#chatoutput .wp-smiley { vertical-align: middle; }`
 add border: none; like this :
-    #chatoutput .wp-smiley { vertical-align: middle; border: none; }
+    `#chatoutput .wp-smiley { vertical-align: middle; border: none; }`
 and tada : no more border
 
 
@@ -113,20 +113,20 @@ Now create a new page name it as you want and choose "Shoutbox" as template for 
 
 = Ok, ok we talk about the shoutbox, but how to implement it in my blog ?
 If you have WP 1.5.x edit your sidebar.php add this line where you want your shoutbox appears :
-<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>
+`<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
 If you have WP >= 2.x go to Theme -> Widgets drag and drop the shoutbox widget where you want it. You can change the title by editing the property of the shoutbox widget.
 
 
 = There's no break between comments in my shoutbox. What can i do to resolve that weird (and ugly) display ?
 Edit css.php at line 46 you'll find :
-    #chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; }
+    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; }`
 add display: block; in it like this :
-    #chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; display: block; }
+    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; display: block; }`
 
 
 = How can i remove the upper left rounded corner from the shoutbox ?
 Edit css.php line 25 you'll find :
-    -moz-border-radius : 14px 0px 0px 0px;
+    `-moz-border-radius : 14px 0px 0px 0px;`
 just comment this line by adding // in front of it.
 
 
@@ -136,7 +136,7 @@ You have to put your banned words list in Comment Moderation List, NOT in Black 
 
 = The CSS doesn't get properly read with FIREFOX... Opera and IE works fine. What is the problem ?
 if you use WP-PostRatings and the shoutbox you've got some incompatibility issues. So edit "postratings.php" and search for :
-    header('Content-Type: text/html; charset='.get_option('blog_charset').'');
+    `header('Content-Type: text/html; charset='.get_option('blog_charset').'');`
 Comment this line and all will be ok.
 
 
