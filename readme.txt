@@ -1,7 +1,7 @@
 === Pierre's Wordspew ===
 Contributors: Pierre Sudarovich
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8487949
-Tags: shoutbox, wordspew, ajax
+Tags: shoutbox, wordspew, ajax, spam
 Requires at least: 1.5
 Tested up to: 2.8.4
 Stable tag: 4.32
