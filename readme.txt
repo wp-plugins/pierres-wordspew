@@ -49,7 +49,7 @@ Yes, all you have to do is to name your wav file as "msg.mp3". Be careful with t
 
 
 = My smileys have borders around them. How to remove them ?
-Edit css.php, at line 54 you'll find :
+Edit "css.php", at line 61 you'll find :
     `#chatoutput .wp-smiley { vertical-align: middle; }`
 add border: none; like this :
     `#chatoutput .wp-smiley { vertical-align: middle; border: none; }`
@@ -118,14 +118,14 @@ If you have WP >= 2.x go to Theme -> Widgets drag and drop the shoutbox widget w
 
 
 = There's no break between comments in my shoutbox. What can i do to resolve that weird (and ugly) display ?
-Edit css.php at line 46 you'll find :
-    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; }`
+Edit css.php at line 53 you'll find :
+    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; }`
 add display: block; in it like this :
-    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #; background: none; font-size: 1em; list-style: none; display: block; }`
+    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; display: block; }`
 
 
 = How can i remove the upper left rounded corner from the shoutbox ?
-Edit css.php line 25 you'll find :
+Edit css.php line 32 you'll find :
     `-moz-border-radius : 14px 0px 0px 0px;`
 just comment this line by adding // in front of it.
 
