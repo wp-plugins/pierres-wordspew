@@ -113,20 +113,20 @@ Now create a new page name it as you want and choose "Shoutbox" as template for 
 
 = Ok, ok we talk about the shoutbox, but how to implement it in my blog ?
 If you have WP 1.5.x edit your sidebar.php add this line where you want your shoutbox appears :
-`<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
+`	<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>	`
 If you have WP >= 2.x go to Theme -> Widgets drag and drop the shoutbox widget where you want it. You can change the title by editing the property of the shoutbox widget.
 
 
 = There's no break between comments in my shoutbox. What can i do to resolve that weird (and ugly) display ?
 Edit css.php at line 53 you'll find :
-    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; }`
+`	#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; } `
 add display: block; in it like this :
-    `#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; display: block; }`
+`	#chatoutput ul#outputList li { padding: 4px; margin: 0; color: #<?php echo $shout_opt['text_color']; ?>; background: none; font-size: 1em; list-style: none; min-height: <?php echo $shout_opt['avatar_size']; ?>px; display: block; } `
 
 
 = How can i remove the upper left rounded corner from the shoutbox ?
 Edit css.php line 32 you'll find :
-    `-moz-border-radius : 14px 0px 0px 0px;`
+`	-moz-border-radius : 14px 0px 0px 0px; `
 just comment this line by adding // in front of it.
 
 
@@ -136,7 +136,7 @@ You have to put your banned words list in Comment Moderation List, NOT in Black 
 
 = The CSS doesn't get properly read with FIREFOX... Opera and IE works fine. What is the problem ?
 if you use WP-PostRatings and the shoutbox you've got some incompatibility issues. So edit "postratings.php" and search for :
-    `header('Content-Type: text/html; charset='.get_option('blog_charset').'');`
+`	header('Content-Type: text/html; charset='.get_option('blog_charset').''); `
 Comment this line and all will be ok.
 
 
