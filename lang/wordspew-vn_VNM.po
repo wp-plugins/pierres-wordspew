@@ -1,0 +1,703 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pierre's Wordspew\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-05 13:33+0100\n"
+"PO-Revision-Date: 2009-10-05 13:33+0100\n"
+"Last-Translator: Pierre\n"
+"Language-Team: Tinhlinh <linhtinh_tinhlinh@yahoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Vietnamese\n"
+"X-Poedit-Country: VIET NAM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax_admin.php:180
+#: ../wordspew_admin.php:509
+msgid "Ban this IP"
+msgstr "Cấm địa chỉ IP này"
+
+#: ../ajax_admin.php:182
+#: ../ajax_shout.php:293
+#: ../wordspew.php:557
+#: ../wordspew_admin.php:513
+#: ../wordspew_archive.php:180
+msgid "Delete"
+msgstr "Xóa bỏ"
+
+#: ../ajax_admin.php:184
+#: ../wordspew_admin.php:514
+msgid "Edit"
+msgstr "Sửa chữa"
+
+#: ../ajax_admin.php:253
+#: ../ajax_archive.php:35
+#: ../ajax_shout.php:336
+msgid "Are you sure to delete the message:"
+msgstr ""
+
+#: ../ajax_admin.php:254
+#: ../ajax_archive.php:36
+#: ../ajax_shout.php:337
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr ""
+
+#: ../ajax_admin.php:291
+msgid "You're about to ban the following IP address:"
+msgstr ""
+
+#: ../ajax_admin.php:292
+msgid "'Cancel' to stop, 'OK' to ban."
+msgstr ""
+
+#: ../ajax_shout.php:63
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+msgid "link"
+msgstr "Đường dẫn"
+
+#: ../ajax_shout.php:77
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+#: ../wordspew_archive.php:148
+msgid "email"
+msgstr "Địa chỉ email"
+
+#: ../ajax_shout.php:148
+msgid "Click here to expand/collapse the smiley's list"
+msgstr "Bấm vào đây để hiển thị hoặc đóng dánh sách biểu tượng tâm trạng"
+
+#: ../ajax_shout.php:244
+#: ../wordspew-rss.php:63
+#: ../wordspew-rss.php:106
+#: ../wordspew.php:546
+#: ../wordspew_archive.php:165
+msgid "Private message for"
+msgstr ""
+
+#: ../common.php:25
+msgid "year"
+msgstr "năm"
+
+#: ../common.php:25
+msgid "years"
+msgstr "năm"
+
+#: ../common.php:26
+msgid "month"
+msgstr "tháng"
+
+#: ../common.php:26
+msgid "months"
+msgstr "tháng"
+
+#: ../common.php:27
+msgid "week"
+msgstr "tuần"
+
+#: ../common.php:27
+msgid "weeks"
+msgstr "tuần"
+
+#: ../common.php:28
+msgid "day"
+msgstr "ngày"
+
+#: ../common.php:28
+msgid "days"
+msgstr "ngày"
+
+#: ../common.php:29
+msgid "hour"
+msgstr "giờ"
+
+#: ../common.php:29
+msgid "hours"
+msgstr "giờ"
+
+#: ../common.php:30
+#: ../wordspew.php:573
+msgid "minute"
+msgstr "phút"
+
+#: ../common.php:30
+msgid "minutes"
+msgstr "phút"
+
+#: ../usersonline.php:110
+msgid "No one online."
+msgstr "Hiện không có thành viên trực tuyến."
+
+#: ../usersonline.php:111
+msgid "guest"
+msgstr "khách"
+
+#: ../usersonline.php:112
+msgid "guests"
+msgstr "khách"
+
+#: ../usersonline.php:113
+msgid "and"
+msgstr "và"
+
+#: ../usersonline.php:114
+msgid "is crawling the site."
+msgstr "đang xem blog."
+
+#: ../usersonline.php:115
+msgid "are crawling the site."
+msgstr "đang xem blog."
+
+#: ../usersonline.php:116
+msgid "is online."
+msgstr "đang trực tuyến."
+
+#: ../usersonline.php:117
+msgid "are online."
+msgstr "đang trực tuyến."
+
+#: ../widgetized.php:20
+#: ../wordspew-rss.php:47
+#: ../wordspew-rss.php:128
+#: ../wordspew.php:53
+msgid "Wordspew-RSS-Feed for:"
+msgstr "Flux RSS của shoutbox cho :"
+
+#: ../widgetized.php:40
+msgid "Title:"
+msgstr "Tiêu đề"
+
+#: ../wordspew.php:90
+#: ../wordspew.php:474
+msgid "Sorry, but you can post only one url by message..."
+msgstr "Xin lỗi, trong mỗi câu đối thoại bạn chỉ có thể chèn một URL..."
+
+#: ../wordspew.php:107
+msgid "No, sorry you used a banned word!"
+msgstr "Xin lỗi, bạn đã dùng một từ bị cấm !"
+
+#: ../wordspew.php:126
+msgid "No, sorry you used the name of a registered user! You have to change it please."
+msgstr "Xin lỗi, tên này đã có người khác sử dụng, mời bạn chọn tên khác."
+
+#: ../wordspew.php:472
+msgid "You should learn to count before use the shoutbox :)"
+msgstr "Có lẽ bạn nên học làm tính cộng trước khi viết bài trong shoutbox :)"
+
+#: ../wordspew.php:473
+msgid "I DON'T LIKE SPAM !!!"
+msgstr "Tôi không ưa các spammers !!!"
+
+#: ../wordspew.php:475
+msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
+msgstr "Địa chỉ IP của bạn đã bị cấm truy nhập. Nếu bạn cho rằng có chuyện nhầm lẫn, mời bạn liên hệ với người quản trị của blog."
+
+#: ../wordspew.php:509
+msgid "Click this to turn on/off sound"
+msgstr "Click vào đây để bật/tắt âm thanh"
+
+#: ../wordspew.php:513
+#: ../wordspew_archive.php:112
+#, php-format
+msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
+msgstr "<div id=\"Show_Spam\">%s spams đã bị chặn</div>"
+
+#: ../wordspew.php:520
+#: ../wordspew.php:573
+#: ../wordspew_admin.php:483
+#, fuzzy, php-format
+msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
+msgstr "<div id=\"lastMessage\"><span>Bài viết mới nhất</span> <em id=\"responseTime\">cách đây %s</em></div>"
+
+#: ../wordspew.php:537
+msgid "Info"
+msgstr "Thông tin"
+
+#: ../wordspew.php:537
+msgid "Please, resolve the addition below before post any new comment..."
+msgstr "Mời bạn giải bài toán cộng dưới đây trước khi có thể viết bài trong shoutbox..."
+
+#: ../wordspew.php:588
+#: ../wordspew_admin.php:473
+#: ../wordspew_archive.php:107
+msgid "Theme:"
+msgstr ""
+
+#: ../wordspew.php:591
+#: ../wordspew_admin.php:477
+#: ../wordspew_admin.php:479
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../wordspew.php:597
+msgid "New theme"
+msgstr ""
+
+#: ../wordspew.php:614
+#: ../wordspew.php:687
+msgid "Guest_"
+msgstr "Khách_"
+
+#: ../wordspew.php:624
+#: ../wordspew_archive.php:122
+msgid "Admin"
+msgstr "Người quản trị"
+
+#: ../wordspew.php:630
+#: ../wordspew.php:680
+msgid "Archive"
+msgstr ""
+
+#: ../wordspew.php:636
+#: ../wordspew.php:656
+#: ../wordspew_archive.php:118
+msgid "Name"
+msgstr "Tên"
+
+#: ../wordspew.php:645
+msgid "Captcha"
+msgstr "Mã kiểm tra"
+
+#: ../wordspew.php:658
+msgid "URL/Email"
+msgstr "URL/Email"
+
+#: ../wordspew.php:662
+#: ../wordspew_archive.php:119
+msgid "Message"
+msgstr "Lời thoại"
+
+#: ../wordspew.php:674
+msgid "Send"
+msgstr "Gửi đi"
+
+#: ../wordspew.php:685
+msgid "You must be a registered user to participate in this chat"
+msgstr "Bạn cần đăng ký trước khi có thể viết bài trong shoutbox"
+
+#: ../wordspew_admin.php:102
+msgid "Congratulations, you just completed the installation of this shoutbox."
+msgstr "Xin chúc mừng, bạn đã cài đặt thành công shoutbox."
+
+#: ../wordspew_admin.php:227
+msgid "No Access for you!"
+msgstr "Bạn không có quyền truy nhập !"
+
+#: ../wordspew_admin.php:232
+msgid "The shoutbox database has been wiped. You now have a fresh slate!"
+msgstr "Đã xóa xong cơ sở dữ liệu của shoutbox !"
+
+#: ../wordspew_admin.php:235
+msgid "Live Shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:236
+#, fuzzy, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr "Jalenack's Live Shoutbox (Hiện đã chặn <font color=\"red\">%s</font> spams)"
+
+#: ../wordspew_admin.php:237
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr "Để những điều chỉnh về thời gian và mầu sắc tại đây có hiệu lực, bạn cần xóa các tệp tạm thời (temporary files) và cập nhật (refresh) trình duyệt."
+
+#: ../wordspew_admin.php:240
+#, php-format
+msgid "There have been <b>%s</b> messages in this shoutbox"
+msgstr "Đã có <b>%s</b> câu đối thoại trong shoutbox."
+
+#: ../wordspew_admin.php:243
+msgid "Colors (Must be 6 digit hex)"
+msgstr "Mầu sắc (bạn phải sử dụng đơn vị hexadécimale)"
+
+#: ../wordspew_admin.php:246
+msgid "Fade from"
+msgstr "Chuyển từ mầu"
+
+#: ../wordspew_admin.php:249
+msgid "The color that new messages fade in from. Default"
+msgstr "Mầu hiển thị câu đối thoại. Mầu mặc định"
+
+#: ../wordspew_admin.php:252
+msgid "Fade to"
+msgstr "Chuyển sang mầu"
+
+#: ../wordspew_admin.php:255
+#, fuzzy
+msgid "Also used as the background color of the box. Default"
+msgstr "Đồng thời được sử dụng làm mầu nền của shoutbox. Mầu mặc định FFFFFF (trắng)"
+
+#: ../wordspew_admin.php:258
+msgid "Text Color"
+msgstr "Mầu chữ"
+
+#: ../wordspew_admin.php:261
+msgid "The color of text within the box. Default"
+msgstr "Mầu chữ trong shoutbox. Mầu mặc định"
+
+#: ../wordspew_admin.php:264
+msgid "Name Color"
+msgstr "Màu tên người sử dụng"
+
+#: ../wordspew_admin.php:267
+msgid "The color of peoples' names. Default"
+msgstr "Màu tên người sử dụng. Mầu mặc định"
+
+#: ../wordspew_admin.php:274
+#, fuzzy
+msgid "Others"
+msgstr "Các thiết lập khác"
+
+#: ../wordspew_admin.php:276
+msgid "Show"
+msgstr "Hiển thị"
+
+#: ../wordspew_admin.php:277
+msgid "comments in the shoutbox"
+msgstr "lời nhắn trong shoutbox"
+
+#: ../wordspew_admin.php:278
+msgid "Enter, here, the number of shouts you want to show in your shoutbox"
+msgstr "Khai số lượng câu đối thoại bạn muốn hiển thị trong shoutbox"
+
+#: ../wordspew_admin.php:279
+msgid "Update Every"
+msgstr "Khoảng cách giữa các lần cập nhật"
+
+#: ../wordspew_admin.php:280
+#: ../wordspew_admin.php:283
+msgid "Seconds"
+msgstr "Giây"
+
+#: ../wordspew_admin.php:281
+msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
+msgstr "Giá trị này quyết định thời gian cập nhật của shoutbox. Giá trị càng lớn, tốc độ cập nhật càng chậm nhưng đổi lại máy chủ (server) sẽ đỡ phải hoạt động nhiều. Bạn có thể sử dụng đơn vị decimal. Giá trị này được sử dụng cho 8 lần cập nhật đầu tiên. Sau đó, nó sẽ từng bước được tự động gia tăng. Mỗi lần có một câu đối thoại mới hoặc bạn di chuột qua shoutbox, khoảng thời gian giữa các lần cập nhật sẽ trở lại với giá trị ban đầu mà bạn khai tại đây. Thời gian mặc định : 4 giây"
+
+#: ../wordspew_admin.php:282
+msgid "Fade Length"
+msgstr "Thời gian chuyển mầu"
+
+#: ../wordspew_admin.php:284
+msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
+msgstr "Thời gian để màu của câu đối thoại chuyển hẳn sang thành màu nền của shoutbox. Bạn có thể dùng đơn vị decimal. Thời gian mặc định : 1,5 giây"
+
+#: ../wordspew_admin.php:285
+msgid "Use textarea"
+msgstr "Sử dụng hộp soạn thảo văn bản"
+
+#: ../wordspew_admin.php:287
+msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
+msgstr "Hộp soạn thảo văn bản có kích thước lớn cho phép người sử dụng viết dài hơn nhưng như vậy cũng sẽ tốn chỗ hơn"
+
+#: ../wordspew_admin.php:288
+msgid "Use URL field"
+msgstr "Cho phép chèn URL"
+
+#: ../wordspew_admin.php:290
+msgid "Check this if you want users to have an option to add their URL when submitting a message."
+msgstr "Đánh dấu chọn nếu bạn cho phép người sử dụng chèn URL vào bài viết"
+
+#: ../wordspew_admin.php:291
+msgid "Use sound alert"
+msgstr "Sử dụng âm thanh"
+
+#: ../wordspew_admin.php:293
+msgid "Check this if you want to hear a sound alert when someone post message"
+msgstr "Đánh dấu chọn nếu bạn muốn nghe tiếng chuông báo mỗi khi có bài viết mới trong shoutbox"
+
+#: ../wordspew_admin.php:294
+msgid "Show smileys list"
+msgstr "Hiển thị danh sách biểu tượng tâm trạng (smiley)"
+
+#: ../wordspew_admin.php:296
+msgid "Check this if you want to show the smileys list"
+msgstr "Đánh dấu chọn nếu bạn muốn hiển thị danh sách biểu tượng tâm trạng (smiley)"
+
+#: ../wordspew_admin.php:297
+msgid "Show blocked spams"
+msgstr "Hiển thị các bài spam đã bị chặn"
+
+#: ../wordspew_admin.php:299
+msgid "Check this if you want to show blocked spams"
+msgstr "Đánh dấu chọn nếu bạn muốn hiển thị số lượng bài spam đã bị chặn"
+
+#: ../wordspew_admin.php:300
+msgid "Use a captcha"
+msgstr "Sử dụng mã kiểm tra"
+
+#: ../wordspew_admin.php:302
+msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
+msgstr "Đánh dấu chọn nếu bạn muốn sử dụng mã kiểm tra (đây chỉ là một bài toán cộng đơn giản. người sử dụng cần khai kết quả đúng nếu muốn sử dụng shoutbox)"
+
+#: ../wordspew_admin.php:303
+msgid "Use Themes"
+msgstr ""
+
+#: ../wordspew_admin.php:305
+#, fuzzy
+msgid "Check this if you want to use themes."
+msgstr "Đánh dấu chọn nếu bạn muốn hiển thị danh sách biểu tượng tâm trạng (smiley)"
+
+#: ../wordspew_admin.php:306
+#, fuzzy
+msgid "Use the RSS feed"
+msgstr "Cho phép chèn URL"
+
+#: ../wordspew_admin.php:308
+#, fuzzy
+msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
+msgstr "Đánh dấu chọn nếu bạn muốn nghe tiếng chuông báo mỗi khi có bài viết mới trong shoutbox"
+
+#: ../wordspew_admin.php:309
+msgid "XHTML strict"
+msgstr "XHTML strict"
+
+#: ../wordspew_admin.php:311
+msgid "Check this if you want to use XHTML strict"
+msgstr "Đánh dấu chọn nếu bạn muốn sử dụng chuẩn XHTML strict"
+
+#: ../wordspew_admin.php:317
+msgid "Users options"
+msgstr ""
+
+#: ../wordspew_admin.php:321
+msgid "<b>Who can administrate the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:333
+#: ../wordspew_admin.php:355
+#: ../wordspew_admin.php:382
+#: ../wordspew_admin.php:405
+msgid "level"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+msgid "Choose the level required to administrate the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+#, fuzzy, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
+msgstr "<a href=\"%s\"><b>Click vào đây</b></a> để xác lập danh sách các từ và địa chỉ IP bị cấm."
+
+#: ../wordspew_admin.php:344
+msgid "Who can <b>see the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:360
+#: ../wordspew_admin.php:387
+#: ../wordspew_admin.php:410
+msgid "Everybody"
+msgstr ""
+
+#: ../wordspew_admin.php:364
+msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
+msgstr ""
+
+#: ../wordspew_admin.php:365
+msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
+msgstr ""
+
+#: ../wordspew_admin.php:366
+msgid "Please activate Javascript..."
+msgstr ""
+
+#: ../wordspew_admin.php:367
+msgid "in the list above,<br/>it will take precedence over the next option"
+msgstr ""
+
+#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:371
+msgid "Who can <b>see the shoutbox archives</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:391
+msgid "Choose who is able to see archive of the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:394
+msgid "Who can see the differents themes"
+msgstr ""
+
+#: ../wordspew_admin.php:414
+msgid "Choose who is able to see the differents themes of your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:418
+msgid "Only allow registered users"
+msgstr "Chỉ cho phép những người đã đăng ký được sử dụng shoutbox"
+
+#: ../wordspew_admin.php:420
+#, fuzzy
+msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
+msgstr "Với lựa chọn này, bạn có thể hạn chế chỉ cho phép các thành viên đã đăng ký được quyền viết và gửi bài trong shoutbox. Những người chưa đăng ký chỉ được quyền đọc mà không được quyền viết và gửi bài. Những người này sẽ nhận được lời mời đăng ký và truy nhập để viết bài. <b>Lưu ý :</b> biện pháp này chỉ có giá trị bảo vệ tương đối. Những người thông thạo, dù không đăng ký hay đăng nhập, vẫn có thể viết những đoạn mã để tương tác trực tiếp với tệp ghi nhận bài viết."
+
+#: ../wordspew_admin.php:424
+msgid "Show users online"
+msgstr "Hiển thị danh sách người sử dụng đang trực tuyến"
+
+#: ../wordspew_admin.php:426
+msgid "Check this if you want to show, in real time, users online"
+msgstr "Đánh dấu chọn nếu bạn muốn hiển thị dánh sách người sử dụng đang trực tuyến"
+
+#: ../wordspew_admin.php:429
+msgid "Users to hide"
+msgstr ""
+
+#: ../wordspew_admin.php:431
+msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
+msgstr ""
+
+#: ../wordspew_admin.php:434
+#, fuzzy
+msgid "Use avatars"
+msgstr "Sử dụng mã kiểm tra"
+
+#: ../wordspew_admin.php:436
+msgid "If checked, avatar will be shown."
+msgstr ""
+
+#: ../wordspew_admin.php:437
+msgid "Avatar size"
+msgstr ""
+
+#: ../wordspew_admin.php:439
+msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
+msgstr ""
+
+#: ../wordspew_admin.php:442
+msgid "Avatar position"
+msgstr ""
+
+#: ../wordspew_admin.php:444
+msgid "Left"
+msgstr ""
+
+#: ../wordspew_admin.php:445
+msgid "Right"
+msgstr ""
+
+#: ../wordspew_admin.php:447
+msgid "Choose the alignement for avatars (left or right)"
+msgstr ""
+
+#: ../wordspew_admin.php:452
+msgid "Save"
+msgstr "Ghi lại"
+
+#: ../wordspew_admin.php:453
+msgid "Delete ALL messages"
+msgstr "Xóa toàn bộ các bài viết"
+
+#: ../wordspew_admin.php:454
+msgid ""
+"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"Bạn có chắc chắn muốn xóa toàn bộ các bài viết trong shoutbox ?\\n"
+"\\'Hủy lệnh\\' để ngừng, \\'OK'\\ để xóa."
+
+#: ../wordspew_admin.php:460
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
+msgstr "<a href=\"%s\"><b>Click vào đây</b></a> để xác lập danh sách các từ và địa chỉ IP bị cấm."
+
+#: ../wordspew_admin.php:461
+msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
+msgstr "<b><font color=\"red\">Chú ý quan trọng !</font></b> Để cấm một địa chỉ IP riêng lẻ, bạn chỉ cần click nút \"Cấm địa chỉ IP này\". Để cấm một dãy địa chỉ IP, bạn cần sử dụng cú pháp (trong thí dụ này, chúng ta sẽ cấm toàn bộ các địa chỉ IP của Vsevolod Stetsinsky) : 195.225.176/179.* ở đây, dấu gạch chéo thay cho tất các số từ 176 đến 179 và dấu sao thay cho toàn bộ các số từ 0 đến 255.<br/>Như vậy chúng ta đã cấm toàn bộ các địa chỉ IP từ 195.225.176.0 tới 195.225.179.255. Bạn có thể sử dụng kết hợp hai lựa chọn này..."
+
+#: ../wordspew_admin.php:558
+#: ../wordspew_admin.php:626
+msgid "Cheatin' uh ?"
+msgstr "Bạn định làm gì vậy ?"
+
+#: ../wordspew_archive.php:83
+#, fuzzy
+msgid "Archive for the shoutbox"
+msgstr "lời nhắn trong shoutbox"
+
+#: ../wordspew_archive.php:105
+msgid "Click here to go to the Homepage"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Click here to refresh the page"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Shoutbox archive"
+msgstr ""
+
+#: ../wordspew_archive.php:117
+msgid "Date/Time"
+msgstr ""
+
+#: ../wordspew_archive.php:124
+msgid "IP"
+msgstr ""
+
+#: ../wordspew_archive.php:171
+msgid "Private"
+msgstr ""
+
+#: ../wordspew_archive.php:173
+msgid "Private message"
+msgstr ""
+
+#: ../wordspew_archive.php:211
+#, fuzzy
+msgid "records"
+msgstr "Giây"
+
+#: ../wordspew_archive.php:215
+msgid "Newer"
+msgstr ""
+
+#: ../wordspew_archive.php:218
+#, fuzzy
+msgid "Older"
+msgstr "Các thiết lập khác"
+
+#~ msgid "0 minute ago"
+#~ msgstr "cách đây 0 phút"
+#~ msgid "The comment was deleted successfully."
+#~ msgstr "Đã xóa xong câu đối thoại."
+#~ msgid "The comment was edited successfully."
+#~ msgstr "Đã sửa xong câu đối thoại."
+#~ msgid "The source ip of this comment was marked as spammer."
+#~ msgstr "Địa chỉ IP bạn đang dùng là của một spammer !"
+#~ msgid "Enter here your secret sentence"
+#~ msgstr "Khai câu gợi ý ngầm"
+#~ msgid "Hide users list"
+#~ msgstr "Giấu danh sách người sử dụng"
+#~ msgid ""
+#~ "Check this if you want to hide users list from document header in the "
+#~ "javascript function. It permit to not expose your users list from a "
+#~ "\"view source\"."
+#~ msgstr ""
+#~ "Đánh dấu chọn nếu bạn không muốn hiển thị danh sách người sử dụng. Điều "
+#~ "này ngăn không cho người ngoài xem danh sách người sử dụng shoutbox của "
+#~ "bạn khi họ sử dụng chức năng xem mã nguồn \"view source\" của trình duyệt."
+#~ msgid "Data"
+#~ msgstr "Dữ liệu"
+#~ msgid "(showing the last <b>%s</b> messages)"
+#~ msgstr "(hiển thị <b>%s</b> bài mới nhất)"
+#~ msgid ""
+#~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
+#~ "times. This is not live. New comments made while viewing this page will "
+#~ "not magically appear like they do in the real thing."
+#~ msgstr ""
+#~ "Lưu ý : Trong shoutbox luôn phải có ít nhất một bài viết. Các bài viết "
+#~ "không hiển thị tức thời ngay sau khi gửi bài."
+#~ msgid "Your secret sentence"
+#~ msgstr "Câu gợi ý ngầm của bạn"
+#~ msgid "Your shoutbox is blank. Add a message!"
+#~ msgstr "Mời bạn viết bài !"
+

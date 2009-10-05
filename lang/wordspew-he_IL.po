@@ -1,0 +1,695 @@
+# Pierre's Wordspew 2.94 POT file.
+# Copyright (C) 2007 Pierre's Wordspew's copyright holder
+# This file is distributed under the same license as Pierre's Wordspew.
+# admin <admin@tzafrir.net>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Pierre's Wordspew\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-05 13:24+0100\n"
+"PO-Revision-Date: 2009-10-05 13:24+0100\n"
+"Last-Translator: Pierre\n"
+"Language-Team: he <admin@tzafrir.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax_admin.php:180
+#: ../wordspew_admin.php:509
+msgid "Ban this IP"
+msgstr "חסום IP זה"
+
+#: ../ajax_admin.php:182
+#: ../ajax_shout.php:293
+#: ../wordspew.php:557
+#: ../wordspew_admin.php:513
+#: ../wordspew_archive.php:180
+msgid "Delete"
+msgstr "מחק"
+
+#: ../ajax_admin.php:184
+#: ../wordspew_admin.php:514
+msgid "Edit"
+msgstr "ערוך"
+
+#: ../ajax_admin.php:253
+#: ../ajax_archive.php:35
+#: ../ajax_shout.php:336
+msgid "Are you sure to delete the message:"
+msgstr ""
+
+#: ../ajax_admin.php:254
+#: ../ajax_archive.php:36
+#: ../ajax_shout.php:337
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr ""
+
+#: ../ajax_admin.php:291
+msgid "You're about to ban the following IP address:"
+msgstr ""
+
+#: ../ajax_admin.php:292
+msgid "'Cancel' to stop, 'OK' to ban."
+msgstr ""
+
+#: ../ajax_shout.php:63
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+msgid "link"
+msgstr "אתר"
+
+#: ../ajax_shout.php:77
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+#: ../wordspew_archive.php:148
+msgid "email"
+msgstr "אימייל"
+
+#: ../ajax_shout.php:148
+msgid "Click here to expand/collapse the smiley's list"
+msgstr "לחץ כאן כדי לכווץ/להרחיב את רשימת הסמיילים"
+
+#: ../ajax_shout.php:244
+#: ../wordspew-rss.php:63
+#: ../wordspew-rss.php:106
+#: ../wordspew.php:546
+#: ../wordspew_archive.php:165
+msgid "Private message for"
+msgstr ""
+
+#: ../common.php:25
+msgid "year"
+msgstr "שנה"
+
+#: ../common.php:25
+msgid "years"
+msgstr "שנים"
+
+#: ../common.php:26
+msgid "month"
+msgstr "חודש"
+
+#: ../common.php:26
+msgid "months"
+msgstr "חודשים"
+
+#: ../common.php:27
+msgid "week"
+msgstr "שבוע"
+
+#: ../common.php:27
+msgid "weeks"
+msgstr "שבועות"
+
+#: ../common.php:28
+msgid "day"
+msgstr "יום"
+
+#: ../common.php:28
+msgid "days"
+msgstr "ימים"
+
+#: ../common.php:29
+msgid "hour"
+msgstr "שעה"
+
+#: ../common.php:29
+msgid "hours"
+msgstr "שעות"
+
+#: ../common.php:30
+#: ../wordspew.php:573
+msgid "minute"
+msgstr "דקה"
+
+#: ../common.php:30
+msgid "minutes"
+msgstr "דקות"
+
+#: ../usersonline.php:110
+msgid "No one online."
+msgstr "אף אחד אינו מחובר."
+
+#: ../usersonline.php:111
+msgid "guest"
+msgstr "אורח"
+
+#: ../usersonline.php:112
+msgid "guests"
+msgstr "אורחים"
+
+#: ../usersonline.php:113
+msgid "and"
+msgstr "וגם"
+
+#: ../usersonline.php:114
+msgid "is crawling the site."
+msgstr "זוחל כעת באתר."
+
+#: ../usersonline.php:115
+msgid "are crawling the site."
+msgstr "זוחלים כעת באתר."
+
+#: ../usersonline.php:116
+msgid "is online."
+msgstr "מחובר."
+
+#: ../usersonline.php:117
+msgid "are online."
+msgstr "מחוברים."
+
+#: ../widgetized.php:20
+#: ../wordspew-rss.php:47
+#: ../wordspew-rss.php:128
+#: ../wordspew.php:53
+msgid "Wordspew-RSS-Feed for:"
+msgstr ""
+
+#: ../widgetized.php:40
+msgid "Title:"
+msgstr "כותרת:"
+
+#: ../wordspew.php:90
+#: ../wordspew.php:474
+msgid "Sorry, but you can post only one url by message..."
+msgstr "צר לי, ניתן להשאיר רק לינק אחד בהודעה..."
+
+#: ../wordspew.php:107
+msgid "No, sorry you used a banned word!"
+msgstr "לא, לצערי השתמשת במילה אסורה!"
+
+#: ../wordspew.php:126
+msgid "No, sorry you used the name of a registered user! You have to change it please."
+msgstr ""
+
+#: ../wordspew.php:472
+msgid "You should learn to count before use the shoutbox :)"
+msgstr ""
+
+#: ../wordspew.php:473
+msgid "I DON'T LIKE SPAM !!!"
+msgstr ""
+
+#: ../wordspew.php:475
+msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
+msgstr "כתובת הIP שלך הורחקה מאתר זה. אם זו לדעתך טעות, אנא צור קשר עם מנהל האתר."
+
+#: ../wordspew.php:509
+msgid "Click this to turn on/off sound"
+msgstr "לחץ כאן כדי להפעיל/לבטל שימוש בצלילים"
+
+#: ../wordspew.php:513
+#: ../wordspew_archive.php:112
+#, php-format
+msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
+msgstr ""
+
+#: ../wordspew.php:520
+#: ../wordspew.php:573
+#: ../wordspew_admin.php:483
+#, fuzzy, php-format
+msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
+msgstr "<div id=\"lastMessage\"><span>הודעה אחרונה</span> <em id=\"responseTime\">לפני %s</em></div>"
+
+#: ../wordspew.php:537
+msgid "Info"
+msgstr ""
+
+#: ../wordspew.php:537
+msgid "Please, resolve the addition below before post any new comment..."
+msgstr ""
+
+#: ../wordspew.php:588
+#: ../wordspew_admin.php:473
+#: ../wordspew_archive.php:107
+msgid "Theme:"
+msgstr ""
+
+#: ../wordspew.php:591
+#: ../wordspew_admin.php:477
+#: ../wordspew_admin.php:479
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../wordspew.php:597
+msgid "New theme"
+msgstr ""
+
+#: ../wordspew.php:614
+#: ../wordspew.php:687
+msgid "Guest_"
+msgstr "אורח_"
+
+#: ../wordspew.php:624
+#: ../wordspew_archive.php:122
+msgid "Admin"
+msgstr "ניהול"
+
+#: ../wordspew.php:630
+#: ../wordspew.php:680
+msgid "Archive"
+msgstr ""
+
+#: ../wordspew.php:636
+#: ../wordspew.php:656
+#: ../wordspew_archive.php:118
+msgid "Name"
+msgstr "שם"
+
+#: ../wordspew.php:645
+msgid "Captcha"
+msgstr ""
+
+#: ../wordspew.php:658
+msgid "URL/Email"
+msgstr "אתר/אימייל"
+
+#: ../wordspew.php:662
+#: ../wordspew_archive.php:119
+msgid "Message"
+msgstr "הודעה"
+
+#: ../wordspew.php:674
+msgid "Send"
+msgstr "שלח"
+
+#: ../wordspew.php:685
+msgid "You must be a registered user to participate in this chat"
+msgstr "חובה להיות משתמש רשום באתר כדי להשתתף בצ&#39;אט"
+
+#: ../wordspew_admin.php:102
+msgid "Congratulations, you just completed the installation of this shoutbox."
+msgstr "ברכותי, זה עתה השלמת את התקנת תיבת הצ&#39;אט."
+
+#: ../wordspew_admin.php:227
+msgid "No Access for you!"
+msgstr "אין לך גישה!"
+
+#: ../wordspew_admin.php:232
+msgid "The shoutbox database has been wiped. You now have a fresh slate!"
+msgstr "בסיס הנתונים אופס - כעת יש לך דף חלק!"
+
+#: ../wordspew_admin.php:235
+msgid "Live Shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:236
+#, fuzzy, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr "תיבת הצ&#39;אט מאת ג&#39;יילנק (<font color=\"red\">%s</font> תגובות זבל נחסמו)"
+
+#: ../wordspew_admin.php:237
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr "כשמעדכנים את הזמנים והצבעים, ייתכן כי צריך לרענן את העמוד או לרוקן את זכרון המטמון לפני שהשינויים יוצגו"
+
+#: ../wordspew_admin.php:240
+#, php-format
+msgid "There have been <b>%s</b> messages in this shoutbox"
+msgstr "היו <strong>%s</strong> הודעות בתיבת הצ&#39;אט הזו"
+
+#: ../wordspew_admin.php:243
+msgid "Colors (Must be 6 digit hex)"
+msgstr "צבעים (בפורמט hex שש ספרות)"
+
+#: ../wordspew_admin.php:246
+msgid "Fade from"
+msgstr "מעבר הדרגתי מ"
+
+#: ../wordspew_admin.php:249
+msgid "The color that new messages fade in from. Default"
+msgstr "הצבע ההתחלתי של הודעות חדשות. ברירת מחדל"
+
+#: ../wordspew_admin.php:252
+msgid "Fade to"
+msgstr "מעבר הדרגתי אל"
+
+#: ../wordspew_admin.php:255
+#, fuzzy
+msgid "Also used as the background color of the box. Default"
+msgstr "משמש גם כצבע הרקע של הקופסה. ברירת מחדל FFFFFF (לבן)"
+
+#: ../wordspew_admin.php:258
+msgid "Text Color"
+msgstr "צבע טקסט"
+
+#: ../wordspew_admin.php:261
+msgid "The color of text within the box. Default"
+msgstr "הצבע של הטקסט בתוך הקופסה. ברירת מחדל"
+
+#: ../wordspew_admin.php:264
+msgid "Name Color"
+msgstr "צבע שמות"
+
+#: ../wordspew_admin.php:267
+msgid "The color of peoples' names. Default"
+msgstr "הצבע של שמות המגיבים. ברירת מחדל"
+
+#: ../wordspew_admin.php:274
+#, fuzzy
+msgid "Others"
+msgstr "שונות"
+
+#: ../wordspew_admin.php:276
+msgid "Show"
+msgstr ""
+
+#: ../wordspew_admin.php:277
+msgid "comments in the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:278
+msgid "Enter, here, the number of shouts you want to show in your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:279
+msgid "Update Every"
+msgstr "עדכן כל"
+
+#: ../wordspew_admin.php:280
+#: ../wordspew_admin.php:283
+msgid "Seconds"
+msgstr "שניות"
+
+#: ../wordspew_admin.php:281
+msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
+msgstr "הנתון הזה קובע עד כמה הצ&#39;אט \"זורם\". כשהמספר גבוה יותר, יקח יותר זמן להודעות להופיע, אבל העומס על השרת יופחת. ניתן להשתמש בשברים עשרוניים. המספר הזה הוא בסיס עבור שמונה הטעינות הראשונות, כשלאחר מכן הזמן בין טעינות גדל בהתמדה. הוספת תגובה, או מעבר עם הסמן מעל תיבת הצ&#39;אט יאפסו את פרק הזמן למספר הנתון מעלה. ברירת מחדל: ארבע שניות."
+
+#: ../wordspew_admin.php:282
+msgid "Fade Length"
+msgstr "משך עמעום"
+
+#: ../wordspew_admin.php:284
+msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
+msgstr "פרק הזמן שלוקח למעבר ההדרגתי בין הצבעים הנתונים מעלה. ניתן להשתמש בשברים עשרוניים. ברירת מחדל - 1.5 שניות."
+
+#: ../wordspew_admin.php:285
+msgid "Use textarea"
+msgstr "השתמש בקופסת טקסט"
+
+#: ../wordspew_admin.php:287
+msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
+msgstr "קופסת טקסט היא סוג גדול יותר של תיבת קלט. למגיבים יהיה יותר מקום לכתוב את תגובתם, אבל תיבת הצ&#39;אט תהיה גדולה יותר."
+
+#: ../wordspew_admin.php:288
+msgid "Use URL field"
+msgstr "השתמש בתיבת אתר"
+
+#: ../wordspew_admin.php:290
+msgid "Check this if you want users to have an option to add their URL when submitting a message."
+msgstr "סמנו כאן אם אתם רוצים שלמגיבים תהיה אפשרות להוסיף את כתובת האתר שלהם כשמוסיפים תגובה."
+
+#: ../wordspew_admin.php:291
+msgid "Use sound alert"
+msgstr "השתמש בהתראה קולית"
+
+#: ../wordspew_admin.php:293
+msgid "Check this if you want to hear a sound alert when someone post message"
+msgstr "סמנו כאן על מנת שיישמע צליל התראה כשמישהו מוסיף תגובה"
+
+#: ../wordspew_admin.php:294
+msgid "Show smileys list"
+msgstr "הצג רשימת סמיילים"
+
+#: ../wordspew_admin.php:296
+msgid "Check this if you want to show the smileys list"
+msgstr "סמנו כאן כדי להציג רשימת סמיילים"
+
+#: ../wordspew_admin.php:297
+msgid "Show blocked spams"
+msgstr ""
+
+#: ../wordspew_admin.php:299
+msgid "Check this if you want to show blocked spams"
+msgstr ""
+
+#: ../wordspew_admin.php:300
+msgid "Use a captcha"
+msgstr ""
+
+#: ../wordspew_admin.php:302
+msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
+msgstr ""
+
+#: ../wordspew_admin.php:303
+msgid "Use Themes"
+msgstr ""
+
+#: ../wordspew_admin.php:305
+#, fuzzy
+msgid "Check this if you want to use themes."
+msgstr "סמנו כאן כדי להציג רשימת סמיילים"
+
+#: ../wordspew_admin.php:306
+#, fuzzy
+msgid "Use the RSS feed"
+msgstr "השתמש בתיבת אתר"
+
+#: ../wordspew_admin.php:308
+#, fuzzy
+msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
+msgstr "סמנו כאן על מנת שיישמע צליל התראה כשמישהו מוסיף תגובה"
+
+#: ../wordspew_admin.php:309
+msgid "XHTML strict"
+msgstr ""
+
+#: ../wordspew_admin.php:311
+msgid "Check this if you want to use XHTML strict"
+msgstr "סמנו כאן כדי להשתמש בXHTML strict"
+
+#: ../wordspew_admin.php:317
+msgid "Users options"
+msgstr ""
+
+#: ../wordspew_admin.php:321
+msgid "<b>Who can administrate the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:333
+#: ../wordspew_admin.php:355
+#: ../wordspew_admin.php:382
+#: ../wordspew_admin.php:405
+msgid "level"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+msgid "Choose the level required to administrate the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+#, fuzzy, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
+msgstr "<a href=\"%s\"><b>לחצו כאן</b></a> כדי לנהל את המילים וכתובות הIP האסורות."
+
+#: ../wordspew_admin.php:344
+msgid "Who can <b>see the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:360
+#: ../wordspew_admin.php:387
+#: ../wordspew_admin.php:410
+msgid "Everybody"
+msgstr ""
+
+#: ../wordspew_admin.php:364
+msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
+msgstr ""
+
+#: ../wordspew_admin.php:365
+msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
+msgstr ""
+
+#: ../wordspew_admin.php:366
+msgid "Please activate Javascript..."
+msgstr ""
+
+#: ../wordspew_admin.php:367
+msgid "in the list above,<br/>it will take precedence over the next option"
+msgstr ""
+
+#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:371
+msgid "Who can <b>see the shoutbox archives</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:391
+msgid "Choose who is able to see archive of the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:394
+msgid "Who can see the differents themes"
+msgstr ""
+
+#: ../wordspew_admin.php:414
+msgid "Choose who is able to see the differents themes of your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:418
+msgid "Only allow registered users"
+msgstr "הרשה רק למשתמשים רשומים להגיב"
+
+#: ../wordspew_admin.php:420
+#, fuzzy
+msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
+msgstr "סימון כאן יאפשר רק למשתמשים שרשומים בבלוג להגיב. משתמשים שאינם רשומים עדיין יראו את הצ&#39;אט, והודעה שאומרת שהם חייבים להיות רשומים כדי להגיב.<br /><strong>שימו לב:</strong> אופציה זאת אינה מאבטחת לגמרי את הצ&#39;אט, אם מישהו ממש רוצה, ומכיר את הפלאגין, הוא יכול לשלוח הודעה ישירות לקובץ שמעבד הודעות חדשות. זה אפשרי, אך מסובך, ודי חסר משמעות."
+
+#: ../wordspew_admin.php:424
+msgid "Show users online"
+msgstr "הצג משתמשים מחוברים"
+
+#: ../wordspew_admin.php:426
+msgid "Check this if you want to show, in real time, users online"
+msgstr "סמנו כאן כדי להראות את המשתמשים שמחוברים בזמן אמת"
+
+#: ../wordspew_admin.php:429
+msgid "Users to hide"
+msgstr ""
+
+#: ../wordspew_admin.php:431
+msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
+msgstr ""
+
+#: ../wordspew_admin.php:434
+#, fuzzy
+msgid "Use avatars"
+msgstr "השתמש בקופסת טקסט"
+
+#: ../wordspew_admin.php:436
+msgid "If checked, avatar will be shown."
+msgstr ""
+
+#: ../wordspew_admin.php:437
+msgid "Avatar size"
+msgstr ""
+
+#: ../wordspew_admin.php:439
+msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
+msgstr ""
+
+#: ../wordspew_admin.php:442
+msgid "Avatar position"
+msgstr ""
+
+#: ../wordspew_admin.php:444
+msgid "Left"
+msgstr ""
+
+#: ../wordspew_admin.php:445
+msgid "Right"
+msgstr ""
+
+#: ../wordspew_admin.php:447
+msgid "Choose the alignement for avatars (left or right)"
+msgstr ""
+
+#: ../wordspew_admin.php:452
+msgid "Save"
+msgstr "שמור"
+
+#: ../wordspew_admin.php:453
+msgid "Delete ALL messages"
+msgstr "מחק את כל ההודעות"
+
+#: ../wordspew_admin.php:454
+msgid ""
+"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"אתם עומדים למחוק את כל ההודעות בצ&#39;אט.\\n"
+"האם אתם בטוחים שבכוונתכם לעשות זאת?\\n"
+"לחצו בטל כדי לבטל, אישור כדי למחוק."
+
+#: ../wordspew_admin.php:460
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
+msgstr "<a href=\"%s\"><b>לחצו כאן</b></a> כדי לנהל את המילים וכתובות הIP האסורות."
+
+#: ../wordspew_admin.php:461
+msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
+msgstr "<b><font color=\"red\">חשוב!</font></b> כדי לחסום כתובת IP בודדת, פשוט לחצו על כפתור \"חסום IP זה\". כדי לחסום טווח כתובות IP, השתמשו בנוסח הבא: 195.225.176/179.* כשהלוכסן מסמן 176 עד 179 ו* מ0 עד 255.<br />ניתן לשלב בין שתי האפשרויות."
+
+#: ../wordspew_admin.php:558
+#: ../wordspew_admin.php:626
+msgid "Cheatin' uh ?"
+msgstr "מרמה, אה?"
+
+#: ../wordspew_archive.php:83
+msgid "Archive for the shoutbox"
+msgstr ""
+
+#: ../wordspew_archive.php:105
+msgid "Click here to go to the Homepage"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Click here to refresh the page"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Shoutbox archive"
+msgstr ""
+
+#: ../wordspew_archive.php:117
+msgid "Date/Time"
+msgstr ""
+
+#: ../wordspew_archive.php:124
+msgid "IP"
+msgstr ""
+
+#: ../wordspew_archive.php:171
+msgid "Private"
+msgstr ""
+
+#: ../wordspew_archive.php:173
+msgid "Private message"
+msgstr ""
+
+#: ../wordspew_archive.php:211
+#, fuzzy
+msgid "records"
+msgstr "שניות"
+
+#: ../wordspew_archive.php:215
+msgid "Newer"
+msgstr ""
+
+#: ../wordspew_archive.php:218
+#, fuzzy
+msgid "Older"
+msgstr "שונות"
+
+#~ msgid "0 minute ago"
+#~ msgstr "לפני 0 דקות"
+#~ msgid "The comment was deleted successfully."
+#~ msgstr "התגובה נמחקה בהצלחה."
+#~ msgid "The comment was edited successfully."
+#~ msgstr "התגובה נערכה בהצלחה."
+#~ msgid "The source ip of this comment was marked as spammer."
+#~ msgstr "כתובת הIP שממנה נרשמה הודעה זו סומנה כספאמר."
+#~ msgid "Data"
+#~ msgstr "מידע"
+#~ msgid "(showing the last <b>%s</b> messages)"
+#~ msgstr "(מציג את <strong>%s</strong> ההודעות האחרונות)"
+#~ msgid ""
+#~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
+#~ "times. This is not live. New comments made while viewing this page will "
+#~ "not magically appear like they do in the real thing."
+#~ msgstr ""
+#~ "תזכורת: בכל רגע נתון חייבת להיות לפחות תגובה אחת בתיבת הצ&#39;אט. המידע "
+#~ "למטה אינו חי. תגובות חדשות שנכנסות בזמן עריכת דף זה לא יופיעו מעצמן כפי "
+#~ "שהן עושות בדבר האמיתי."
+#~ msgid "Your shoutbox is blank. Add a message!"
+#~ msgstr "תיבת הצ&#39;אט ריקה. הוסיפו הודעה!"
+

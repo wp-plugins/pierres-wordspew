@@ -1,0 +1,690 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pierre's Wordspew\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-05 13:34+0100\n"
+"PO-Revision-Date: 2009-10-05 13:34+0100\n"
+"Last-Translator: Pierre\n"
+"Language-Team: Pierre\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax_admin.php:180
+#: ../wordspew_admin.php:509
+msgid "Ban this IP"
+msgstr "禁止此IP地址"
+
+#: ../ajax_admin.php:182
+#: ../ajax_shout.php:293
+#: ../wordspew.php:557
+#: ../wordspew_admin.php:513
+#: ../wordspew_archive.php:180
+msgid "Delete"
+msgstr "删除"
+
+#: ../ajax_admin.php:184
+#: ../wordspew_admin.php:514
+msgid "Edit"
+msgstr "编译"
+
+#: ../ajax_admin.php:253
+#: ../ajax_archive.php:35
+#: ../ajax_shout.php:336
+msgid "Are you sure to delete the message:"
+msgstr ""
+
+#: ../ajax_admin.php:254
+#: ../ajax_archive.php:36
+#: ../ajax_shout.php:337
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr ""
+
+#: ../ajax_admin.php:291
+msgid "You're about to ban the following IP address:"
+msgstr ""
+
+#: ../ajax_admin.php:292
+msgid "'Cancel' to stop, 'OK' to ban."
+msgstr ""
+
+#: ../ajax_shout.php:63
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+msgid "link"
+msgstr "链接"
+
+#: ../ajax_shout.php:77
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+#: ../wordspew_archive.php:148
+msgid "email"
+msgstr "email"
+
+#: ../ajax_shout.php:148
+msgid "Click here to expand/collapse the smiley's list"
+msgstr "点击此处放大/缩小表情符号"
+
+#: ../ajax_shout.php:244
+#: ../wordspew-rss.php:63
+#: ../wordspew-rss.php:106
+#: ../wordspew.php:546
+#: ../wordspew_archive.php:165
+msgid "Private message for"
+msgstr ""
+
+#: ../common.php:25
+msgid "year"
+msgstr "年"
+
+#: ../common.php:25
+msgid "years"
+msgstr "年"
+
+#: ../common.php:26
+msgid "month"
+msgstr "月"
+
+#: ../common.php:26
+msgid "months"
+msgstr "月"
+
+#: ../common.php:27
+msgid "week"
+msgstr "星期"
+
+#: ../common.php:27
+msgid "weeks"
+msgstr "星期"
+
+#: ../common.php:28
+msgid "day"
+msgstr "天"
+
+#: ../common.php:28
+msgid "days"
+msgstr "天"
+
+#: ../common.php:29
+msgid "hour"
+msgstr "小时"
+
+#: ../common.php:29
+msgid "hours"
+msgstr "小时"
+
+#: ../common.php:30
+#: ../wordspew.php:573
+msgid "minute"
+msgstr "分钟"
+
+#: ../common.php:30
+msgid "minutes"
+msgstr "分钟"
+
+#: ../usersonline.php:110
+msgid "No one online."
+msgstr "无人在线。"
+
+#: ../usersonline.php:111
+msgid "guest"
+msgstr "客人"
+
+#: ../usersonline.php:112
+msgid "guests"
+msgstr "客人"
+
+#: ../usersonline.php:113
+msgid "and"
+msgstr "和"
+
+#: ../usersonline.php:114
+msgid "is crawling the site."
+msgstr "在搜查此网站。"
+
+#: ../usersonline.php:115
+msgid "are crawling the site."
+msgstr "在搜查此网站。"
+
+#: ../usersonline.php:116
+msgid "is online."
+msgstr "在线。"
+
+#: ../usersonline.php:117
+msgid "are online."
+msgstr "在线。"
+
+#: ../widgetized.php:20
+#: ../wordspew-rss.php:47
+#: ../wordspew-rss.php:128
+#: ../wordspew.php:53
+msgid "Wordspew-RSS-Feed for:"
+msgstr ""
+
+#: ../widgetized.php:40
+msgid "Title:"
+msgstr "标题："
+
+#: ../wordspew.php:90
+#: ../wordspew.php:474
+msgid "Sorry, but you can post only one url by message..."
+msgstr "抱歉，您只能在每个聊天里添加一个网址。"
+
+#: ../wordspew.php:107
+msgid "No, sorry you used a banned word!"
+msgstr "抱歉，您用了一个禁止的词句！"
+
+#: ../wordspew.php:126
+msgid "No, sorry you used the name of a registered user! You have to change it please."
+msgstr ""
+
+#: ../wordspew.php:472
+msgid "You should learn to count before use the shoutbox :)"
+msgstr ""
+
+#: ../wordspew.php:473
+msgid "I DON'T LIKE SPAM !!!"
+msgstr ""
+
+#: ../wordspew.php:475
+msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
+msgstr "您的IP地址已被禁止，请与博客主户联系。"
+
+#: ../wordspew.php:509
+msgid "Click this to turn on/off sound"
+msgstr "点击此处打开/关闭音频"
+
+#: ../wordspew.php:513
+#: ../wordspew_archive.php:112
+#, php-format
+msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
+msgstr ""
+
+#: ../wordspew.php:520
+#: ../wordspew.php:573
+#: ../wordspew_admin.php:483
+#, fuzzy, php-format
+msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
+msgstr "<div id=\"lastMessage\"><span>最后聊天</span> <em id=\"responseTime\">%s 以前</em></div>"
+
+#: ../wordspew.php:537
+msgid "Info"
+msgstr ""
+
+#: ../wordspew.php:537
+msgid "Please, resolve the addition below before post any new comment..."
+msgstr ""
+
+#: ../wordspew.php:588
+#: ../wordspew_admin.php:473
+#: ../wordspew_archive.php:107
+msgid "Theme:"
+msgstr ""
+
+#: ../wordspew.php:591
+#: ../wordspew_admin.php:477
+#: ../wordspew_admin.php:479
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../wordspew.php:597
+msgid "New theme"
+msgstr ""
+
+#: ../wordspew.php:614
+#: ../wordspew.php:687
+msgid "Guest_"
+msgstr "客人_"
+
+#: ../wordspew.php:624
+#: ../wordspew_archive.php:122
+msgid "Admin"
+msgstr "管理"
+
+#: ../wordspew.php:630
+#: ../wordspew.php:680
+msgid "Archive"
+msgstr ""
+
+#: ../wordspew.php:636
+#: ../wordspew.php:656
+#: ../wordspew_archive.php:118
+msgid "Name"
+msgstr "名称"
+
+#: ../wordspew.php:645
+msgid "Captcha"
+msgstr ""
+
+#: ../wordspew.php:658
+msgid "URL/Email"
+msgstr "网址/email"
+
+#: ../wordspew.php:662
+#: ../wordspew_archive.php:119
+msgid "Message"
+msgstr "聊天"
+
+#: ../wordspew.php:674
+msgid "Send"
+msgstr "发送"
+
+#: ../wordspew.php:685
+msgid "You must be a registered user to participate in this chat"
+msgstr "您必须登陆后才能聊天"
+
+#: ../wordspew_admin.php:102
+msgid "Congratulations, you just completed the installation of this shoutbox."
+msgstr "恭喜，您已安装了聊天框。"
+
+#: ../wordspew_admin.php:227
+msgid "No Access for you!"
+msgstr "禁止通行"
+
+#: ../wordspew_admin.php:232
+msgid "The shoutbox database has been wiped. You now have a fresh slate!"
+msgstr "聊天数据库已清空。"
+
+#: ../wordspew_admin.php:235
+msgid "Live Shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:236
+#, fuzzy, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr "聊天框 (现有 <font color=\"red\">%s</font> 个阻止的垃圾聊天)"
+
+#: ../wordspew_admin.php:237
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr "当您更新时间与颜色选项，您可能需要刷新/清除存档来看到更新的效果。"
+
+#: ../wordspew_admin.php:240
+#, php-format
+msgid "There have been <b>%s</b> messages in this shoutbox"
+msgstr "聊天框已经有 <b>%s</b> 个聊天"
+
+#: ../wordspew_admin.php:243
+msgid "Colors (Must be 6 digit hex)"
+msgstr "颜色 （必须是6位的16进制数字）"
+
+#: ../wordspew_admin.php:246
+msgid "Fade from"
+msgstr "褪色从"
+
+#: ../wordspew_admin.php:249
+msgid "The color that new messages fade in from. Default"
+msgstr "新聊天会从此颜色开始褪色。默认"
+
+#: ../wordspew_admin.php:252
+msgid "Fade to"
+msgstr "褪色至"
+
+#: ../wordspew_admin.php:255
+#, fuzzy
+msgid "Also used as the background color of the box. Default"
+msgstr "此颜色也用在聊天框的背景。默认：FFFFFF（白色）"
+
+#: ../wordspew_admin.php:258
+msgid "Text Color"
+msgstr "字体颜色"
+
+#: ../wordspew_admin.php:261
+msgid "The color of text within the box. Default"
+msgstr "聊天框内的字体颜色。默认"
+
+#: ../wordspew_admin.php:264
+msgid "Name Color"
+msgstr "名称颜色"
+
+#: ../wordspew_admin.php:267
+msgid "The color of peoples' names. Default"
+msgstr "聊天用户的名称颜色。默认"
+
+#: ../wordspew_admin.php:274
+#, fuzzy
+msgid "Others"
+msgstr "其他"
+
+#: ../wordspew_admin.php:276
+msgid "Show"
+msgstr ""
+
+#: ../wordspew_admin.php:277
+msgid "comments in the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:278
+msgid "Enter, here, the number of shouts you want to show in your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:279
+msgid "Update Every"
+msgstr "更新每"
+
+#: ../wordspew_admin.php:280
+#: ../wordspew_admin.php:283
+msgid "Seconds"
+msgstr "秒"
+
+#: ../wordspew_admin.php:281
+msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
+msgstr "此设置控制着聊天框的“即时性”。更大的数字会延迟新聊天的显示，不过也会减轻服务器的负担。您可以用小数。JavaScript会以此数字控制前8回更新。以后的更新时间会越来越大。发送新的聊天或用鼠标移至聊天框会恢复此时间。默认：4秒"
+
+#: ../wordspew_admin.php:282
+msgid "Fade Length"
+msgstr "褪色持续"
+
+#: ../wordspew_admin.php:284
+msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
+msgstr "褪色到背景颜色的持续时间。您可以用小数。默认1.5秒"
+
+#: ../wordspew_admin.php:285
+msgid "Use textarea"
+msgstr "使用textarea"
+
+#: ../wordspew_admin.php:287
+msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
+msgstr "textarea比一般的输入框更大。用户会有更大的聊天输入空间，不过聊天框所占用的空间也会更大。"
+
+#: ../wordspew_admin.php:288
+msgid "Use URL field"
+msgstr "使用网址框"
+
+#: ../wordspew_admin.php:290
+msgid "Check this if you want users to have an option to add their URL when submitting a message."
+msgstr "选定会使用户能够在聊天时添加一个网址。"
+
+#: ../wordspew_admin.php:291
+msgid "Use sound alert"
+msgstr "使用音频警报"
+
+#: ../wordspew_admin.php:293
+msgid "Check this if you want to hear a sound alert when someone post message"
+msgstr "选定会使用户在收到聊天时听到一个音频警告"
+
+#: ../wordspew_admin.php:294
+msgid "Show smileys list"
+msgstr "显示表情符号"
+
+#: ../wordspew_admin.php:296
+msgid "Check this if you want to show the smileys list"
+msgstr "选定会使用户能选择表情符号"
+
+#: ../wordspew_admin.php:297
+msgid "Show blocked spams"
+msgstr ""
+
+#: ../wordspew_admin.php:299
+#, fuzzy
+msgid "Check this if you want to show blocked spams"
+msgstr "选定会使用户能选择表情符号"
+
+#: ../wordspew_admin.php:300
+msgid "Use a captcha"
+msgstr ""
+
+#: ../wordspew_admin.php:302
+msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
+msgstr ""
+
+#: ../wordspew_admin.php:303
+msgid "Use Themes"
+msgstr ""
+
+#: ../wordspew_admin.php:305
+#, fuzzy
+msgid "Check this if you want to use themes."
+msgstr "选定会使用户能选择表情符号"
+
+#: ../wordspew_admin.php:306
+#, fuzzy
+msgid "Use the RSS feed"
+msgstr "使用网址框"
+
+#: ../wordspew_admin.php:308
+#, fuzzy
+msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
+msgstr "选定会使用户在收到聊天时听到一个音频警告"
+
+#: ../wordspew_admin.php:309
+msgid "XHTML strict"
+msgstr "XHTML 严正"
+
+#: ../wordspew_admin.php:311
+msgid "Check this if you want to use XHTML strict"
+msgstr "选定会使用 XHTML 严正"
+
+#: ../wordspew_admin.php:317
+msgid "Users options"
+msgstr ""
+
+#: ../wordspew_admin.php:321
+msgid "<b>Who can administrate the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:333
+#: ../wordspew_admin.php:355
+#: ../wordspew_admin.php:382
+#: ../wordspew_admin.php:405
+msgid "level"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+msgid "Choose the level required to administrate the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+#, fuzzy, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
+msgstr "<a href=\"%s\"><b>点击此处</b></a>来管理禁止词句与IP地址。"
+
+#: ../wordspew_admin.php:344
+msgid "Who can <b>see the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:360
+#: ../wordspew_admin.php:387
+#: ../wordspew_admin.php:410
+msgid "Everybody"
+msgstr ""
+
+#: ../wordspew_admin.php:364
+msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
+msgstr ""
+
+#: ../wordspew_admin.php:365
+msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
+msgstr ""
+
+#: ../wordspew_admin.php:366
+msgid "Please activate Javascript..."
+msgstr ""
+
+#: ../wordspew_admin.php:367
+msgid "in the list above,<br/>it will take precedence over the next option"
+msgstr ""
+
+#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:371
+msgid "Who can <b>see the shoutbox archives</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:391
+msgid "Choose who is able to see archive of the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:394
+msgid "Who can see the differents themes"
+msgstr ""
+
+#: ../wordspew_admin.php:414
+msgid "Choose who is able to see the differents themes of your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:418
+msgid "Only allow registered users"
+msgstr "只允许登陆的用户"
+
+#: ../wordspew_admin.php:420
+#, fuzzy
+msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
+msgstr "选定会只允许登陆的用户来聊天。为登陆的用户只会观看聊天，并收到不能聊天的信息。<b>注意：</b>此设置并不完全可靠。"
+
+#: ../wordspew_admin.php:424
+msgid "Show users online"
+msgstr "显示在线用户"
+
+#: ../wordspew_admin.php:426
+msgid "Check this if you want to show, in real time, users online"
+msgstr "选定会即时地显示在线的用户"
+
+#: ../wordspew_admin.php:429
+msgid "Users to hide"
+msgstr ""
+
+#: ../wordspew_admin.php:431
+msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
+msgstr ""
+
+#: ../wordspew_admin.php:434
+#, fuzzy
+msgid "Use avatars"
+msgstr "使用textarea"
+
+#: ../wordspew_admin.php:436
+msgid "If checked, avatar will be shown."
+msgstr ""
+
+#: ../wordspew_admin.php:437
+msgid "Avatar size"
+msgstr ""
+
+#: ../wordspew_admin.php:439
+msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
+msgstr ""
+
+#: ../wordspew_admin.php:442
+msgid "Avatar position"
+msgstr ""
+
+#: ../wordspew_admin.php:444
+msgid "Left"
+msgstr ""
+
+#: ../wordspew_admin.php:445
+msgid "Right"
+msgstr ""
+
+#: ../wordspew_admin.php:447
+msgid "Choose the alignement for avatars (left or right)"
+msgstr ""
+
+#: ../wordspew_admin.php:452
+msgid "Save"
+msgstr "保存"
+
+#: ../wordspew_admin.php:453
+msgid "Delete ALL messages"
+msgstr "删除所有聊天"
+
+#: ../wordspew_admin.php:454
+msgid ""
+"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"您将要删除所有的聊天。\\n"
+"您真的要这么做吗？\\n"
+"‘取消’停止，‘确定’删除。"
+
+#: ../wordspew_admin.php:460
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
+msgstr "<a href=\"%s\"><b>点击此处</b></a>来管理禁止词句与IP地址。"
+
+#: ../wordspew_admin.php:461
+msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
+msgstr "<b><font color=\"red\">重要！</font></b>要禁止单一的IP地址只要点击“禁止此IP”即可。如果您要禁止一系列IP地址，就用此句法（如禁止垃圾发信者）：195.225.176/179.* 反斜线符号（176/179）代表从176至179，星号（*）代表从0至255。<br/>请注意，我已禁止 195.225.176.0 至 195.225.179.255。"
+
+#: ../wordspew_admin.php:558
+#: ../wordspew_admin.php:626
+msgid "Cheatin' uh ?"
+msgstr "Cheatin' uh ?"
+
+#: ../wordspew_archive.php:83
+msgid "Archive for the shoutbox"
+msgstr ""
+
+#: ../wordspew_archive.php:105
+msgid "Click here to go to the Homepage"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Click here to refresh the page"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Shoutbox archive"
+msgstr ""
+
+#: ../wordspew_archive.php:117
+msgid "Date/Time"
+msgstr ""
+
+#: ../wordspew_archive.php:124
+msgid "IP"
+msgstr ""
+
+#: ../wordspew_archive.php:171
+msgid "Private"
+msgstr ""
+
+#: ../wordspew_archive.php:173
+msgid "Private message"
+msgstr ""
+
+#: ../wordspew_archive.php:211
+#, fuzzy
+msgid "records"
+msgstr "秒"
+
+#: ../wordspew_archive.php:215
+msgid "Newer"
+msgstr ""
+
+#: ../wordspew_archive.php:218
+#, fuzzy
+msgid "Older"
+msgstr "其他"
+
+#~ msgid "0 minute ago"
+#~ msgstr "0 分钟以前"
+#~ msgid "The comment was deleted successfully."
+#~ msgstr "聊天删除成功。"
+#~ msgid "The comment was edited successfully."
+#~ msgstr "聊天编译成功。"
+#~ msgid "The source ip of this comment was marked as spammer."
+#~ msgstr "此发行的来源IP标为垃圾。"
+#~ msgid "Data"
+#~ msgstr "信息"
+#~ msgid "(showing the last <b>%s</b> messages)"
+#~ msgstr "(显示前 <b>%s</b> 个聊天)"
+#~ msgid ""
+#~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
+#~ "times. This is not live. New comments made while viewing this page will "
+#~ "not magically appear like they do in the real thing."
+#~ msgstr ""
+#~ "注意：聊天框里必须至少有一个聊天。此数据并不即时。查看此页面时发送的聊天不"
+#~ "会显示在此。"
+#~ msgid "Your shoutbox is blank. Add a message!"
+#~ msgstr "您的聊天框是空的。"
+
