@@ -49,11 +49,7 @@ Yes, all you have to do is to name your file as `msg.mp3`. Be careful with the s
 
 
 = My smileys have borders around them. How to remove them? =
-Edit `css.php`, at line 61 you'll find :
-`#chatoutput .wp-smiley { vertical-align: middle; }`
-add border: none; like this :
-`#chatoutput .wp-smiley { vertical-align: middle; border: none; }`
-and tada : no more border
+Edit `css.php`, at line 61 you'll find : `#chatoutput .wp-smiley { vertical-align: middle; }` add border: none; like this : `#chatoutput .wp-smiley { vertical-align: middle; border: none; }` and tada : no more border
 
 
 = My smileys are not showing in my shoutbox, what is the problem? =
