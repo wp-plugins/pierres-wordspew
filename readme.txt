@@ -6,11 +6,11 @@ Requires at least: 1.5
 Tested up to: 2.8.4
 Stable tag: trunk
 
-A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour.
+A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
 
 == Description ==
 
-The shoutbox add a chat functionality to your blog and permit to easily interact with your users/visitors.
+The shoutbox add a chat functionality to your blog and permit to easily interact with your users/visitors. It uses the Fade Anything Technique for extra glamour
 
 Features:
 --------
@@ -137,13 +137,13 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 == Changelog ==
 
 = 4.4 =
-* Added Portuguese and Polish translations. Thanks to eLias (http://www.jokerpt.com/) for Portuguese and Kamil (http://blumare.pl/) for Polish :).
+* Added Portuguese and Polish translations. Thanks to [eLias](http://www.jokerpt.com/) for Portuguese and [Kamil](http://blumare.pl/) for Polish :).
 * You have now the possibility to empty the selected archive in the admin interface.
 * You can use the shoutbox only on some pages, or on particulars sections. You can use this values: `@homepage`, `@frontpage`, `@pages`, `@single`, `@archives`, `@category`.
 If you use one of this keyword without any "parameter" you'll use the "default" shoutbox (without any theme).
 Otherwise, you can use 2 kinds of values to be more specific. `(linked)`, `(rubric)`.
-If you use the term : `@pages(rubric)` It meens that you want to use a specific shoutbox for ALL pages.
-If you use the term : `@pages(linked)` It meens that you want to use a specific shoutbox on EACH page.
+If you use the term : `@pages(rubric)` It meens that you want to use a specific shoutbox for **ALL** pages.
+If you use the term : `@pages(linked)` It meens that you want to use a specific shoutbox on **EACH** page.
 You can use these 2 keywords with : `@pages`, `@single`, `@archives` (only rubric, here.) and `@category`.
 Finally, if you want to use the shoutbox in a page template you've done by yourself, enter: `@page[The name of your page]`.
 
