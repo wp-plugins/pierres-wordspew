@@ -122,10 +122,6 @@ shout_theme=document.getElementById('shout_theme');
 	httpReceiveChat = getHTTPObject();
 	httpSendChat = getHTTPObject();
 
-//onload we verify if the two "fields" have the same value if not, we do a refresh of records.
-	if(document.getElementById("cat_id").innerHTML!=document.getElementById("shout_cat").value) 
-		CleanBox();
-
 	setTimeout('receiveChatText()', jal_timeout); //initiates the first data query
 
 	shoutboxname.onblur = checkName;
@@ -215,7 +211,7 @@ function handlehHttpReceiveChat() {
 				insertNewContent(results[1], results[2], "", parseInt(results[0])+1,"","");
 				jal_lastID.value = parseInt(results[0])+1;
 			}
-			is_new=1;
+			//is_new=1;
 		}
 	}
 }
@@ -354,7 +350,7 @@ function delChild(id) {
 }
 // Piece of code from "TinyMCE Advanced" plugin. Thanks to -> Andrew Ozz : http://www.laptoptips.ca/
 function onBlurEditableSelectInput () {
-MyCat=document.getElementById("shout_cat");
+MyCat=document.getElementById("shout_cat_theme");
 	if (MyCat.previousSibling.value != '') {
 		var o = new Option(MyCat.previousSibling.value, MyCat.previousSibling.value);
 		MyCat.options[MyCat.options.length] = o;
@@ -384,7 +380,10 @@ function onKeyDown(e) {
 
 function CleanBox() {
 var new_val;
-MyCat=document.getElementById("shout_cat");
+
+document.getElementById("shout_cat").value=document.getElementById("shout_cat_theme").value;
+
+MyCat=document.getElementById("shout_cat_theme");
 if (MyCat.options[MyCat.selectedIndex].value == 'add_custom') {
 	new_val = document.createElement("input");
 	new_val.id = MyCat.id + "_custom";
@@ -416,6 +415,7 @@ else {
 function pressedEnter(field,event) {
 	var theCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
 	if (theCode == 13) {
+		is_new=1;
 		sendComment();
 		return false;
 	} 

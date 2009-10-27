@@ -82,6 +82,66 @@ function verifyName($name) {
    $loggedUsers = (!is_array($_SESSION['LoggedUsers'])) ? explode(',',$_SESSION['LoggedUsers']) : $_SESSION['LoggedUsers'];
    return in_array(strtolower($name), array_map('strtolower', $loggedUsers));
 }
+$myvaleur=0;
+function where_shout($where, $myBool) {
+global $shout_where, $myvaleur;
+
+if($myvaleur==1) return true;
+if($myvaleur==2) return false;
+
+$myvaleur=1;
+	if($where!="") {
+		$where=strtolower($where);
+		$shout_where="";
+		if(is_home() && strpos($where,"@homepage")!==false) {
+			if(strpos($where,"@homepage(rubric)")!==false) $shout_where=__("Homepage",wordspew);
+			return true;
+		}
+		elseif (is_front_page() && strpos($where,"@frontpage")!==false) {
+			if(strpos($where,"@frontpage(rubric)")!==false) $shout_where=__("Frontpage",wordspew);
+			return true;
+			}
+		elseif (is_page() && strpos($where,"@page")!==false) {
+			$TitrePage=html_entity_decode(single_post_title('',false),ENT_COMPAT,'UTF-8');
+			if(strpos($where,"@page[")!==false) {
+				$myBoolPage=in_array(strtolower("@page[".$TitrePage."]"), explode(', ',$where));
+				if($myBoolPage && $myBool) {
+					$myvaleur=2; 
+					return true;
+				}
+				elseif(!in_array(strtolower($TitrePage), explode(', ',$where)) && strpos($where,"@pages")===false) {
+					$myvaleur=2;
+					return false;
+				}
+			}
+				if(strpos($where,"@pages(linked)")!==false) $shout_where=$TitrePage;
+				if(strpos($where,"@pages(rubric)")!==false) $shout_where=__("Pages",wordspew);
+			return true;
+			}
+		elseif ((is_singular() && !is_page()) && strpos($where,"@single")!==false) {
+			if(strpos($where,"@single(linked)")!==false) $shout_where=single_post_title('',false);
+			if(strpos($where,"@single(rubric)")!==false) $shout_where=__("Single",wordspew);
+			return true;
+			}
+		elseif ((is_archive() && !is_category()) && strpos($where,"@archives")!==false) {
+			if(strpos($where,"@archives(rubric)")!==false) $shout_where=__("Archives",wordspew);
+			return true;
+			}
+		elseif (is_category() && strpos($where,"@category")!==false) {
+			if(strpos($where,"@category(linked)")!==false) $shout_where=single_cat_title('',false);
+			if(strpos($where,"@category(rubric)")!==false) $shout_where=__("Category",wordspew);
+			return true;
+			}
+		else {
+			$shout_where=single_post_title('',false);
+			$myBoolPage=in_array(strtolower($shout_where), explode(', ',$where));
+			if($myBoolPage) return true;
+			$myvaleur=2;
+			return false;
+		}
+	}
+	return true;
+}
 
 function del($id) {
 global $jal_table_prefix;

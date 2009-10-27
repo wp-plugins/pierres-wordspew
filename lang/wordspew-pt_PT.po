@@ -1,26 +1,26 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Pierre's Wordspew\n"
+"Project-Id-Version: wordspew\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-22 14:44+0100\n"
-"PO-Revision-Date: 2009-10-22 14:44+0100\n"
+"POT-Creation-Date: 2009-10-22 14:38+0100\n"
+"PO-Revision-Date: 2009-10-22 14:39+0100\n"
 "Last-Translator: Pierre\n"
-"Language-Team: Pierre\n"
+"Language-Team: Rodrigo Volponi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
+"X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=n > 1\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Language: Portuguese\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../ajax_admin.php:180
 #: ../wordspew_admin.php:528
 msgid "Ban this IP"
-msgstr "Bu IP'yi yasakla"
+msgstr "Banir este IP"
 
 #: ../ajax_admin.php:182
 #: ../ajax_shout.php:289
@@ -28,39 +28,39 @@ msgstr "Bu IP'yi yasakla"
 #: ../wordspew_admin.php:532
 #: ../wordspew_archive.php:180
 msgid "Delete"
-msgstr "Sil"
+msgstr "Apagar"
 
 #: ../ajax_admin.php:184
 #: ../wordspew_admin.php:533
 msgid "Edit"
-msgstr "Düzenle"
+msgstr "Editar"
 
 #: ../ajax_admin.php:253
 #: ../ajax_archive.php:35
 #: ../ajax_shout.php:332
 msgid "Are you sure to delete the message:"
-msgstr ""
+msgstr "Tem a certeza que pretende apagar a mensagem:"
 
 #: ../ajax_admin.php:254
 #: ../ajax_archive.php:36
 #: ../ajax_shout.php:333
 msgid "'Cancel' to stop, 'OK' to delete."
-msgstr ""
+msgstr "'Cancelar' para parar, 'OK' para apagar."
 
 #: ../ajax_admin.php:291
 msgid "You're about to ban the following IP address:"
-msgstr ""
+msgstr "Está a apagar o seguinte endereço de IP:"
 
 #: ../ajax_admin.php:292
 msgid "'Cancel' to stop, 'OK' to ban."
-msgstr ""
+msgstr "'Cancelar' para parar, 'OK' para banir."
 
 #: ../ajax_shout.php:63
 #: ../wordspew-rss.php:113
 #: ../wordspew.php:526
 #: ../wordspew_archive.php:138
 msgid "link"
-msgstr "bağlantı"
+msgstr "link"
 
 #: ../ajax_shout.php:77
 #: ../wordspew-rss.php:113
@@ -68,11 +68,11 @@ msgstr "bağlantı"
 #: ../wordspew_archive.php:138
 #: ../wordspew_archive.php:148
 msgid "email"
-msgstr "eposta"
+msgstr "e-mail"
 
 #: ../ajax_shout.php:144
 msgid "Click here to expand/collapse the smiley's list"
-msgstr "Surat ifadelerini açıp/kapatmak için buraya tıklayınız"
+msgstr "Clique aqui para expandir/contrair a lista de smileys."
 
 #: ../ajax_shout.php:240
 #: ../wordspew-rss.php:63
@@ -80,56 +80,56 @@ msgstr "Surat ifadelerini açıp/kapatmak için buraya tıklayınız"
 #: ../wordspew.php:543
 #: ../wordspew_archive.php:165
 msgid "Private message for"
-msgstr ""
+msgstr "Mensagem para"
 
 #: ../common.php:25
 msgid "year"
-msgstr "yıl"
+msgstr "ano"
 
 #: ../common.php:25
 msgid "years"
-msgstr "yıl"
+msgstr "anos"
 
 #: ../common.php:26
 msgid "month"
-msgstr "ay"
+msgstr "mês"
 
 #: ../common.php:26
 msgid "months"
-msgstr "ay"
+msgstr "meses"
 
 #: ../common.php:27
 msgid "week"
-msgstr "hafta"
+msgstr "semana"
 
 #: ../common.php:27
 msgid "weeks"
-msgstr "hafta"
+msgstr "semanas"
 
 #: ../common.php:28
 msgid "day"
-msgstr "gün"
+msgstr "dia"
 
 #: ../common.php:28
 msgid "days"
-msgstr "gün"
+msgstr "dias"
 
 #: ../common.php:29
 msgid "hour"
-msgstr "saat"
+msgstr "hora"
 
 #: ../common.php:29
 msgid "hours"
-msgstr "saat"
+msgstr "horas"
 
 #: ../common.php:30
 #: ../wordspew.php:570
 msgid "minute"
-msgstr "dakika"
+msgstr "minuto"
 
 #: ../common.php:30
 msgid "minutes"
-msgstr "dakika"
+msgstr "minutos"
 
 #: ../common.php:97
 msgid "Homepage"
@@ -142,15 +142,16 @@ msgstr ""
 #: ../common.php:118
 #, fuzzy
 msgid "Pages"
-msgstr "misafir"
+msgstr "convidado"
 
 #: ../common.php:123
 msgid "Single"
 msgstr ""
 
 #: ../common.php:127
+#, fuzzy
 msgid "Archives"
-msgstr ""
+msgstr "Arquivo"
 
 #: ../common.php:132
 msgid "Category"
@@ -158,163 +159,163 @@ msgstr ""
 
 #: ../usersonline.php:110
 msgid "No one online."
-msgstr "Çevirimiçi kimse yok."
+msgstr "Ninguém online"
 
 #: ../usersonline.php:111
 msgid "guest"
-msgstr "misafir"
+msgstr "convidado"
 
 #: ../usersonline.php:112
 msgid "guests"
-msgstr "misafir"
+msgstr "convidados"
 
 #: ../usersonline.php:113
 msgid "and"
-msgstr "ve"
+msgstr "e"
 
 #: ../usersonline.php:114
 msgid "is crawling the site."
-msgstr "şuan sitede geziniyor."
+msgstr "está no site"
 
 #: ../usersonline.php:115
 msgid "are crawling the site."
-msgstr "şuan sitede geziniyor."
+msgstr "estão no site."
 
 #: ../usersonline.php:116
 msgid "is online."
-msgstr "çevirimiçi."
+msgstr "está online."
 
 #: ../usersonline.php:117
 msgid "are online."
-msgstr "çevirimiçi."
+msgstr "estão online."
 
 #: ../widgetized.php:21
 #: ../wordspew-rss.php:47
 #: ../wordspew-rss.php:128
 #: ../wordspew.php:53
 msgid "Wordspew-RSS-Feed for:"
-msgstr ""
+msgstr "Wordspew-RSS-Feed para:"
 
 #: ../widgetized.php:42
 msgid "Title:"
-msgstr "Başlık:"
+msgstr "Título:"
 
 #: ../wordspew.php:90
 #: ../wordspew.php:478
 msgid "Sorry, but you can post only one url by message..."
-msgstr "Üzgünüz, fakat mesaj başına bir url gönderebilirsiniz."
+msgstr "Desculpe, mas você só pode inserir uma URL por mensagem..."
 
 #: ../wordspew.php:107
 msgid "No, sorry you used a banned word!"
-msgstr "Üzgünüz, yasaklı bir kelime kullandınız!"
+msgstr "Desculpe, você utilizou uma palavra banida!"
 
 #: ../wordspew.php:126
 msgid "No, sorry you used the name of a registered user! You have to change it please."
-msgstr "Üzgünüz, kayıtlı bir kullanıcının kullanıcı adını kullandınız! Lütfen değiştiriniz."
+msgstr "Desculpe. Você utilizou o nome de um usuário registrado. Escolha outro nome, por favor."
 
 #: ../wordspew.php:476
 msgid "You should learn to count before use the shoutbox :)"
-msgstr ""
+msgstr "Você tem que aprender a contar antes de usar o shoutbox :)"
 
 #: ../wordspew.php:477
 msgid "I DON'T LIKE SPAM !!!"
-msgstr ""
+msgstr "NÃO GOSTO DE SPAM !!!"
 
 #: ../wordspew.php:479
 msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
-msgstr "IP adresiniz bu blogda yasaklanmıştır, Eğer bunun bir hata olduğunu düşünüyorsanız lütfen webmaster ile iletişime geçiniz."
+msgstr "Seu IP foi banido deste blog, se você sentir que isto é um erro, por favor contate o webmaster."
 
 #: ../wordspew.php:507
 msgid "Click this to turn on/off sound"
-msgstr "Sesi açıp/kapatmak için buna tıklayınız."
+msgstr "Clique aqui para ligar/desligar o som"
 
 #: ../wordspew.php:511
 #: ../wordspew_archive.php:112
 #, php-format
 msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
-msgstr "<div id=\"Show_Spam\">%s spam bloke edildi</div>"
+msgstr "<div id=\"Show_Spam\">%s spams bloqueados</div>"
 
 #: ../wordspew.php:518
 #: ../wordspew.php:570
 #: ../wordspew_admin.php:502
-#, fuzzy, php-format
+#, php-format
 msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
-msgstr "<div id=\"lastMessage\"><span>Son Mesaj</span> <em id=\"responseTime\">%s önce</em></div>"
+msgstr "<div id=\"lastMessage\"><span>Última mensagem</span><br/><div id=\"responseTime\">%s</div>&nbsp;atrás</div>"
 
 #: ../wordspew.php:534
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: ../wordspew.php:534
 msgid "Please, resolve the addition below before post any new comment..."
-msgstr ""
+msgstr "Por favor, resolva a adição abaixo antes de publicar qualquer mensagem nova..."
 
 #: ../wordspew.php:588
 #: ../wordspew_admin.php:492
 #: ../wordspew_archive.php:107
 msgid "Theme:"
-msgstr ""
+msgstr "Tema:"
 
 #: ../wordspew.php:591
 #: ../wordspew_admin.php:234
 #: ../wordspew_admin.php:496
 #: ../wordspew_admin.php:498
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Vários"
 
 #: ../wordspew.php:598
 msgid "New theme"
-msgstr ""
+msgstr "Novo tema"
 
 #: ../wordspew.php:616
 #: ../wordspew.php:689
 msgid "Guest_"
-msgstr "Misafir"
+msgstr "Convidado_"
 
 #: ../wordspew.php:626
 #: ../wordspew_archive.php:122
 msgid "Admin"
-msgstr "Yönetici"
+msgstr "Administrador"
 
 #: ../wordspew.php:632
 #: ../wordspew.php:682
 msgid "Archive"
-msgstr ""
+msgstr "Arquivo"
 
 #: ../wordspew.php:638
 #: ../wordspew.php:658
 #: ../wordspew_archive.php:118
 msgid "Name"
-msgstr "Gönderen"
+msgstr "Nome"
 
 #: ../wordspew.php:647
 msgid "Captcha"
-msgstr ""
+msgstr "Captcha"
 
 #: ../wordspew.php:660
 msgid "URL/Email"
-msgstr "URL/Eposta"
+msgstr "URL/Email"
 
 #: ../wordspew.php:664
 #: ../wordspew_archive.php:119
 msgid "Message"
-msgstr "Mesaj"
+msgstr "Mensagem"
 
 #: ../wordspew.php:676
 msgid "Send"
-msgstr "Gönder"
+msgstr "Enviar"
 
 #: ../wordspew.php:687
 msgid "You must be a registered user to participate in this chat"
-msgstr "Bu sohbete katılabilmeniz için, kayıtlı bir kullanıcı olmanız gerekmektedir."
+msgstr "Você deve ser um usuário registrado para participar deste chat"
 
 #: ../wordspew_admin.php:102
 msgid "Congratulations, you just completed the installation of this shoutbox."
-msgstr "Tebrikler, Shoutbox kurulumunu tamamladınız."
+msgstr "Parabéns, você acaba de completar a instalação deste shoutbox."
 
 #: ../wordspew_admin.php:228
 msgid "No Access for you!"
-msgstr "Size erişim yok!"
+msgstr "Você não ter permissões para acessar."
 
 #: ../wordspew_admin.php:236
 #, php-format
@@ -323,171 +324,166 @@ msgstr ""
 
 #: ../wordspew_admin.php:239
 msgid "Live Shoutbox"
-msgstr ""
+msgstr "Live Shoutbox"
 
 #: ../wordspew_admin.php:240
-#, fuzzy, php-format
+#, php-format
 msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
-msgstr "Jalenack's Live Shoutbox (<font color=\"red\">%s</font> spam bloke edildi)"
+msgstr "(Até agora <font color=\"red\">%s</font> spams bloqueados)"
 
 #: ../wordspew_admin.php:241
 msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
-msgstr "Zaman ve renkleri güncellerken, değişikliklerin etkili olabilmesi için cache'yi tazelemek/temizlemek zorunda kalabiliriniz."
+msgstr "Quando você atualiza as horas e as cores, você vai precisar recarregar a página ou limpar o cache de seu navegador para conseguir visualizar as mudanças."
 
 #: ../wordspew_admin.php:244
 #, php-format
 msgid "There have been <b>%s</b> messages in this shoutbox"
-msgstr "Shoutbox'da <b>%s</b> mesaj var."
+msgstr "Existem  <b>%s</b> mensagens neste shoutbox"
 
 #: ../wordspew_admin.php:247
 msgid "Colors (Must be 6 digit hex)"
-msgstr "Renkler (6 karakterli Hex kodu olmak zorunda)"
+msgstr "Cores (devem ser 6 dígitos em hexadecimal)"
 
 #: ../wordspew_admin.php:250
 msgid "Fade from"
-msgstr "Efekt rengi"
+msgstr "Transição a partir de"
 
 #: ../wordspew_admin.php:253
 msgid "The color that new messages fade in from. Default"
-msgstr "Yeni mesaj eklendiğinde, efekt gösterilecek renk. Varsayılan"
+msgstr "A cor que será utilizada para fazer transição. Padrão"
 
 #: ../wordspew_admin.php:256
 msgid "Fade to"
-msgstr "Efekt rengi sonu"
+msgstr "Transição para"
 
 #: ../wordspew_admin.php:259
-#, fuzzy
 msgid "Also used as the background color of the box. Default"
-msgstr "Efekt bittiğindeki son renk, panonun arkaplan rengi olarakta kullanılır. Varsayılan: FFFFFF (beyaz)"
+msgstr "Também utilizada como a cor de fundo do shotbox. Predefinido"
 
 #: ../wordspew_admin.php:262
 msgid "Text Color"
-msgstr "Yazı rengi"
+msgstr "Cor do texto"
 
 #: ../wordspew_admin.php:265
 msgid "The color of text within the box. Default"
-msgstr "Pano içindeki yazı rengi. Varsayılan"
+msgstr "Cor do texto dentro do shotbox. Padrão"
 
 #: ../wordspew_admin.php:268
 msgid "Name Color"
-msgstr "Kullanıcı isimi rengi"
+msgstr "Cor do nome"
 
 #: ../wordspew_admin.php:271
 msgid "The color of peoples' names. Default"
-msgstr "Kullanıcı isimlerinin rengi. Varsayılan"
+msgstr "Cor dos nomes dos usuários. Padrão"
 
 #: ../wordspew_admin.php:278
-#, fuzzy
 msgid "Others"
-msgstr "Diğer"
+msgstr "Outras"
 
 #: ../wordspew_admin.php:280
 msgid "Show"
-msgstr "Göster"
+msgstr "Exibir"
 
 #: ../wordspew_admin.php:281
 msgid "comments in the shoutbox"
-msgstr "shoutbox'daki yorumlar"
+msgstr "comentários no shoutbox"
 
 #: ../wordspew_admin.php:282
 msgid "Enter, here, the number of shouts you want to show in your shoutbox"
-msgstr "Buraya shoutbox'da göstermek istediğiniz mesaj sayısını giriniz."
+msgstr "Insira, aqui, o número de mensagens que você quer exibir no shoutbox"
 
 #: ../wordspew_admin.php:283
 msgid "Update Every"
-msgstr "Güncelleme zamanı"
+msgstr "Atualizar cada"
 
 #: ../wordspew_admin.php:284
 #: ../wordspew_admin.php:287
 msgid "Seconds"
-msgstr "Saniye"
+msgstr "Segundos"
 
 #: ../wordspew_admin.php:285
 msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
-msgstr "Yukarıda belirttiğiniz zamana göre shoutbox'ı günceller,yeniler. Yüksek rakamlar, uzun zamanda yenilenmesini sebep olur fakat sunucu yüklenmesini düşürür. Varsayılan : 4 Saniye"
+msgstr "Isto determina o quanto \"ao vivo\" o shoutbox é. Com um número maior, ele irá demorar mais tempo para novas mensagens aparecerem, mas também diminui a carga do servidor. Você pode usar decimais. Este número é utilizado como base para os primeiros 8 carregamentos do javascript. Depois disso, o número fica sucessivamente maior. Adicionar um novo comentário ou passar o mouse sobre o shoutbox irá resetar o intervalo para o número fornecido acima. Padrão: 4 segundos."
 
 #: ../wordspew_admin.php:286
 msgid "Fade Length"
-msgstr "Efekt gösterilme süresi"
+msgstr "Duração da transição"
 
 #: ../wordspew_admin.php:288
 msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
-msgstr "Efektin devam etme süresi.İlk efekt renginden ikinci efekt rengine kadar geçen süre. Varsayılan 1.5 saniye"
+msgstr "O tempo necessário para fazer a transição completa com a cor de fundo. Você pode usar decimais. Padrão: 1.5 segundos"
 
 #: ../wordspew_admin.php:289
 msgid "Use textarea"
-msgstr "Textarea kullan"
+msgstr "Utilizar área de texto"
 
 #: ../wordspew_admin.php:291
 msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
-msgstr "Textarea, input box'lardan daha büyük bir türdür. Kullanıcıların yorum yazmak için daha fazla alanları olur fakat bu daha fazla yer kaplamasına sebep olur."
+msgstr "Uma caixa de texto (textarea) é um tipo maior de campo para inserir texto. Os usuário terão mais espaço para digitar os comentário, mas ela também ocupará mais espaço."
 
 #: ../wordspew_admin.php:292
 msgid "Use URL field"
-msgstr "URL alanı kullan"
+msgstr "Utilizar campo URL"
 
 #: ../wordspew_admin.php:294
 msgid "Check this if you want users to have an option to add their URL when submitting a message."
-msgstr "Mesaj yollarken kullanıcıların URL seçeneği olmasına izin verir."
+msgstr "Marque aqui se você quer que os usuários tenham a opção de adicionar uma URL quando enviar uma mensagem."
 
 #: ../wordspew_admin.php:295
 msgid "Use sound alert"
-msgstr "Uyarı sesi kullan"
+msgstr "Usar alerta sonoro"
 
 #: ../wordspew_admin.php:297
 msgid "Check this if you want to hear a sound alert when someone post message"
-msgstr "Biri mesaj attığında uyarı sesi çıkarır."
+msgstr "Marque aqui se você quer ouvir um alerta sonoro quando alguém publicar uma nova mensagem"
 
 #: ../wordspew_admin.php:298
 msgid "Show smileys list"
-msgstr "Surat ifadelerini göster"
+msgstr "Exibir lista de smileys."
 
 #: ../wordspew_admin.php:300
 msgid "Check this if you want to show the smileys list"
-msgstr "Sayfada surat ifadelerini gösterir."
+msgstr "Marque aqui se você quer mostrar a lista de smileys"
 
 #: ../wordspew_admin.php:301
 msgid "Show blocked spams"
-msgstr "Engellenmiş spamleri göster"
+msgstr "Mostrar spams bloqueados"
 
 #: ../wordspew_admin.php:303
 msgid "Check this if you want to show blocked spams"
-msgstr "Engellenmiş spamleri göstermek için işaretleyin."
+msgstr "Marque aqui se você quer mostrar spams bloqueados"
 
 #: ../wordspew_admin.php:304
 msgid "Use a captcha"
-msgstr ""
+msgstr "Utilizar um CAPTCHA"
 
 #: ../wordspew_admin.php:306
 msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
-msgstr ""
+msgstr "Marque aqui se você quer usar um CAPTCHA (na verdade é apenas uma conta de somar que os usuários têm que resolver antes de publicar qualquer mensagem nova no shoutbox)"
 
 #: ../wordspew_admin.php:307
 msgid "Use Themes"
-msgstr ""
+msgstr "Usar Temas"
 
 #: ../wordspew_admin.php:309
-#, fuzzy
 msgid "Check this if you want to use themes."
-msgstr "Sayfada surat ifadelerini gösterir."
+msgstr "Marque aqui se desejar utilizar temas."
 
 #: ../wordspew_admin.php:310
-#, fuzzy
 msgid "Use the RSS feed"
-msgstr "URL alanı kullan"
+msgstr "Utilizar RSSS feed"
 
 #: ../wordspew_admin.php:312
-#, fuzzy
 msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
-msgstr "Biri mesaj attığında uyarı sesi çıkarır."
+msgstr "Marque aqui se deseja que os utilizadores possam mostar e /ou usar o RSSS feed da shoutbox."
 
 #: ../wordspew_admin.php:313
 msgid "XHTML strict"
-msgstr "XHTML"
+msgstr "XHTML estrito"
 
 #: ../wordspew_admin.php:315
 msgid "Check this if you want to use XHTML strict"
-msgstr "XHTML kullanmak istiyorsanız işaretleyin."
+msgstr "Marque aqui se você quer utilizar XHTML estrito."
 
 #: ../wordspew_admin.php:317
 msgid "Use the shoutbox only on:"
@@ -537,136 +533,134 @@ msgstr ""
 
 #: ../wordspew_admin.php:334
 msgid "Users options"
-msgstr ""
+msgstr "Opções de utilizador"
 
 #: ../wordspew_admin.php:338
 msgid "<b>Who can administrate the shoutbox</b>"
-msgstr ""
+msgstr "<b>Quem pode administrar a shoutbox</b>"
 
 #: ../wordspew_admin.php:350
 #: ../wordspew_admin.php:372
 #: ../wordspew_admin.php:399
 #: ../wordspew_admin.php:422
 msgid "level"
-msgstr ""
+msgstr "nível"
 
 #: ../wordspew_admin.php:357
 msgid "Choose the level required to administrate the shoutbox"
-msgstr ""
+msgstr "Seleccione o nível necessário para administrar a shoutbox"
 
 #: ../wordspew_admin.php:357
-#, fuzzy, php-format
+#, php-format
 msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
-msgstr "Yasaklı kelimeler listesini ve IP adreslerini yönetmek için <a href=\"%s\"><b>BURAYA</b></a> tıklayınız."
+msgstr "<a href=\"%s\"><b>Clique aqui</b></a> caso necessite de mais informação sobre as Regras e Possibilidades."
 
 #: ../wordspew_admin.php:361
 msgid "Who can <b>see the shoutbox</b>"
-msgstr ""
+msgstr "Quem pode <b>ver a shoutbox</b>"
 
 #: ../wordspew_admin.php:377
 #: ../wordspew_admin.php:404
 #: ../wordspew_admin.php:427
 msgid "Everybody"
-msgstr ""
+msgstr "Todos"
 
 #: ../wordspew_admin.php:381
 msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
-msgstr ""
+msgstr "Seleccionar, aqui, utilizadores que possam <strong>ver e colocar post</strong> na sua shoutbox. Outros utilizadores simplesmente não poderão ver nada :)"
 
 #: ../wordspew_admin.php:382
 msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
-msgstr ""
+msgstr "<b>Note:</b> Deve escolher tornar a shoutbox visível apenas a:"
 
 #: ../wordspew_admin.php:383
 msgid "Please activate Javascript..."
-msgstr ""
+msgstr "Por favor active Javascript..."
 
 #: ../wordspew_admin.php:384
 msgid "in the list above,<br/>it will take precedence over the next option"
-msgstr ""
+msgstr "na lista acima, <br/>irá ter precedência sobre a próxima opção"
 
 #: ../wordspew_admin.php:384
 #: ../wordspew_admin.php:388
 msgid "Who can <b>see the shoutbox archives</b>"
-msgstr ""
+msgstr "Quem pode <b>ver os arquivos da shoutbox</b>"
 
 #: ../wordspew_admin.php:408
 msgid "Choose who is able to see archive of the shoutbox"
-msgstr ""
+msgstr "Escolha quem poderá ver o arquivo da shoutbox"
 
 #: ../wordspew_admin.php:411
 msgid "Who can see the differents themes"
-msgstr ""
+msgstr "Seleccione pode ver os diferentes temas"
 
 #: ../wordspew_admin.php:431
 msgid "Choose who is able to see the differents themes of your shoutbox"
-msgstr ""
+msgstr "Seleccione quem poderá ver os diferentes temas da sua shoutbox"
 
 #: ../wordspew_admin.php:435
 msgid "Only allow registered users"
-msgstr "Sadece kayıtlı kullanıcılara izin ver"
+msgstr "Permitir apenas usuários registrados"
 
 #: ../wordspew_admin.php:437
-#, fuzzy
 msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
-msgstr "Formu sadece kayıtlı kullanıcıların kullanmasına izin verir. Giriş yapmayan kullanıcılar pano yazışmalarını ve yorum yapmak için giriş yap mesajını görebilirler. <b>Not:</b> bu tamamen  \"güvenli\" değildir. Eğer biri GERÇEKTEN isterse, mesajı alan dosya ile etkileşime geçebilir."
+msgstr "Isto fará com que apenas os utilizadores registrados possam utilizar o formulário necessário para digitar mensagens. Os utilizadores que NÃO estejam logados poderão visualizar o chat e uma mensagem dizendo que deverão estar logados para comentar."
 
 #: ../wordspew_admin.php:441
 msgid "Show users online"
-msgstr "Çevirimiçi kullanıcıları göster"
+msgstr "Mostrar usuários online"
 
 #: ../wordspew_admin.php:443
 msgid "Check this if you want to show, in real time, users online"
-msgstr "Çevirimiçi kullanıcıları gösterir."
+msgstr "Marque aqui se você quer mostrar, em tempo real, os usuários online"
 
 #: ../wordspew_admin.php:446
 msgid "Users to hide"
-msgstr ""
+msgstr "Utilizadores a esconder"
 
 #: ../wordspew_admin.php:448
 msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
-msgstr ""
+msgstr "Coloque aqui, separado por vírgulas, os utilizadores que deseja esconder da função \"Users online\" da shoutbox. "
 
 #: ../wordspew_admin.php:451
-#, fuzzy
 msgid "Use avatars"
-msgstr "Textarea kullan"
+msgstr "Utilizar avatar"
 
 #: ../wordspew_admin.php:453
 msgid "If checked, avatar will be shown."
-msgstr ""
+msgstr "Se aceitar, o avatar será mostrado."
 
 #: ../wordspew_admin.php:454
 msgid "Avatar size"
-msgstr ""
+msgstr "Tamanho do avatar"
 
 #: ../wordspew_admin.php:456
 msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
-msgstr ""
+msgstr "Escolha o tamanho dos avatar. Os tamanhos válidos variam entre 1 e 80 inclusive. Qualquer tamanho acima de 80 fará com que a imagem de Avatar original seja diminuída através de redimensionamento bicúbico antes de ser apresentado."
 
 #: ../wordspew_admin.php:459
 msgid "Avatar position"
-msgstr ""
+msgstr "Posição do avatar"
 
 #: ../wordspew_admin.php:461
 msgid "Left"
-msgstr ""
+msgstr "Esquerda"
 
 #: ../wordspew_admin.php:462
 msgid "Right"
-msgstr ""
+msgstr "Direita"
 
 #: ../wordspew_admin.php:464
 msgid "Choose the alignement for avatars (left or right)"
-msgstr ""
+msgstr "Escolha o alinhamento dos avatar (esquerda ou direita)"
 
 #: ../wordspew_admin.php:469
 msgid "Save"
-msgstr "Kaydet"
+msgstr "Gravar"
 
 #: ../wordspew_admin.php:470
 msgid "Delete ALL messages"
-msgstr "Bütün mesajları sil"
+msgstr "Apagar TODAS as mensagens."
 
 #: ../wordspew_admin.php:471
 #, fuzzy, php-format
@@ -675,14 +669,13 @@ msgid ""
 "Are you sure you want to do this?\\n"
 "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
-"Shoutbox'daki bütün mesajları silmek üzeresiniz. Bu bütün mesajları tamamen silecektir.\\n"
-"Bunu yapmak istediğinizden eminmisiniz?\\n"
-"İptal etmek için \\'İPTALl\\' , Silmek için  \\'TAMAM\\' "
+"Ao continuar, você irá apagar TODAS as mensagens do shoutbox. As mensagens serão apagadas permanentemente.\\n"
+"\\'Cancelar\\' para desistir, \\'OK\\' para apagar."
 
 #: ../wordspew_admin.php:471
 #, fuzzy
 msgid "Delete ALL ARCHIVED messages"
-msgstr "Bütün mesajları sil"
+msgstr "Apagar TODAS as mensagens."
 
 #: ../wordspew_admin.php:472
 #, fuzzy, php-format
@@ -691,91 +684,94 @@ msgid ""
 "Are you sure you want to do this?\\n"
 "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
-"Shoutbox'daki bütün mesajları silmek üzeresiniz. Bu bütün mesajları tamamen silecektir.\\n"
-"Bunu yapmak istediğinizden eminmisiniz?\\n"
-"İptal etmek için \\'İPTALl\\' , Silmek için  \\'TAMAM\\' "
+"Ao continuar, você irá apagar TODAS as mensagens do shoutbox. As mensagens serão apagadas permanentemente.\\n"
+"\\'Cancelar\\' para desistir, \\'OK\\' para apagar."
 
 #: ../wordspew_admin.php:478
 #, php-format
 msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
-msgstr "Yasaklı kelimeler listesini ve IP adreslerini yönetmek için <a href=\"%s\"><b>BURAYA</b></a> tıklayınız."
+msgstr "<a href=\"%s\"><b>Clique aqui</b></a> para gerenciar sua lista de palavras proibidas e endereços IP"
 
 #: ../wordspew_admin.php:479
 msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
-msgstr "<b><font color=\"red\">Önemli !</font></b> Sadece bir IP adresi yasaklamak istiyorsanız \"Bu IP'yi yasakla\" düğmesine tıklayınız.Eğer belirli aralıktaki IP'leri yasaklamak istiyorsanız, şu şekilde kullanın :195.225.176/179.* buradaki / işareti 176 dan 179 'a ve * işareti 0 'dan 255'e anlamına gelir."
+msgstr "<b><font color=\"red\">Importante!</font></b> Para banir um único endereço IP apenas clique em \"Banir este IP\" . Se você quer banir um grupo de IPs, utilize esta sintaxe (aqui, por exemplo, você pode dizer adeus para Vsevolod Stetsinsky): 195.225.176/179.* onde a barra significa de 176 a 179 e * de zero a 255. <br/>Desta forma, você pode banir endereços IP de 195.225.176.0 a 195.225.179.255. Você pode misturar as duas opções..."
 
 #: ../wordspew_admin.php:577
 #: ../wordspew_admin.php:652
 msgid "Cheatin' uh ?"
-msgstr "Problem nedir ?"
+msgstr "Trapaceando, hein?"
 
 #: ../wordspew_archive.php:83
-#, fuzzy
 msgid "Archive for the shoutbox"
-msgstr "shoutbox'daki yorumlar"
+msgstr "Arquivo para a shoutbox"
 
 #: ../wordspew_archive.php:105
 msgid "Click here to go to the Homepage"
-msgstr ""
+msgstr "Clique aqui para ir para Página Inicial"
 
 #: ../wordspew_archive.php:106
 msgid "Click here to refresh the page"
-msgstr ""
+msgstr "Clique aqui para actualizar a página"
 
 #: ../wordspew_archive.php:106
 msgid "Shoutbox archive"
-msgstr ""
+msgstr "Arquivo da shoutbox"
 
 #: ../wordspew_archive.php:117
 msgid "Date/Time"
-msgstr ""
+msgstr "Data/Hora"
 
 #: ../wordspew_archive.php:124
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #: ../wordspew_archive.php:171
 msgid "Private"
-msgstr ""
+msgstr "Privado"
 
 #: ../wordspew_archive.php:173
 msgid "Private message"
-msgstr ""
+msgstr "Mensagem privada"
 
 #: ../wordspew_archive.php:211
-#, fuzzy
 msgid "records"
-msgstr "Saniye"
+msgstr "registos"
 
 #: ../wordspew_archive.php:215
 msgid "Newer"
-msgstr ""
+msgstr "Mais recente"
 
 #: ../wordspew_archive.php:218
-#, fuzzy
 msgid "Older"
-msgstr "Diğer"
+msgstr "Mais antigo"
 
 #~ msgid "The shoutbox database has been wiped. You now have a fresh slate!"
-#~ msgstr ""
-#~ "Shoutbox veritabanı temizlendi. Artık temiz bir yazı tahtasına sahipsiniz!"
+#~ msgstr "Sua base de dados do shoutbox foi apagado. Ele está como novo!"
 #~ msgid "0 minute ago"
-#~ msgstr "0 dakika önce"
+#~ msgstr "0 minutos atrás"
 #~ msgid "The comment was deleted successfully."
-#~ msgstr "Yorum başarıyla silindi."
+#~ msgstr "O comentário foi deletado com sucesso."
 #~ msgid "The comment was edited successfully."
-#~ msgstr "Yorum başarıyla düzenlendi."
+#~ msgstr "O comentário foi editado com sucesso."
 #~ msgid "The source ip of this comment was marked as spammer."
-#~ msgstr "Bu yorumun kaynak IP adresi spammer olarak işaretlendi."
+#~ msgstr "O IP deste comentário foi marcado como spammer."
+#~ msgid "Enter here your secret sentence"
+#~ msgstr "Insira aqui sua frase secreta"
 #~ msgid "Data"
-#~ msgstr "Veri"
+#~ msgstr "Dados"
 #~ msgid "(showing the last <b>%s</b> messages)"
-#~ msgstr "(son <b>%s</b> mesaj gösteriliyor)"
+#~ msgstr "(mostrando as últimas <b>%s</b> mensagens)"
 #~ msgid ""
 #~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
 #~ "times. This is not live. New comments made while viewing this page will "
 #~ "not magically appear like they do in the real thing."
-#~ msgstr "Hatırlatma: Shoutbox'da herzaman, en az bir yorum bulunmak zorunda."
+#~ msgstr ""
+#~ "Lembrete: você DEVE ter NO MÍNIMO uma mensagem no seu shoutbox o tempo "
+#~ "todo. Isto não é ao vivo. Novos comentários feitos enquanto a página "
+#~ "estiver aberta não aparecerão magicamente como elas fazem quando a coisa "
+#~ "é real."
+#~ msgid "Your secret sentence"
+#~ msgstr "Sua frase secreta"
 #~ msgid "Your shoutbox is blank. Add a message!"
-#~ msgstr "Shoutbox boş. Lütfen mesaj ekleyin!"
+#~ msgstr "Seu shoutbox está vazio. Adicione uma mensagem!"
 

@@ -37,25 +37,25 @@ global $jal_version, $jal_table_prefix, $jal_admin_user_level, $user_ID, $user_e
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
+	if(where_shout($shout_opt['where'],1)) {
+		$show_to_level=$shout_opt['level_for_shoutbox'];
+		$user_level=isset($user_level) ? $user_level : -1;
+		$theuser_nickname=(round($wp_version)>=2)? $user_identity : $user_nickname;
+		$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
-	$show_to_level=$shout_opt['level_for_shoutbox'];
-	$user_level=isset($user_level) ? $user_level : -1;
-	$theuser_nickname=(round($wp_version)>=2)? $user_identity : $user_nickname;
-	$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
+		if ($user_level >= $show_to_level || $current==1) {
+			$jal_wp_url = get_bloginfo('wpurl') . "/";
+			$UseRSS=$shout_opt['use_rss'];
+			$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
+			$dateJS=filemtime(dirname(__FILE__)."/ajax_shout.php");
+			$ShowRSS="";
+			if ($UseRSS=='1') 
+			$ShowRSS='<link rel="alternate" type="application/rss+xml" title="'. __('Wordspew-RSS-Feed for:', wordspew). ' '
+			. get_bloginfo('name').'" href="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/wordspew-rss.php" />'."\n";
 
-	if ($user_level >= $show_to_level || $current==1) {
-		$jal_wp_url = get_bloginfo('wpurl') . "/";
-		$UseRSS=$shout_opt['use_rss'];
-		$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
-		$dateJS=filemtime(dirname(__FILE__)."/ajax_shout.php");
-		$ShowRSS="";
-		if ($UseRSS=='1') 
-		$ShowRSS='<link rel="alternate" type="application/rss+xml" title="'. __('Wordspew-RSS-Feed for:', wordspew). ' '
-		. get_bloginfo('name').'" href="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/wordspew-rss.php" />'."\n";
-
-		$show=$shout_opt['show_avatar'];
-		$size=$shout_opt['avatar_size'];
-		$position=$shout_opt['avatar_position'];
+			$show=$shout_opt['show_avatar'];
+			$size=$shout_opt['avatar_size'];
+			$position=$shout_opt['avatar_position'];
 echo '
 <!-- Added By Wordspew Plugin, modified by Pierre, version '.$jal_version.' -->'."\n"
 .$ShowRSS.
@@ -116,19 +116,20 @@ return true;
 <script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/fade.php"></script>
 <script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/ajax_shout.php?dt='.$dateJS.'"></script>
 ';
-		$users = $shout_opt['hidden_users'];
-		$users = str_replace(", ", ",", $users);
-		$UsersToHide = stripslashes($users);
+			$users = $shout_opt['hidden_users'];
+			$users = str_replace(", ", ",", $users);
+			$UsersToHide = stripslashes($users);
 
-		$_SESSION['HideUsers']=explode(",",strtolower($UsersToHide));
-		$_SESSION['CurrentUser']=$user_email;
-		$_SESSION['CookieHash']=COOKIEHASH;
-		$_SESSION['LoggedMsg']=__('No, sorry you used the name of a registered user! You have to change it please.',wordspew);
+			$_SESSION['HideUsers']=explode(",",strtolower($UsersToHide));
+			$_SESSION['CurrentUser']=$user_email;
+			$_SESSION['CookieHash']=COOKIEHASH;
+			$_SESSION['LoggedMsg']=__('No, sorry you used the name of a registered user! You have to change it please.',wordspew);
 
-		if(!isset($_SESSION['LoggedUsers'])) {
-			$column = (floatval($wp_version) > '1.5') ? "display_name" : "user_nickname";
-			$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$jal_table_prefix."users");
-			$_SESSION['LoggedUsers']=$LoggedUsers;
+			if(!isset($_SESSION['LoggedUsers'])) {
+				$column = (floatval($wp_version) > '1.5') ? "display_name" : "user_nickname";
+				$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$jal_table_prefix."users");
+				$_SESSION['LoggedUsers']=$LoggedUsers;
+			}
 		}
 	}
 }
@@ -191,7 +192,7 @@ echo jal_time_since($_SESSION['Chrono'])."---".$who."\n".$loop;
 }
 
 function jal_special_chars ($s) {
-	$s = htmlspecialchars($s, ENT_COMPAT,'UTF-8');
+	$s = htmlspecialchars($s, ENT_NOQUOTES,'UTF-8');
 	$s = str_replace("\n"," ",$s);
 	return str_replace("---","&minus;-&minus;",$s);
 }
@@ -445,10 +446,8 @@ return str_replace($bad, $good, $name);
 }
 
 // Prints the html structure for the shoutbox
-function jal_get_shoutbox ($cat="") {
+function jal_get_shoutbox ($cat="",$comboTheme=1) {
 global $wpdb, $jal_table_prefix, $user_level, $theuser_nickname, $user_url, $user_ID, $jal_admin_user_level, $show, $size, $position, $shout_opt;
-
-//get_currentuserinfo(); // Gets logged in user
 
 $HiddenCat="";
 $show_to_level=$shout_opt['level_for_shoutbox'];
@@ -460,10 +459,15 @@ $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme)
 $curadmin=current_user_can('level_'.$jal_admin_user_level);
 $use_theme=$shout_opt['use_theme'];
 
-if($cat!="" && $use_theme==1) $HiddenCat=$cat;
+if($cat!="") $HiddenCat=$cat;
+
 if ($user_level >= $show_to_level || $current==1) {
-	$cat=($cat=="") ? ((($user_level >= $level_for_theme || $curthe==1) && $use_theme==1) ? $_COOKIE['jalCombo'] : "") : $cat;
-	$cookie_combo=$cat;
+
+	if($cat=="") {
+		if(($user_level >= $level_for_theme || $curthe==1) && $use_theme==1)
+			$HiddenCat=$cat=str_replace("\\","",$_COOKIE['jalCombo']);
+	}
+
 	$XHTML=$shout_opt['xhtml'];
 	$Captcha=$shout_opt['use_captcha'];
 	$jal_number_of_comments=get_option('shoutbox_nb_comment');
@@ -482,18 +486,12 @@ if ($user_level >= $show_to_level || $current==1) {
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 	$wpdb->hide_errors();
-	$SQL="SELECT * FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."'";
+
+	$SQLCat=html_entity_decode($cat,ENT_COMPAT,'UTF-8');
+	$SQLCat=str_replace("'","\'",$SQLCat);
+	$SQL="SELECT * FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($SQLCat)."'";
 	$SQL.=" ORDER BY id DESC LIMIT ".$jal_number_of_comments;
 	$results = $wpdb->get_results($SQL);
-
-	if(!$results) {
-		$SQL="SELECT * FROM ".$jal_table_prefix."liveshoutbox WHERE cat='' ORDER BY id DESC LIMIT ".$jal_number_of_comments;
-		$results = $wpdb->get_results($SQL);
-	}
-
-	$SQL="SELECT DISTINCT cat FROM ".$jal_table_prefix."liveshoutbox WHERE cat!='' ORDER BY cat";
-	$theme = $wpdb->get_results($SQL);
-	$wpdb->show_errors();
 
 	// Will only add the last message div if it is looping for the first time
 	$jal_first_time = true;
@@ -518,8 +516,7 @@ if ($user_level >= $show_to_level || $current==1) {
 		if ($jal_first_time) {
 			$_SESSION['Chrono']=$r->time;
 			printf(__('<div id="lastMessage"><span>Last Message</span><br/><div id="responseTime">%s</div>&nbsp;ago</div>',wordspew),jal_time_since($r->time));
-		echo '<div id="cat_id" style="display:none">'.$r->cat.'</div>
-		<div id="usersOnline">'.jal_get_useronline_extended().'</div>
+		echo '<div id="usersOnline">'.jal_get_useronline_extended().'</div>
 		<ul id="outputList">';
 		}
 
@@ -572,7 +569,6 @@ if ($user_level >= $show_to_level || $current==1) {
 	if(!$results) {
 		printf(__('<div id="lastMessage"><span>Last Message</span><br/><div id="responseTime">%s</div>&nbsp;ago</div>',wordspew),'0 '.__('minute',wordspew));
 		echo '
-		<div id="cat_id" style="display:none"></div>
 		<div id="usersOnline">'.jal_get_useronline_extended().'</div>
 		<ul id="outputList">
 		<li>&nbsp;</li>
@@ -580,18 +576,23 @@ if ($user_level >= $show_to_level || $current==1) {
 	}
 	$use_url = ($shout_opt['use_url']==1) ? TRUE : FALSE;
 	$use_textarea = ($shout_opt['use_textarea']==1) ? TRUE : FALSE;
-
+	
 	$combo='<input type="hidden" name="shout_cat" id="shout_cat" value="'.$HiddenCat.'"/>';
-	if($use_theme==1) {
-		if(($user_level >= $level_for_theme || current_user_can('level_'.$level_for_theme)==1) && $HiddenCat=="") {
+	if($use_theme==1 && ($comboTheme==1 || $user_level >= $jal_admin_user_level)) {
+		$SQL="SELECT DISTINCT cat FROM ".$jal_table_prefix."liveshoutbox WHERE cat!='' ORDER BY cat";
+		$theme = $wpdb->get_results($SQL);
+		$wpdb->show_errors();
+
+		if(($user_level >= $level_for_theme || current_user_can('level_'.$level_for_theme)==1)) {
 			if($theme || ($user_level >= $jal_admin_user_level || $curadmin==1)) {
-				$combo='<div id="shout_theme" style="display:none;"><b>'.__("Theme:",wordspew).'</b><br/>';
-				$combo.='<select name="shout_cat" id="shout_cat" onchange="document.getElementById(\'chatbarText\').focus();" onblur="CleanBox()" 
+				$combo.='<div id="shout_theme" style="display:none;"><b>'.__("Theme:",wordspew).'</b><br/>';
+				$combo.='<select name="shout_cat_theme" id="shout_cat_theme" onchange="document.getElementById(\'chatbarText\').focus();" onblur="CleanBox()" 
 				onfocus="oldval=this.options[this.selectedIndex].value">
 				<option value="">'.__("Miscellaneous",wordspew).'</option>';
 				foreach( $theme as $theme_name ) {
-					$selected=($cookie_combo==$theme_name->cat) ? ' selected="true"' : '';
-					$combo.='<option value="'.$theme_name->cat.'"'.$selected.'>'.$theme_name->cat.'</option>';
+					$the_theme=stripslashes($theme_name->cat);
+					$selected=($SQLCat==$the_theme || $HiddenCat==$the_theme) ? ' selected="true"' : '';
+					$combo.='<option value="'.$the_theme.'"'.$selected.'>'.$the_theme.'</option>';
 				}
 				if($user_level >= $jal_admin_user_level || $curadmin==1)
 					$combo.='<option value="add_custom" style="font-weight:bold">'.__("New theme",wordspew).'</option>';
@@ -599,6 +600,7 @@ if ($user_level >= $show_to_level || $current==1) {
 			}
 		}
 	}
+
 	if (!defined("DB_CHARSET")) {
 		@mysql_query("SET CHARACTER SET 'latin1'");
 		@mysql_query("SET NAMES latin1");

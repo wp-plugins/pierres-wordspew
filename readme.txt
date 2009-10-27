@@ -136,5 +136,16 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 4.4 =
+* You have now the possibility to empty the selected archive in the admin interface.
+* You can use the shoutbox only on some pages, or on particulars sections. You can use this values: `@homepage`, `@frontpage`, `@pages`, `@single`, `@archives`, `@category`.
+If you use one of this keyword without any "parameter" you'll use the "default" shoutbox (without any theme).
+Otherwise, you can use 2 kinds of values to be more specific. `(linked)`, `(rubric)`.
+If you use the term : `@pages(rubric)` It meens that you want to use a specific shoutbox for ALL pages.
+If you use the term : `@pages(linked)` It meens that you want to use a specific shoutbox on EACH page.
+You can use these 2 keywords with : `@pages`, `@single`, `@archives` (only rubric, here.) and `@category`.
+Finally, if you want to use the shoutbox in a page template you've done by yourself, enter: `@page[The name of your page]`.
+
+
 = 4.32 =
 * (05 Oct 2009) - First Release.

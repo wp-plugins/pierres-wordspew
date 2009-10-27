@@ -36,7 +36,7 @@ $Actual_URL=get_bloginfo('wpurl');
 $show_to_level=$shout_opt['level_for_shoutbox']; 
 $alt="alternate";
 $link="";
-$link_cat=($cat!="") ? "&amp;shout_cat=".urlencode($cat) : "";
+$link_cat=($cat!="") ? "&amp;shout_cat=".urlencode(stripslashes($cat)) : "";
 $link_cat2=str_replace("&amp;shout_cat=", "?shout_cat=",$link_cat);
 
 $show=$shout_opt['show_avatar'];
@@ -104,7 +104,7 @@ if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_a
 	src="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/img/home.png" border="0" width="32" height="32" alt=""
 	title="'.__("Click here to go to the Homepage", wordspew).'"/></a></div>
 	<h3><a href="wordspew_archive.php'.$link_cat2.'" title="'.__("Click here to refresh the page",wordspew).'">'.__("Shoutbox archive",wordspew);
-	if($cat!="") echo ' '.__("Theme:",wordspew).' '. $cat;
+	if($cat!="") echo ' '.__("Theme:",wordspew).' '. stripslashes($cat);
 	echo '</a></h3>
 	';
 	if($shout_opt['show_spam']=='1') {

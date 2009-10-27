@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pierre's Wordspew\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-05 13:23+0100\n"
-"PO-Revision-Date: 2009-10-05 13:26+0100\n"
+"POT-Creation-Date: 2009-10-22 14:39+0100\n"
+"PO-Revision-Date: 2009-10-22 14:39+0100\n"
 "Last-Translator: Pierre\n"
 "Language-Team: Pierre\n"
 "MIME-Version: 1.0\n"
@@ -18,32 +18,32 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../ajax_admin.php:180
-#: ../wordspew_admin.php:509
+#: ../wordspew_admin.php:528
 msgid "Ban this IP"
 msgstr ""
 
 #: ../ajax_admin.php:182
-#: ../ajax_shout.php:293
-#: ../wordspew.php:557
-#: ../wordspew_admin.php:513
+#: ../ajax_shout.php:289
+#: ../wordspew.php:554
+#: ../wordspew_admin.php:532
 #: ../wordspew_archive.php:180
 msgid "Delete"
 msgstr ""
 
 #: ../ajax_admin.php:184
-#: ../wordspew_admin.php:514
+#: ../wordspew_admin.php:533
 msgid "Edit"
 msgstr ""
 
 #: ../ajax_admin.php:253
 #: ../ajax_archive.php:35
-#: ../ajax_shout.php:336
+#: ../ajax_shout.php:332
 msgid "Are you sure to delete the message:"
 msgstr ""
 
 #: ../ajax_admin.php:254
 #: ../ajax_archive.php:36
-#: ../ajax_shout.php:337
+#: ../ajax_shout.php:333
 msgid "'Cancel' to stop, 'OK' to delete."
 msgstr ""
 
@@ -57,27 +57,27 @@ msgstr ""
 
 #: ../ajax_shout.php:63
 #: ../wordspew-rss.php:113
-#: ../wordspew.php:529
+#: ../wordspew.php:526
 #: ../wordspew_archive.php:138
 msgid "link"
 msgstr ""
 
 #: ../ajax_shout.php:77
 #: ../wordspew-rss.php:113
-#: ../wordspew.php:529
+#: ../wordspew.php:526
 #: ../wordspew_archive.php:138
 #: ../wordspew_archive.php:148
 msgid "email"
 msgstr ""
 
-#: ../ajax_shout.php:148
+#: ../ajax_shout.php:144
 msgid "Click here to expand/collapse the smiley's list"
 msgstr ""
 
-#: ../ajax_shout.php:244
+#: ../ajax_shout.php:240
 #: ../wordspew-rss.php:63
 #: ../wordspew-rss.php:106
-#: ../wordspew.php:546
+#: ../wordspew.php:543
 #: ../wordspew_archive.php:165
 msgid "Private message for"
 msgstr ""
@@ -123,12 +123,36 @@ msgid "hours"
 msgstr ""
 
 #: ../common.php:30
-#: ../wordspew.php:573
+#: ../wordspew.php:570
 msgid "minute"
 msgstr ""
 
 #: ../common.php:30
 msgid "minutes"
+msgstr ""
+
+#: ../common.php:97
+msgid "Homepage"
+msgstr ""
+
+#: ../common.php:101
+msgid "Frontpage"
+msgstr ""
+
+#: ../common.php:118
+msgid "Pages"
+msgstr ""
+
+#: ../common.php:123
+msgid "Single"
+msgstr ""
+
+#: ../common.php:127
+msgid "Archives"
+msgstr ""
+
+#: ../common.php:132
+msgid "Category"
 msgstr ""
 
 #: ../usersonline.php:110
@@ -163,19 +187,19 @@ msgstr ""
 msgid "are online."
 msgstr ""
 
-#: ../widgetized.php:20
+#: ../widgetized.php:21
 #: ../wordspew-rss.php:47
 #: ../wordspew-rss.php:128
 #: ../wordspew.php:53
 msgid "Wordspew-RSS-Feed for:"
 msgstr ""
 
-#: ../widgetized.php:40
+#: ../widgetized.php:42
 msgid "Title:"
 msgstr ""
 
 #: ../wordspew.php:90
-#: ../wordspew.php:474
+#: ../wordspew.php:478
 msgid "Sorry, but you can post only one url by message..."
 msgstr ""
 
@@ -187,98 +211,99 @@ msgstr ""
 msgid "No, sorry you used the name of a registered user! You have to change it please."
 msgstr ""
 
-#: ../wordspew.php:472
+#: ../wordspew.php:476
 msgid "You should learn to count before use the shoutbox :)"
 msgstr ""
 
-#: ../wordspew.php:473
+#: ../wordspew.php:477
 msgid "I DON'T LIKE SPAM !!!"
 msgstr ""
 
-#: ../wordspew.php:475
+#: ../wordspew.php:479
 msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
 msgstr ""
 
-#: ../wordspew.php:509
+#: ../wordspew.php:507
 msgid "Click this to turn on/off sound"
 msgstr ""
 
-#: ../wordspew.php:513
+#: ../wordspew.php:511
 #: ../wordspew_archive.php:112
 #, php-format
 msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
 msgstr ""
 
-#: ../wordspew.php:520
-#: ../wordspew.php:573
-#: ../wordspew_admin.php:483
+#: ../wordspew.php:518
+#: ../wordspew.php:570
+#: ../wordspew_admin.php:502
 #, php-format
 msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
 msgstr ""
 
-#: ../wordspew.php:537
+#: ../wordspew.php:534
 msgid "Info"
 msgstr ""
 
-#: ../wordspew.php:537
+#: ../wordspew.php:534
 msgid "Please, resolve the addition below before post any new comment..."
 msgstr ""
 
 #: ../wordspew.php:588
-#: ../wordspew_admin.php:473
+#: ../wordspew_admin.php:492
 #: ../wordspew_archive.php:107
 msgid "Theme:"
 msgstr ""
 
 #: ../wordspew.php:591
-#: ../wordspew_admin.php:477
-#: ../wordspew_admin.php:479
+#: ../wordspew_admin.php:234
+#: ../wordspew_admin.php:496
+#: ../wordspew_admin.php:498
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../wordspew.php:597
+#: ../wordspew.php:598
 msgid "New theme"
 msgstr ""
 
-#: ../wordspew.php:614
-#: ../wordspew.php:687
+#: ../wordspew.php:616
+#: ../wordspew.php:689
 msgid "Guest_"
 msgstr ""
 
-#: ../wordspew.php:624
+#: ../wordspew.php:626
 #: ../wordspew_archive.php:122
 msgid "Admin"
 msgstr ""
 
-#: ../wordspew.php:630
-#: ../wordspew.php:680
+#: ../wordspew.php:632
+#: ../wordspew.php:682
 msgid "Archive"
 msgstr ""
 
-#: ../wordspew.php:636
-#: ../wordspew.php:656
+#: ../wordspew.php:638
+#: ../wordspew.php:658
 #: ../wordspew_archive.php:118
 msgid "Name"
 msgstr ""
 
-#: ../wordspew.php:645
+#: ../wordspew.php:647
 msgid "Captcha"
 msgstr ""
 
-#: ../wordspew.php:658
+#: ../wordspew.php:660
 msgid "URL/Email"
 msgstr ""
 
-#: ../wordspew.php:662
+#: ../wordspew.php:664
 #: ../wordspew_archive.php:119
 msgid "Message"
 msgstr ""
 
-#: ../wordspew.php:674
+#: ../wordspew.php:676
 msgid "Send"
 msgstr ""
 
-#: ../wordspew.php:685
+#: ../wordspew.php:687
 msgid "You must be a registered user to participate in this chat"
 msgstr ""
 
@@ -286,326 +311,386 @@ msgstr ""
 msgid "Congratulations, you just completed the installation of this shoutbox."
 msgstr ""
 
-#: ../wordspew_admin.php:227
+#: ../wordspew_admin.php:228
 msgid "No Access for you!"
-msgstr ""
-
-#: ../wordspew_admin.php:232
-msgid "The shoutbox database has been wiped. You now have a fresh slate!"
-msgstr ""
-
-#: ../wordspew_admin.php:235
-msgid "Live Shoutbox"
 msgstr ""
 
 #: ../wordspew_admin.php:236
 #, php-format
-msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgid "The content of the shoutbox %s has been wiped."
 msgstr ""
 
-#: ../wordspew_admin.php:237
-msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+#: ../wordspew_admin.php:239
+msgid "Live Shoutbox"
 msgstr ""
 
 #: ../wordspew_admin.php:240
 #, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr ""
+
+#: ../wordspew_admin.php:241
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr ""
+
+#: ../wordspew_admin.php:244
+#, php-format
 msgid "There have been <b>%s</b> messages in this shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:243
+#: ../wordspew_admin.php:247
 msgid "Colors (Must be 6 digit hex)"
 msgstr ""
 
-#: ../wordspew_admin.php:246
+#: ../wordspew_admin.php:250
 msgid "Fade from"
 msgstr ""
 
-#: ../wordspew_admin.php:249
+#: ../wordspew_admin.php:253
 msgid "The color that new messages fade in from. Default"
 msgstr ""
 
-#: ../wordspew_admin.php:252
+#: ../wordspew_admin.php:256
 msgid "Fade to"
 msgstr ""
 
-#: ../wordspew_admin.php:255
+#: ../wordspew_admin.php:259
 msgid "Also used as the background color of the box. Default"
 msgstr ""
 
-#: ../wordspew_admin.php:258
+#: ../wordspew_admin.php:262
 msgid "Text Color"
 msgstr ""
 
-#: ../wordspew_admin.php:261
+#: ../wordspew_admin.php:265
 msgid "The color of text within the box. Default"
 msgstr ""
 
-#: ../wordspew_admin.php:264
+#: ../wordspew_admin.php:268
 msgid "Name Color"
 msgstr ""
 
-#: ../wordspew_admin.php:267
+#: ../wordspew_admin.php:271
 msgid "The color of peoples' names. Default"
 msgstr ""
 
-#: ../wordspew_admin.php:274
+#: ../wordspew_admin.php:278
 msgid "Others"
 msgstr ""
 
-#: ../wordspew_admin.php:276
+#: ../wordspew_admin.php:280
 msgid "Show"
 msgstr ""
 
-#: ../wordspew_admin.php:277
+#: ../wordspew_admin.php:281
 msgid "comments in the shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:278
+#: ../wordspew_admin.php:282
 msgid "Enter, here, the number of shouts you want to show in your shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:279
+#: ../wordspew_admin.php:283
 msgid "Update Every"
 msgstr ""
 
-#: ../wordspew_admin.php:280
-#: ../wordspew_admin.php:283
+#: ../wordspew_admin.php:284
+#: ../wordspew_admin.php:287
 msgid "Seconds"
 msgstr ""
 
-#: ../wordspew_admin.php:281
+#: ../wordspew_admin.php:285
 msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
 msgstr ""
 
-#: ../wordspew_admin.php:282
+#: ../wordspew_admin.php:286
 msgid "Fade Length"
 msgstr ""
 
-#: ../wordspew_admin.php:284
+#: ../wordspew_admin.php:288
 msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
 msgstr ""
 
-#: ../wordspew_admin.php:285
+#: ../wordspew_admin.php:289
 msgid "Use textarea"
 msgstr ""
 
-#: ../wordspew_admin.php:287
+#: ../wordspew_admin.php:291
 msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
 msgstr ""
 
-#: ../wordspew_admin.php:288
+#: ../wordspew_admin.php:292
 msgid "Use URL field"
 msgstr ""
 
-#: ../wordspew_admin.php:290
+#: ../wordspew_admin.php:294
 msgid "Check this if you want users to have an option to add their URL when submitting a message."
 msgstr ""
 
-#: ../wordspew_admin.php:291
+#: ../wordspew_admin.php:295
 msgid "Use sound alert"
 msgstr ""
 
-#: ../wordspew_admin.php:293
+#: ../wordspew_admin.php:297
 msgid "Check this if you want to hear a sound alert when someone post message"
 msgstr ""
 
-#: ../wordspew_admin.php:294
+#: ../wordspew_admin.php:298
 msgid "Show smileys list"
 msgstr ""
 
-#: ../wordspew_admin.php:296
+#: ../wordspew_admin.php:300
 msgid "Check this if you want to show the smileys list"
 msgstr ""
 
-#: ../wordspew_admin.php:297
+#: ../wordspew_admin.php:301
 msgid "Show blocked spams"
 msgstr ""
 
-#: ../wordspew_admin.php:299
+#: ../wordspew_admin.php:303
 msgid "Check this if you want to show blocked spams"
 msgstr ""
 
-#: ../wordspew_admin.php:300
+#: ../wordspew_admin.php:304
 msgid "Use a captcha"
 msgstr ""
 
-#: ../wordspew_admin.php:302
+#: ../wordspew_admin.php:306
 msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
 msgstr ""
 
-#: ../wordspew_admin.php:303
+#: ../wordspew_admin.php:307
 msgid "Use Themes"
 msgstr ""
 
-#: ../wordspew_admin.php:305
+#: ../wordspew_admin.php:309
 msgid "Check this if you want to use themes."
 msgstr ""
 
-#: ../wordspew_admin.php:306
+#: ../wordspew_admin.php:310
 msgid "Use the RSS feed"
 msgstr ""
 
-#: ../wordspew_admin.php:308
+#: ../wordspew_admin.php:312
 msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
 msgstr ""
 
-#: ../wordspew_admin.php:309
+#: ../wordspew_admin.php:313
 msgid "XHTML strict"
 msgstr ""
 
-#: ../wordspew_admin.php:311
+#: ../wordspew_admin.php:315
 msgid "Check this if you want to use XHTML strict"
 msgstr ""
 
 #: ../wordspew_admin.php:317
-msgid "Users options"
+msgid "Use the shoutbox only on:"
+msgstr ""
+
+#: ../wordspew_admin.php:318
+msgid "If you want to use the shoutbox only on some pages, enter here their titles (each entry have to be separated by a comma) otherwise or if you don't understand its usage, let this field empty."
+msgstr ""
+
+#: ../wordspew_admin.php:318
+msgid "An other possibilities, is to show the shoutbox <b>only on particulars sections</b>. You can use this values:"
+msgstr ""
+
+#: ../wordspew_admin.php:320
+msgid "And last but not least, you can use 2 kinds of values to be more specific."
 msgstr ""
 
 #: ../wordspew_admin.php:321
+#: ../wordspew_admin.php:322
+msgid "If you use the term:"
+msgstr ""
+
+#: ../wordspew_admin.php:321
+msgid "It meens that you want to use the same specific shoutbox for <b>ALL</b> pages."
+msgstr ""
+
+#: ../wordspew_admin.php:322
+msgid "It meens that you want to use a specific shoutbox on <b>EACH</b> page."
+msgstr ""
+
+#: ../wordspew_admin.php:323
+msgid "You can use these 2 keywords with :"
+msgstr ""
+
+#: ../wordspew_admin.php:323
+#, php-format
+msgid "only %s, here"
+msgstr ""
+
+#: ../wordspew_admin.php:324
+msgid "Finally, if you want to use the shoutbox in a page template you've done by yourself, enter : "
+msgstr ""
+
+#: ../wordspew_admin.php:324
+msgid "The name of your page"
+msgstr ""
+
+#: ../wordspew_admin.php:334
+msgid "Users options"
+msgstr ""
+
+#: ../wordspew_admin.php:338
 msgid "<b>Who can administrate the shoutbox</b>"
 msgstr ""
 
-#: ../wordspew_admin.php:333
-#: ../wordspew_admin.php:355
-#: ../wordspew_admin.php:382
-#: ../wordspew_admin.php:405
+#: ../wordspew_admin.php:350
+#: ../wordspew_admin.php:372
+#: ../wordspew_admin.php:399
+#: ../wordspew_admin.php:422
 msgid "level"
 msgstr ""
 
-#: ../wordspew_admin.php:340
+#: ../wordspew_admin.php:357
 msgid "Choose the level required to administrate the shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:340
+#: ../wordspew_admin.php:357
 #, php-format
 msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
 msgstr ""
 
-#: ../wordspew_admin.php:344
+#: ../wordspew_admin.php:361
 msgid "Who can <b>see the shoutbox</b>"
 msgstr ""
 
-#: ../wordspew_admin.php:360
-#: ../wordspew_admin.php:387
-#: ../wordspew_admin.php:410
+#: ../wordspew_admin.php:377
+#: ../wordspew_admin.php:404
+#: ../wordspew_admin.php:427
 msgid "Everybody"
 msgstr ""
 
-#: ../wordspew_admin.php:364
+#: ../wordspew_admin.php:381
 msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
 msgstr ""
 
-#: ../wordspew_admin.php:365
+#: ../wordspew_admin.php:382
 msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
 msgstr ""
 
-#: ../wordspew_admin.php:366
+#: ../wordspew_admin.php:383
 msgid "Please activate Javascript..."
 msgstr ""
 
-#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:384
 msgid "in the list above,<br/>it will take precedence over the next option"
 msgstr ""
 
-#: ../wordspew_admin.php:367
-#: ../wordspew_admin.php:371
+#: ../wordspew_admin.php:384
+#: ../wordspew_admin.php:388
 msgid "Who can <b>see the shoutbox archives</b>"
 msgstr ""
 
-#: ../wordspew_admin.php:391
+#: ../wordspew_admin.php:408
 msgid "Choose who is able to see archive of the shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:394
+#: ../wordspew_admin.php:411
 msgid "Who can see the differents themes"
 msgstr ""
 
-#: ../wordspew_admin.php:414
+#: ../wordspew_admin.php:431
 msgid "Choose who is able to see the differents themes of your shoutbox"
 msgstr ""
 
-#: ../wordspew_admin.php:418
+#: ../wordspew_admin.php:435
 msgid "Only allow registered users"
 msgstr ""
 
-#: ../wordspew_admin.php:420
+#: ../wordspew_admin.php:437
 msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
 msgstr ""
 
-#: ../wordspew_admin.php:424
+#: ../wordspew_admin.php:441
 msgid "Show users online"
 msgstr ""
 
-#: ../wordspew_admin.php:426
+#: ../wordspew_admin.php:443
 msgid "Check this if you want to show, in real time, users online"
 msgstr ""
 
-#: ../wordspew_admin.php:429
+#: ../wordspew_admin.php:446
 msgid "Users to hide"
 msgstr ""
 
-#: ../wordspew_admin.php:431
+#: ../wordspew_admin.php:448
 msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
 msgstr ""
 
-#: ../wordspew_admin.php:434
+#: ../wordspew_admin.php:451
 msgid "Use avatars"
 msgstr ""
 
-#: ../wordspew_admin.php:436
+#: ../wordspew_admin.php:453
 msgid "If checked, avatar will be shown."
 msgstr ""
 
-#: ../wordspew_admin.php:437
+#: ../wordspew_admin.php:454
 msgid "Avatar size"
 msgstr ""
 
-#: ../wordspew_admin.php:439
+#: ../wordspew_admin.php:456
 msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
 msgstr ""
 
-#: ../wordspew_admin.php:442
+#: ../wordspew_admin.php:459
 msgid "Avatar position"
 msgstr ""
 
-#: ../wordspew_admin.php:444
+#: ../wordspew_admin.php:461
 msgid "Left"
 msgstr ""
 
-#: ../wordspew_admin.php:445
+#: ../wordspew_admin.php:462
 msgid "Right"
 msgstr ""
 
-#: ../wordspew_admin.php:447
+#: ../wordspew_admin.php:464
 msgid "Choose the alignement for avatars (left or right)"
 msgstr ""
 
-#: ../wordspew_admin.php:452
+#: ../wordspew_admin.php:469
 msgid "Save"
 msgstr ""
 
-#: ../wordspew_admin.php:453
+#: ../wordspew_admin.php:470
 msgid "Delete ALL messages"
 msgstr ""
 
-#: ../wordspew_admin.php:454
+#: ../wordspew_admin.php:471
+#, php-format
 msgid ""
-"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"You are about to delete ALL messages from : %s in the shoutbox.\\n"
 "Are you sure you want to do this?\\n"
 "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
 
-#: ../wordspew_admin.php:460
+#: ../wordspew_admin.php:471
+msgid "Delete ALL ARCHIVED messages"
+msgstr ""
+
+#: ../wordspew_admin.php:472
+#, php-format
+msgid ""
+"You are about to delete ALL ARCHIVED messages from : %s.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+
+#: ../wordspew_admin.php:478
 #, php-format
 msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
 msgstr ""
 
-#: ../wordspew_admin.php:461
+#: ../wordspew_admin.php:479
 msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
 msgstr ""
 
-#: ../wordspew_admin.php:558
-#: ../wordspew_admin.php:626
+#: ../wordspew_admin.php:577
+#: ../wordspew_admin.php:652
 msgid "Cheatin' uh ?"
 msgstr ""
 
