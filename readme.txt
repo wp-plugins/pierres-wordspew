@@ -137,6 +137,7 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 == Changelog ==
 
 = 4.4 =
+* Added Portuguese and Polish translations. Thanks to eLias (http://www.jokerpt.com/) for Portuguese and Kamil (http://blumare.pl/) for Polish :).
 * You have now the possibility to empty the selected archive in the admin interface.
 * You can use the shoutbox only on some pages, or on particulars sections. You can use this values: `@homepage`, `@frontpage`, `@pages`, `@single`, `@archives`, `@category`.
 If you use one of this keyword without any "parameter" you'll use the "default" shoutbox (without any theme).
