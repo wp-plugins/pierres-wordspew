@@ -1,0 +1,686 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pierre's Wordspew\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-25 10:41+0100\n"
+"PO-Revision-Date: 2009-10-05 13:25+0100\n"
+"Last-Translator: Pierre\n"
+"Language-Team: Pierre\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax_admin.php:180
+#: ../wordspew_admin.php:509
+msgid "Ban this IP"
+msgstr "Bannir cette IP"
+
+#: ../ajax_admin.php:182
+#: ../ajax_shout.php:293
+#: ../wordspew.php:556
+#: ../wordspew_admin.php:513
+#: ../wordspew_archive.php:180
+msgid "Delete"
+msgstr "Effacer"
+
+#: ../ajax_admin.php:184
+#: ../wordspew_admin.php:514
+msgid "Edit"
+msgstr "Editer"
+
+#: ../ajax_admin.php:253
+#: ../ajax_archive.php:35
+#: ../ajax_shout.php:336
+msgid "Are you sure to delete the message:"
+msgstr "Etes-vous sur de vouloir effacer le message :"
+
+#: ../ajax_admin.php:254
+#: ../ajax_archive.php:36
+#: ../ajax_shout.php:337
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr "'Annuler' pour arrêter, 'OK' pour effacer."
+
+#: ../ajax_admin.php:291
+msgid "You're about to ban the following IP address:"
+msgstr "Vous êtes sur le point de bannir l'adresse IP suivante :"
+
+#: ../ajax_admin.php:292
+msgid "'Cancel' to stop, 'OK' to ban."
+msgstr "'Annuler' pour arrêter, 'OK' pour bannir."
+
+#: ../ajax_shout.php:63
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:528
+#: ../wordspew_archive.php:138
+msgid "link"
+msgstr "Lien"
+
+#: ../ajax_shout.php:77
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:528
+#: ../wordspew_archive.php:138
+#: ../wordspew_archive.php:148
+msgid "email"
+msgstr "Email"
+
+#: ../ajax_shout.php:148
+msgid "Click here to expand/collapse the smiley's list"
+msgstr "Cliquez ici pour étendre/réduire la liste des smileys"
+
+#: ../ajax_shout.php:244
+#: ../wordspew-rss.php:63
+#: ../wordspew-rss.php:106
+#: ../wordspew.php:545
+#: ../wordspew_archive.php:165
+msgid "Private message for"
+msgstr "Message privé pour"
+
+#: ../common.php:25
+msgid "year"
+msgstr "an"
+
+#: ../common.php:25
+msgid "years"
+msgstr "ans"
+
+#: ../common.php:26
+msgid "month"
+msgstr "mois"
+
+#: ../common.php:26
+msgid "months"
+msgstr "mois"
+
+#: ../common.php:27
+msgid "week"
+msgstr "semaine"
+
+#: ../common.php:27
+msgid "weeks"
+msgstr "semaines"
+
+#: ../common.php:28
+msgid "day"
+msgstr "jour"
+
+#: ../common.php:28
+msgid "days"
+msgstr "jours"
+
+#: ../common.php:29
+msgid "hour"
+msgstr "heure"
+
+#: ../common.php:29
+msgid "hours"
+msgstr "heures"
+
+#: ../common.php:30
+#: ../wordspew.php:572
+msgid "minute"
+msgstr "minute"
+
+#: ../common.php:30
+msgid "minutes"
+msgstr "minutes"
+
+#: ../usersonline.php:110
+msgid "No one online."
+msgstr "Personne en ligne."
+
+#: ../usersonline.php:111
+msgid "guest"
+msgstr "invité"
+
+#: ../usersonline.php:112
+msgid "guests"
+msgstr "invités"
+
+#: ../usersonline.php:113
+msgid "and"
+msgstr "et"
+
+#: ../usersonline.php:114
+msgid "is crawling the site."
+msgstr "parcours le site."
+
+#: ../usersonline.php:115
+msgid "are crawling the site."
+msgstr "parcourent le site."
+
+#: ../usersonline.php:116
+msgid "is online."
+msgstr "est en ligne."
+
+#: ../usersonline.php:117
+msgid "are online."
+msgstr "sont en ligne."
+
+#: ../widgetized.php:20
+#: ../wordspew-rss.php:47
+#: ../wordspew-rss.php:128
+#: ../wordspew.php:53
+msgid "Wordspew-RSS-Feed for:"
+msgstr "Flux RSS de la shoutbox pour :"
+
+#: ../widgetized.php:40
+msgid "Title:"
+msgstr "Titre :"
+
+#: ../wordspew.php:89
+#: ../wordspew.php:473
+msgid "Sorry, but you can post only one url by message..."
+msgstr "Désolé, mais vous ne pouvez poster qu'une URL par message..."
+
+#: ../wordspew.php:106
+msgid "No, sorry you used a banned word!"
+msgstr "Non, désolé vous avez utilisé un mot interdit !"
+
+#: ../wordspew.php:125
+msgid "No, sorry you used the name of a registered user! You have to change it please."
+msgstr "Non, désolé vous utilisez le nom d'un utilisateur enregistré ! Vous devez le changer svp."
+
+#: ../wordspew.php:471
+msgid "You should learn to count before use the shoutbox :)"
+msgstr "Vous devriez apprendre à compter avant d'utiliser la boîte à cris :)"
+
+#: ../wordspew.php:472
+msgid "I DON'T LIKE SPAM !!!"
+msgstr "JE N'AIME PAS LE SPAM !!!"
+
+#: ../wordspew.php:474
+msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
+msgstr "Votre adresse IP a été bannie, si vous pensez que c'est une erreur contactez le webmaster."
+
+#: ../wordspew.php:508
+msgid "Click this to turn on/off sound"
+msgstr "Cliquez-ici pour activer/désactiver le son"
+
+#: ../wordspew.php:512
+#: ../wordspew_archive.php:112
+#, php-format
+msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
+msgstr "<div id=\"Show_Spam\">%s spams bloqués</div>"
+
+#: ../wordspew.php:519
+#: ../wordspew.php:572
+#: ../wordspew_admin.php:483
+#, php-format
+msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
+msgstr "<div id=\"lastMessage\"><span>Dernier Message</span><br/>il y a <div id=\"responseTime\">%s</div></div>"
+
+#: ../wordspew.php:536
+msgid "Info"
+msgstr ""
+
+#: ../wordspew.php:536
+msgid "Please, resolve the addition below before post any new comment..."
+msgstr "Veuillez résoudre l'addition ci-dessous avant de poster un nouveau commentaire..."
+
+#: ../wordspew.php:587
+#: ../wordspew_admin.php:473
+#: ../wordspew_archive.php:107
+msgid "Theme:"
+msgstr "Thème :"
+
+#: ../wordspew.php:590
+#: ../wordspew_admin.php:477
+#: ../wordspew_admin.php:479
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#: ../wordspew.php:596
+msgid "New theme"
+msgstr "Nouvau thème"
+
+#: ../wordspew.php:613
+#: ../wordspew.php:686
+msgid "Guest_"
+msgstr "Invité_"
+
+#: ../wordspew.php:623
+#: ../wordspew_archive.php:122
+msgid "Admin"
+msgstr "Administration"
+
+#: ../wordspew.php:629
+#: ../wordspew.php:679
+msgid "Archive"
+msgstr ""
+
+#: ../wordspew.php:635
+#: ../wordspew.php:655
+#: ../wordspew_archive.php:118
+msgid "Name"
+msgstr "Nom"
+
+#: ../wordspew.php:644
+msgid "Captcha"
+msgstr ""
+
+#: ../wordspew.php:657
+msgid "URL/Email"
+msgstr "URL/Email"
+
+#: ../wordspew.php:661
+#: ../wordspew_archive.php:119
+msgid "Message"
+msgstr "Message"
+
+#: ../wordspew.php:673
+msgid "Send"
+msgstr "Chat !!"
+
+#: ../wordspew.php:684
+msgid "You must be a registered user to participate in this chat"
+msgstr "Vous devez être un utilisateur enregistré pour participer au Chat'"
+
+#: ../wordspew_admin.php:102
+msgid "Congratulations, you just completed the installation of this shoutbox."
+msgstr "Félicitation, vous avez bien installé votre « boîte à cris » :)"
+
+#: ../wordspew_admin.php:227
+msgid "No Access for you!"
+msgstr "Pas d'accès pour vous !"
+
+#: ../wordspew_admin.php:232
+msgid "The shoutbox database has been wiped. You now have a fresh slate!"
+msgstr "Le contenu de la base de données de la « boîte à cris » a été effacé."
+
+#: ../wordspew_admin.php:235
+msgid "Live Shoutbox"
+msgstr "Live Shoutbox"
+
+#: ../wordspew_admin.php:236
+#, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr "(Actuellement <font color=\"red\">%s</font> spams bloqués)"
+
+#: ../wordspew_admin.php:237
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr "Quand vous modifiez la durée et les couleurs, vous devez rafraîchir/vider le cache pour voir les changements"
+
+#: ../wordspew_admin.php:240
+#, php-format
+msgid "There have been <b>%s</b> messages in this shoutbox"
+msgstr "Il y a eu <b>%s</b> messages dans la « boîte à cris »"
+
+#: ../wordspew_admin.php:243
+msgid "Colors (Must be 6 digit hex)"
+msgstr "Couleurs (doivent être une valeur hexadécimale)"
+
+#: ../wordspew_admin.php:246
+msgid "Fade from"
+msgstr "Fondu depuis"
+
+#: ../wordspew_admin.php:249
+msgid "The color that new messages fade in from. Default"
+msgstr "La couleur de fondu des nouveaux messages. Par défaut"
+
+#: ../wordspew_admin.php:252
+msgid "Fade to"
+msgstr "Fondu vers"
+
+#: ../wordspew_admin.php:255
+msgid "Also used as the background color of the box. Default"
+msgstr "Utilisé aussi comme couleur de fond de la « boîte à cris ». Par défaut"
+
+#: ../wordspew_admin.php:258
+msgid "Text Color"
+msgstr "Couleur du texte"
+
+#: ../wordspew_admin.php:261
+msgid "The color of text within the box. Default"
+msgstr "Couleur du texte dans la « boîte à cris ». Par défaut"
+
+#: ../wordspew_admin.php:264
+msgid "Name Color"
+msgstr "Couleur du Nom"
+
+#: ../wordspew_admin.php:267
+msgid "The color of peoples' names. Default"
+msgstr "La couleur du nom des utilisateurs. Par défaut"
+
+#: ../wordspew_admin.php:274
+msgid "Others"
+msgstr "Autres"
+
+#: ../wordspew_admin.php:276
+msgid "Show"
+msgstr "Afficher"
+
+#: ../wordspew_admin.php:277
+msgid "comments in the shoutbox"
+msgstr "commentaires dans la shoutbox"
+
+#: ../wordspew_admin.php:278
+msgid "Enter, here, the number of shouts you want to show in your shoutbox"
+msgstr "Entrez, ici, le nombre de cris que vous voulez afficher dans votre shoutbox"
+
+#: ../wordspew_admin.php:279
+msgid "Update Every"
+msgstr "Mettre à jour toutes les"
+
+#: ../wordspew_admin.php:280
+#: ../wordspew_admin.php:283
+msgid "Seconds"
+msgstr "Secondes"
+
+#: ../wordspew_admin.php:281
+msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
+msgstr "Ceci détermine comment se comporte la « boîte à cris ». Plus ce nombre sera grand moins les messages s'afficheront rapidement mais déchargera le serveur. Vous pouvez utiliser des décimales (utilisez le point). Ce nombre est utilisé comme base pour les 8 premiers chargements des javascript. Après cela, ce nombre va accroître (pour décharger le serveur). Ajouter un commentaire ou déplacer la souris au-dessus de la « boîte à cris » ré-initialisera l'intervalle entré ici. Par défaut : 4 secondes"
+
+#: ../wordspew_admin.php:282
+msgid "Fade Length"
+msgstr "Durée du fondu"
+
+#: ../wordspew_admin.php:284
+msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
+msgstr "Temps nécessaire pour que l'effet du fondu atteigne la couleur de fond. Vous pouvez utiliser des décimales (utiliser le point). Par défaut 1.5 secondes"
+
+#: ../wordspew_admin.php:285
+msgid "Use textarea"
+msgstr "Utiliser une zone de texte"
+
+#: ../wordspew_admin.php:287
+msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
+msgstr "Une zone de texte est plus grande qu'un champ. Les utilisateurs auront plus de place pour taper leurs commentaires mais cela prendra plus de place."
+
+#: ../wordspew_admin.php:288
+msgid "Use URL field"
+msgstr "Utiliser le champ URL"
+
+#: ../wordspew_admin.php:290
+msgid "Check this if you want users to have an option to add their URL when submitting a message."
+msgstr "Cochez cette case si vous voulez que les utilisateurs puissent ajouter leur URL quand ils envoient un messsage"
+
+#: ../wordspew_admin.php:291
+msgid "Use sound alert"
+msgstr "Utiliser un son"
+
+#: ../wordspew_admin.php:293
+msgid "Check this if you want to hear a sound alert when someone post message"
+msgstr "Cochez cette case si vous désirez entendre un son quand un utilisateur ajoute un message."
+
+#: ../wordspew_admin.php:294
+msgid "Show smileys list"
+msgstr "Afficher la liste des smileys"
+
+#: ../wordspew_admin.php:296
+msgid "Check this if you want to show the smileys list"
+msgstr "Cochez cette case si vous souhaitez afficher la liste de vos smileys"
+
+#: ../wordspew_admin.php:297
+msgid "Show blocked spams"
+msgstr "Afficher les spams bloqués"
+
+#: ../wordspew_admin.php:299
+msgid "Check this if you want to show blocked spams"
+msgstr "Cochez cette case si vous souhaitez afficher le nombre de spams bloqués"
+
+#: ../wordspew_admin.php:300
+msgid "Use a captcha"
+msgstr "Utiliser un captcha"
+
+#: ../wordspew_admin.php:302
+msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
+msgstr "Cochez cette case si vous souhaitez utiliser un captcha (en fait c'est une simple addition que les utilisateurs devront résoudre avant de pouvoir poster un nouveau message dans la boîte à cris)."
+
+#: ../wordspew_admin.php:303
+msgid "Use Themes"
+msgstr "Utiliser les thèmes"
+
+#: ../wordspew_admin.php:305
+msgid "Check this if you want to use themes."
+msgstr "Cochez cette case si vous souhaitez utiliser les thèmes."
+
+#: ../wordspew_admin.php:306
+msgid "Use the RSS feed"
+msgstr "Utiliser le flux RSS"
+
+#: ../wordspew_admin.php:308
+msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
+msgstr "Cochez cette case si vous voulez que les utilisateurs puissent afficher et/ou utiliser le flux RSS de la shoutbox."
+
+#: ../wordspew_admin.php:309
+msgid "XHTML strict"
+msgstr "XHTML strict"
+
+#: ../wordspew_admin.php:311
+msgid "Check this if you want to use XHTML strict"
+msgstr "Cochez cette case si vous voulez utiliser du XHTML strict"
+
+#: ../wordspew_admin.php:317
+msgid "Users options"
+msgstr "Options utilisateurs"
+
+#: ../wordspew_admin.php:321
+msgid "<b>Who can administrate the shoutbox</b>"
+msgstr "<b>Qui peut administrer la shoutbox</b>"
+
+#: ../wordspew_admin.php:333
+#: ../wordspew_admin.php:355
+#: ../wordspew_admin.php:382
+#: ../wordspew_admin.php:405
+msgid "level"
+msgstr "niveau"
+
+#: ../wordspew_admin.php:340
+msgid "Choose the level required to administrate the shoutbox"
+msgstr "Choisissez le niveau requit pour administrer la shoutbox"
+
+#: ../wordspew_admin.php:340
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
+msgstr "<a href=\"%s\"><b>Cliquez-ici</b></a> si vous souhaitez plus d'information sur les Rôles et les Capacités."
+
+#: ../wordspew_admin.php:344
+msgid "Who can <b>see the shoutbox</b>"
+msgstr "Qui peut <b>voir la shoutbox</b>"
+
+#: ../wordspew_admin.php:360
+#: ../wordspew_admin.php:387
+#: ../wordspew_admin.php:410
+msgid "Everybody"
+msgstr "Tout le monde"
+
+#: ../wordspew_admin.php:364
+msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
+msgstr "Choisissez, ici, les utilisateurs qui pourront <strong>voir et poster</strong> dans votre shoutbox. Les autres utilisateurs ne verront rien :)"
+
+#: ../wordspew_admin.php:365
+msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
+msgstr "<b>Note:</b> Vous avez choisit d'afficher la shoutbox seulement aux :"
+
+#: ../wordspew_admin.php:366
+msgid "Please activate Javascript..."
+msgstr "Activez le Javascript SVP..."
+
+#: ../wordspew_admin.php:367
+msgid "in the list above,<br/>it will take precedence over the next option"
+msgstr "dans la liste ci-dessus,<br/>cela primera sur l'option suivante"
+
+#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:371
+msgid "Who can <b>see the shoutbox archives</b>"
+msgstr "Qui peut <b>voir les archives de la shoutbox</b>"
+
+#: ../wordspew_admin.php:391
+msgid "Choose who is able to see archive of the shoutbox"
+msgstr "Choisissez qui peut voir les archives de la shoutbox"
+
+#: ../wordspew_admin.php:394
+msgid "Who can see the differents themes"
+msgstr "Qui peut voir les différents thèmes"
+
+#: ../wordspew_admin.php:414
+msgid "Choose who is able to see the differents themes of your shoutbox"
+msgstr "Choisissez qui peut voir les différents thèmes de votre shoutbox"
+
+#: ../wordspew_admin.php:418
+msgid "Only allow registered users"
+msgstr "Seulement les utilisateurs enregistrés"
+
+#: ../wordspew_admin.php:420
+msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
+msgstr "Ceci vous permettra de ne laisser la possibilité de poster qu'aux utilisateurs enregistrés. Les utilisateurs qui ne sont PAS enregistrés pourront voir les messages dans la « boîte à cris » mais ne pourront pas y participer. Un message les préviendra qu'ils doivent être enregistré pour pouvoir l'utiliser."
+
+#: ../wordspew_admin.php:424
+msgid "Show users online"
+msgstr "Montrer les utilisateurs en ligne"
+
+#: ../wordspew_admin.php:426
+msgid "Check this if you want to show, in real time, users online"
+msgstr "Cochez cette case si vous souhaitez afficher, en temps réel, les utilisateurs en ligne"
+
+#: ../wordspew_admin.php:429
+msgid "Users to hide"
+msgstr "Utilisateurs à masquer"
+
+#: ../wordspew_admin.php:431
+msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
+msgstr "Placez ici, séparé par des virgules, les utilisateurs que vous souhaitez masquer de la fonction \"Utilisateurs en ligne\" de la shoutbox"
+
+#: ../wordspew_admin.php:434
+msgid "Use avatars"
+msgstr "Utiliser les avatars"
+
+#: ../wordspew_admin.php:436
+msgid "If checked, avatar will be shown."
+msgstr "Si coché les avatars seront affichés."
+
+#: ../wordspew_admin.php:437
+msgid "Avatar size"
+msgstr "Taille de l'avatar"
+
+#: ../wordspew_admin.php:439
+msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
+msgstr "Choisissez la taille des avatars. Les valeurs valides sont comprises entre 1 et 80. Toute autre taille que 80 affichera une image sous-échantillonée (pas propre quoi)"
+
+#: ../wordspew_admin.php:442
+msgid "Avatar position"
+msgstr "Position de l'avatar"
+
+#: ../wordspew_admin.php:444
+msgid "Left"
+msgstr "Gauche"
+
+#: ../wordspew_admin.php:445
+msgid "Right"
+msgstr "Droite"
+
+#: ../wordspew_admin.php:447
+msgid "Choose the alignement for avatars (left or right)"
+msgstr "Choisissez l'alignement des avatars (gauche ou droite)"
+
+#: ../wordspew_admin.php:452
+msgid "Save"
+msgstr "Sauver"
+
+#: ../wordspew_admin.php:453
+msgid "Delete ALL messages"
+msgstr "Effacer TOUS les messages"
+
+#: ../wordspew_admin.php:454
+msgid ""
+"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"Etes-vous sûr de vouloir effacer TOUS les messages de votre « boîte à cris ».\\n"
+"\\'Annuler\\' pour arrêter, \\'OK\\' pour effacer."
+
+#: ../wordspew_admin.php:460
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
+msgstr "<a href=\"%s\"><b>Cliquez-ici</b></a> pour gérer votre liste de mots bannis et les adresses IP."
+
+#: ../wordspew_admin.php:461
+msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
+msgstr "<b><font color=\"red\">Important !</font></b> Pour bannir une seule adresse IP cliquez sur le bouton \"Bannir cette IP\". Si vous souhaitez bannir un rang d'adresse IP, utilisez cette syntaxe (pour cet exemple je peux dire au revoir à Vsevolod Stetsinsky) : 195.225.176/179.* où le slash signifie de 176 à 179 et * de 0 à 255.<br/>Ainsi, je bannis les adresses IP de 195.225.176.0 à 195.225.179.255. Vous pouvez mélanger les deux options..."
+
+#: ../wordspew_admin.php:558
+#: ../wordspew_admin.php:626
+msgid "Cheatin' uh ?"
+msgstr "Bien essayé, tricheur !"
+
+#: ../wordspew_archive.php:83
+msgid "Archive for the shoutbox"
+msgstr "Archive de la shoutbox"
+
+#: ../wordspew_archive.php:105
+msgid "Click here to go to the Homepage"
+msgstr "Cliquez ici pour allez sur la page d'accueil du site"
+
+#: ../wordspew_archive.php:106
+msgid "Click here to refresh the page"
+msgstr "Cliquez ici pour rafraîchir la page"
+
+#: ../wordspew_archive.php:106
+msgid "Shoutbox archive"
+msgstr "Archive de la Shoutbox"
+
+#: ../wordspew_archive.php:117
+msgid "Date/Time"
+msgstr "Date/Heure"
+
+#: ../wordspew_archive.php:124
+msgid "IP"
+msgstr ""
+
+#: ../wordspew_archive.php:171
+msgid "Private"
+msgstr "Privé"
+
+#: ../wordspew_archive.php:173
+msgid "Private message"
+msgstr "Message privé"
+
+#: ../wordspew_archive.php:211
+msgid "records"
+msgstr "enregistrements"
+
+#: ../wordspew_archive.php:215
+msgid "Newer"
+msgstr "Plus récent"
+
+#: ../wordspew_archive.php:218
+msgid "Older"
+msgstr "Plus ancien"
+
+#~ msgid ""
+#~ "<div id=\"lastMessage\"><span>Last Message</span> <div id=\"responseTime"
+#~ "\">%s ago</div></div>"
+#~ msgstr ""
+#~ "<div id=\"lastMessage\"><span>Dernier Message</span> <div id="
+#~ "\"responseTime\">il y a %s</div></div>"
+#~ msgid "0 minute ago"
+#~ msgstr "il y a 0 minute"
+#~ msgid "The source ip of this comment was marked as spammer."
+#~ msgstr "L'adresse IP de ce commentaire a été marquée comme spammer."
+#~ msgid "Data"
+#~ msgstr "Données"
+#~ msgid "(showing the last <b>%s</b> messages)"
+#~ msgstr "(derniers <b>%s</b> messages)"
+#~ msgid ""
+#~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
+#~ "times. This is not live. New comments made while viewing this page will "
+#~ "not magically appear like they do in the real thing."
+#~ msgstr ""
+#~ "Rappel: Vous DEVEZ toujours avoir au moins 1 message dans votre « boîte à "
+#~ "cris ». Cette affichage n'est pas dynamique, si de nouveaux commentaires "
+#~ "sont faits il n'apparaîtront pas ici en temps réel."
+#~ msgid "The comment was deleted successfully."
+#~ msgstr "Le commentaire a bien été effacé."
+#~ msgid "The comment was edited successfully."
+#~ msgstr "Le commentaire a été édité avec succès."
+#~ msgid "Your shoutbox is blank. Add a message!"
+#~ msgstr "Tchatez en direct !!!"
+

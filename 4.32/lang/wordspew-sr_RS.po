@@ -1,0 +1,702 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pierre's Wordspew\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-05 13:32+0100\n"
+"PO-Revision-Date: 2009-10-05 13:32+0100\n"
+"Last-Translator: Pierre\n"
+"Language-Team: Pierre\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Serbian\n"
+"X-Poedit-Country: SERBIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ajax_admin.php:180
+#: ../wordspew_admin.php:509
+msgid "Ban this IP"
+msgstr "Забрани овај IP"
+
+#: ../ajax_admin.php:182
+#: ../ajax_shout.php:293
+#: ../wordspew.php:557
+#: ../wordspew_admin.php:513
+#: ../wordspew_archive.php:180
+msgid "Delete"
+msgstr "Обрисати"
+
+#: ../ajax_admin.php:184
+#: ../wordspew_admin.php:514
+msgid "Edit"
+msgstr "Уреди"
+
+#: ../ajax_admin.php:253
+#: ../ajax_archive.php:35
+#: ../ajax_shout.php:336
+msgid "Are you sure to delete the message:"
+msgstr ""
+
+#: ../ajax_admin.php:254
+#: ../ajax_archive.php:36
+#: ../ajax_shout.php:337
+msgid "'Cancel' to stop, 'OK' to delete."
+msgstr ""
+
+#: ../ajax_admin.php:291
+msgid "You're about to ban the following IP address:"
+msgstr ""
+
+#: ../ajax_admin.php:292
+msgid "'Cancel' to stop, 'OK' to ban."
+msgstr ""
+
+#: ../ajax_shout.php:63
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+msgid "link"
+msgstr "веза"
+
+#: ../ajax_shout.php:77
+#: ../wordspew-rss.php:113
+#: ../wordspew.php:529
+#: ../wordspew_archive.php:138
+#: ../wordspew_archive.php:148
+msgid "email"
+msgstr "email"
+
+#: ../ajax_shout.php:148
+msgid "Click here to expand/collapse the smiley's list"
+msgstr "кликни овде да прикажеш/сакријеш листу са емотиконима"
+
+#: ../ajax_shout.php:244
+#: ../wordspew-rss.php:63
+#: ../wordspew-rss.php:106
+#: ../wordspew.php:546
+#: ../wordspew_archive.php:165
+msgid "Private message for"
+msgstr ""
+
+#: ../common.php:25
+msgid "year"
+msgstr "година"
+
+#: ../common.php:25
+msgid "years"
+msgstr "године"
+
+#: ../common.php:26
+msgid "month"
+msgstr "месец"
+
+#: ../common.php:26
+msgid "months"
+msgstr "месеци"
+
+#: ../common.php:27
+msgid "week"
+msgstr "недеља"
+
+#: ../common.php:27
+msgid "weeks"
+msgstr "недеља"
+
+#: ../common.php:28
+msgid "day"
+msgstr "дан"
+
+#: ../common.php:28
+msgid "days"
+msgstr "дана"
+
+#: ../common.php:29
+msgid "hour"
+msgstr "сат"
+
+#: ../common.php:29
+msgid "hours"
+msgstr "сати"
+
+#: ../common.php:30
+#: ../wordspew.php:573
+msgid "minute"
+msgstr "минут"
+
+#: ../common.php:30
+msgid "minutes"
+msgstr "минута"
+
+#: ../usersonline.php:110
+msgid "No one online."
+msgstr "Нико није присутан."
+
+#: ../usersonline.php:111
+msgid "guest"
+msgstr "гост"
+
+#: ../usersonline.php:112
+msgid "guests"
+msgstr "гостију"
+
+#: ../usersonline.php:113
+msgid "and"
+msgstr "и"
+
+#: ../usersonline.php:114
+msgid "is crawling the site."
+msgstr "is crawling the site."
+
+#: ../usersonline.php:115
+msgid "are crawling the site."
+msgstr "are crawling the site."
+
+#: ../usersonline.php:116
+msgid "is online."
+msgstr "је присутан"
+
+#: ../usersonline.php:117
+msgid "are online."
+msgstr "су присутни."
+
+#: ../widgetized.php:20
+#: ../wordspew-rss.php:47
+#: ../wordspew-rss.php:128
+#: ../wordspew.php:53
+msgid "Wordspew-RSS-Feed for:"
+msgstr ""
+
+#: ../widgetized.php:40
+msgid "Title:"
+msgstr "Наслов:"
+
+#: ../wordspew.php:90
+#: ../wordspew.php:474
+msgid "Sorry, but you can post only one url by message..."
+msgstr "Нажалост, можете послати само једну адресу по поруци..."
+
+#: ../wordspew.php:107
+msgid "No, sorry you used a banned word!"
+msgstr "Не! Покушали сте да употребите забрањену реч!"
+
+#: ../wordspew.php:126
+msgid "No, sorry you used the name of a registered user! You have to change it please."
+msgstr "Не можете да користите име другог регистрованог корисника! "
+
+#: ../wordspew.php:472
+msgid "You should learn to count before use the shoutbox :)"
+msgstr "Морате научи сабирање пре него што се придружите :)"
+
+#: ../wordspew.php:473
+msgid "I DON'T LIKE SPAM !!!"
+msgstr "НЕ ДОЗВОЉАВАМО СПАМ !!!"
+
+#: ../wordspew.php:475
+msgid "Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster."
+msgstr "Ваша  IP адреса је блокирана на овом блогу. Ако мислите да је у потању грешка, молим контактирајте администратора."
+
+#: ../wordspew.php:509
+msgid "Click this to turn on/off sound"
+msgstr "Кликно да искључиш/укључиш звук"
+
+#: ../wordspew.php:513
+#: ../wordspew_archive.php:112
+#, php-format
+msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
+msgstr "<div id=\"Show_Spam\">%s spams blocked</div>"
+
+#: ../wordspew.php:520
+#: ../wordspew.php:573
+#: ../wordspew_admin.php:483
+#, fuzzy, php-format
+msgid "<div id=\"lastMessage\"><span>Last Message</span><br/><div id=\"responseTime\">%s</div>&nbsp;ago</div>"
+msgstr "<div id=\"lastMessage\"><span>Last Message</span> <em id=\"responseTime\">%s ago</em></div>"
+
+#: ../wordspew.php:537
+msgid "Info"
+msgstr "Информација"
+
+#: ../wordspew.php:537
+msgid "Please, resolve the addition below before post any new comment..."
+msgstr "Молим вас, саберите приказане бројеве пре него што напишете поруку..."
+
+#: ../wordspew.php:588
+#: ../wordspew_admin.php:473
+#: ../wordspew_archive.php:107
+msgid "Theme:"
+msgstr ""
+
+#: ../wordspew.php:591
+#: ../wordspew_admin.php:477
+#: ../wordspew_admin.php:479
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../wordspew.php:597
+msgid "New theme"
+msgstr ""
+
+#: ../wordspew.php:614
+#: ../wordspew.php:687
+msgid "Guest_"
+msgstr "Гост_"
+
+#: ../wordspew.php:624
+#: ../wordspew_archive.php:122
+msgid "Admin"
+msgstr "Админ"
+
+#: ../wordspew.php:630
+#: ../wordspew.php:680
+msgid "Archive"
+msgstr ""
+
+#: ../wordspew.php:636
+#: ../wordspew.php:656
+#: ../wordspew_archive.php:118
+msgid "Name"
+msgstr "Име"
+
+#: ../wordspew.php:645
+msgid "Captcha"
+msgstr "Captcha"
+
+#: ../wordspew.php:658
+msgid "URL/Email"
+msgstr "URL/Email"
+
+#: ../wordspew.php:662
+#: ../wordspew_archive.php:119
+msgid "Message"
+msgstr "Порука"
+
+#: ../wordspew.php:674
+msgid "Send"
+msgstr "Пошаљи"
+
+#: ../wordspew.php:685
+msgid "You must be a registered user to participate in this chat"
+msgstr "Морате бити регистровани корисник да би могли да користите чет"
+
+#: ../wordspew_admin.php:102
+msgid "Congratulations, you just completed the installation of this shoutbox."
+msgstr "Честитамо, управо сте завршили инсталацију shoutbox-а"
+
+#: ../wordspew_admin.php:227
+msgid "No Access for you!"
+msgstr "Вама је забрањен приступ!"
+
+#: ../wordspew_admin.php:232
+msgid "The shoutbox database has been wiped. You now have a fresh slate!"
+msgstr "База података је обрисана. Сада имате почетно стање."
+
+#: ../wordspew_admin.php:235
+msgid "Live Shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:236
+#, fuzzy, php-format
+msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
+msgstr "Jalenack's Live Shoutbox (Успешно <font color=\"red\">%s</font> спама блокирао)"
+
+#: ../wordspew_admin.php:237
+msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
+msgstr "Након промене времена и боја морате освежити/испразнити кеш да би промене биле приказане."
+
+#: ../wordspew_admin.php:240
+#, php-format
+msgid "There have been <b>%s</b> messages in this shoutbox"
+msgstr "Било је <b>%s</b> порука."
+
+#: ../wordspew_admin.php:243
+msgid "Colors (Must be 6 digit hex)"
+msgstr "Боје (мора бити шестоцифрен хексадецимални број)"
+
+#: ../wordspew_admin.php:246
+msgid "Fade from"
+msgstr "Бледети од"
+
+#: ../wordspew_admin.php:249
+msgid "The color that new messages fade in from. Default"
+msgstr "Боја нове поруке од које бледи. Стандардно"
+
+#: ../wordspew_admin.php:252
+msgid "Fade to"
+msgstr "Бледети ка"
+
+#: ../wordspew_admin.php:255
+#, fuzzy
+msgid "Also used as the background color of the box. Default"
+msgstr "Такође искоришћена као позадинска боја. Стандардно:  FFFFFF (бела)"
+
+#: ../wordspew_admin.php:258
+msgid "Text Color"
+msgstr "Боја текста"
+
+#: ../wordspew_admin.php:261
+msgid "The color of text within the box. Default"
+msgstr "Боја текста. Подразумевана"
+
+#: ../wordspew_admin.php:264
+msgid "Name Color"
+msgstr "Име боје"
+
+#: ../wordspew_admin.php:267
+msgid "The color of peoples' names. Default"
+msgstr "Боја имена корисника. Подразумевана"
+
+#: ../wordspew_admin.php:274
+#, fuzzy
+msgid "Others"
+msgstr "Друго"
+
+#: ../wordspew_admin.php:276
+msgid "Show"
+msgstr "Прокажи"
+
+#: ../wordspew_admin.php:277
+msgid "comments in the shoutbox"
+msgstr "порука"
+
+#: ../wordspew_admin.php:278
+msgid "Enter, here, the number of shouts you want to show in your shoutbox"
+msgstr "Унеси број порука које желиш да прикажеш"
+
+#: ../wordspew_admin.php:279
+msgid "Update Every"
+msgstr "Освежи сваких"
+
+#: ../wordspew_admin.php:280
+#: ../wordspew_admin.php:283
+msgid "Seconds"
+msgstr "секунде"
+
+#: ../wordspew_admin.php:281
+msgid "This determines how \"live\" the shoutbox is. With a bigger number, it will take more time for messages to show up, but also decrease the server load. You may use decimals. This number is used as the base for the first 8 javascript loads. After that, the number gets successively bigger. Adding a new comment or mousing over the shoutbox will reset the interval to the number suplied above. Default: 4 Seconds"
+msgstr "Одређује колико је \"жив\" shoutbox. Са већим бројем потребно је више времена за приказ поруке, али истовремено смањује оптерећење сервера. Можете користити децимале. Овај број се узима као основа за првих 8 учитавања јава скрипта. Након тога, број се постепено увећава. Додавање нове поруке или прелазак миша преко  shoutbox-а ресетују на почетну вредност. Типично: 4 секунде."
+
+#: ../wordspew_admin.php:282
+msgid "Fade Length"
+msgstr "трајање изблеђивања"
+
+#: ../wordspew_admin.php:284
+msgid "The amount of time it takes for the fader to completely blend with the background color. You may use decimals. Default 1.5 seconds"
+msgstr "Време неопходно да изблеђивање у потпуности дође до боје позадине. Можете користити децимале. Стандардно је 1,5 секунди."
+
+#: ../wordspew_admin.php:285
+msgid "Use textarea"
+msgstr "Користи текстуално поље"
+
+#: ../wordspew_admin.php:287
+msgid "A textarea is a bigger type of input box. Users will have more room to type their comments, but it will take up more space."
+msgstr "Поље за текст је веће поље за унос. Корисници имају више простора за текст поруке, али заузима више простора."
+
+#: ../wordspew_admin.php:288
+msgid "Use URL field"
+msgstr "Користи URL поље"
+
+#: ../wordspew_admin.php:290
+msgid "Check this if you want users to have an option to add their URL when submitting a message."
+msgstr "Означите ако желите да корисници имају мофућност да додају URL када шаљу поруку"
+
+#: ../wordspew_admin.php:291
+msgid "Use sound alert"
+msgstr "Користи звучно упозорење"
+
+#: ../wordspew_admin.php:293
+msgid "Check this if you want to hear a sound alert when someone post message"
+msgstr "Означи ако желиш звучно упозорење када неко пошаље поруку"
+
+#: ../wordspew_admin.php:294
+msgid "Show smileys list"
+msgstr "Прикажи емотиконе"
+
+#: ../wordspew_admin.php:296
+msgid "Check this if you want to show the smileys list"
+msgstr "Означи ако желишда прикажеш листу са емотиконима."
+
+#: ../wordspew_admin.php:297
+msgid "Show blocked spams"
+msgstr "Прикажи блокирани спам"
+
+#: ../wordspew_admin.php:299
+msgid "Check this if you want to show blocked spams"
+msgstr "Означи ако желиш приказ блокираног спама"
+
+#: ../wordspew_admin.php:300
+msgid "Use a captcha"
+msgstr "Користи captcha"
+
+#: ../wordspew_admin.php:302
+msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
+msgstr "Означи ако желиш да користиш captcha (суштински прост задатак који корисник мора да реши пре писања поруке)."
+
+#: ../wordspew_admin.php:303
+msgid "Use Themes"
+msgstr ""
+
+#: ../wordspew_admin.php:305
+#, fuzzy
+msgid "Check this if you want to use themes."
+msgstr "Означи ако желишда прикажеш листу са емотиконима."
+
+#: ../wordspew_admin.php:306
+#, fuzzy
+msgid "Use the RSS feed"
+msgstr "Користи URL поље"
+
+#: ../wordspew_admin.php:308
+#, fuzzy
+msgid "Check this if you want that users can show and/or use the RSS feed of the shoutbox."
+msgstr "Означи ако желиш звучно упозорење када неко пошаље поруку"
+
+#: ../wordspew_admin.php:309
+msgid "XHTML strict"
+msgstr "XHTML стриктно"
+
+#: ../wordspew_admin.php:311
+msgid "Check this if you want to use XHTML strict"
+msgstr "Означи ако желиш да користиш стриктно XHTML"
+
+#: ../wordspew_admin.php:317
+msgid "Users options"
+msgstr ""
+
+#: ../wordspew_admin.php:321
+msgid "<b>Who can administrate the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:333
+#: ../wordspew_admin.php:355
+#: ../wordspew_admin.php:382
+#: ../wordspew_admin.php:405
+msgid "level"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+msgid "Choose the level required to administrate the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:340
+#, fuzzy, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> if you need more information on Roles and Capabilities."
+msgstr "<a href=\"%s\"><b>Кликни овде</b></a> да уредиш листу забрањених речи и IP адреса."
+
+#: ../wordspew_admin.php:344
+msgid "Who can <b>see the shoutbox</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:360
+#: ../wordspew_admin.php:387
+#: ../wordspew_admin.php:410
+msgid "Everybody"
+msgstr ""
+
+#: ../wordspew_admin.php:364
+msgid "Choose, here, users able to <strong>see and post</strong> in your shoutbox. Other users will simply view nothing :)"
+msgstr ""
+
+#: ../wordspew_admin.php:365
+msgid "<b>Note:</b> You have choose to show the shoutbox only to :"
+msgstr ""
+
+#: ../wordspew_admin.php:366
+msgid "Please activate Javascript..."
+msgstr ""
+
+#: ../wordspew_admin.php:367
+msgid "in the list above,<br/>it will take precedence over the next option"
+msgstr ""
+
+#: ../wordspew_admin.php:367
+#: ../wordspew_admin.php:371
+msgid "Who can <b>see the shoutbox archives</b>"
+msgstr ""
+
+#: ../wordspew_admin.php:391
+msgid "Choose who is able to see archive of the shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:394
+msgid "Who can see the differents themes"
+msgstr ""
+
+#: ../wordspew_admin.php:414
+msgid "Choose who is able to see the differents themes of your shoutbox"
+msgstr ""
+
+#: ../wordspew_admin.php:418
+msgid "Only allow registered users"
+msgstr "Само регистровани корисници"
+
+#: ../wordspew_admin.php:420
+#, fuzzy
+msgid "This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment."
+msgstr "Ова опција дозвољава само регистрованим корисницима да шаљу поруке. Корисници који нису пријављени могу само да посматрају. <b>Пажња:</b> ово није потпуно \"заштићено\"... Ако  неко заиста жели, у могућности је да помоћу скрипте са директном интеракцијом заобиђе ову заштиту."
+
+#: ../wordspew_admin.php:424
+msgid "Show users online"
+msgstr "Покажи присутне кориснике"
+
+#: ../wordspew_admin.php:426
+msgid "Check this if you want to show, in real time, users online"
+msgstr "Означи ако желиш у реалном времену приказ ко је присутан од корисника."
+
+#: ../wordspew_admin.php:429
+msgid "Users to hide"
+msgstr ""
+
+#: ../wordspew_admin.php:431
+msgid "Place here, separated by comma, users that you want to hide from the \"Users online\" function of the shoutbox."
+msgstr ""
+
+#: ../wordspew_admin.php:434
+#, fuzzy
+msgid "Use avatars"
+msgstr "Користи captcha"
+
+#: ../wordspew_admin.php:436
+msgid "If checked, avatar will be shown."
+msgstr ""
+
+#: ../wordspew_admin.php:437
+msgid "Avatar size"
+msgstr ""
+
+#: ../wordspew_admin.php:439
+msgid "Choose the size for the avatars. Valid values are from 1 to 80 inclusive. Any size other than 80 will cause the original Gravatar image to be downsampled using bicubic resampling before output"
+msgstr ""
+
+#: ../wordspew_admin.php:442
+msgid "Avatar position"
+msgstr ""
+
+#: ../wordspew_admin.php:444
+msgid "Left"
+msgstr ""
+
+#: ../wordspew_admin.php:445
+msgid "Right"
+msgstr ""
+
+#: ../wordspew_admin.php:447
+msgid "Choose the alignement for avatars (left or right)"
+msgstr ""
+
+#: ../wordspew_admin.php:452
+msgid "Save"
+msgstr "Сачувај"
+
+#: ../wordspew_admin.php:453
+msgid "Delete ALL messages"
+msgstr "Обриши СВЕ поруке"
+
+#: ../wordspew_admin.php:454
+msgid ""
+"You are about to delete ALL messages in the shoutbox. It will completely erase all messages.\\n"
+"Are you sure you want to do this?\\n"
+"\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"Овим ћете комплетно обрисати СВЕ поруке у shoutbox-у. \\Да ли сте сигурни?\\n"
+"\\'Cancel\\' за одустајање, \\'OK\\' за брисање."
+
+#: ../wordspew_admin.php:460
+#, php-format
+msgid "<a href=\"%s\"><b>Click here</b></a> to manage your banned words list and IP addresses."
+msgstr "<a href=\"%s\"><b>Кликни овде</b></a> да уредиш листу забрањених речи и IP адреса."
+
+#: ../wordspew_admin.php:461
+msgid "<b><font color=\"red\">Important !</font></b> To ban a single IP address just click on \"Ban this IP\" button. If you want to ban a range of IP, use this syntax (for this example i can say good bye to Vsevolod Stetsinsky) : 195.225.176/179.* where slash means from 176 to 179 and * from 0 to 255.<br/>BTW i ban IP addresses from 195.225.176.0 to 195.225.179.255. You can mix the two options..."
+msgstr "<b><font color=\"red\">Важно !</font></b> Да забраните неку IP кликните на \"Ban this IP\" дугме. Ако желите да забраните ранг IP адреса, користите (овим примером рећи ћемо збогом Vsevolod-у Stetsinsky-ом) : 195.225.176/179.* где коса црта значи од 176 to 179 а * од 0 до 255.<br/>Тако су ѕабрањенњ свњ адресе између 195.225.176.0 и 195.225.179.255. Можете корисити комбинацију ових могућности..."
+
+#: ../wordspew_admin.php:558
+#: ../wordspew_admin.php:626
+msgid "Cheatin' uh ?"
+msgstr "Cheatin' uh ?"
+
+#: ../wordspew_archive.php:83
+#, fuzzy
+msgid "Archive for the shoutbox"
+msgstr "порука"
+
+#: ../wordspew_archive.php:105
+msgid "Click here to go to the Homepage"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Click here to refresh the page"
+msgstr ""
+
+#: ../wordspew_archive.php:106
+msgid "Shoutbox archive"
+msgstr ""
+
+#: ../wordspew_archive.php:117
+msgid "Date/Time"
+msgstr ""
+
+#: ../wordspew_archive.php:124
+msgid "IP"
+msgstr ""
+
+#: ../wordspew_archive.php:171
+msgid "Private"
+msgstr ""
+
+#: ../wordspew_archive.php:173
+msgid "Private message"
+msgstr ""
+
+#: ../wordspew_archive.php:211
+#, fuzzy
+msgid "records"
+msgstr "секунде"
+
+#: ../wordspew_archive.php:215
+msgid "Newer"
+msgstr ""
+
+#: ../wordspew_archive.php:218
+#, fuzzy
+msgid "Older"
+msgstr "Друго"
+
+#~ msgid "0 minute ago"
+#~ msgstr "пре 0 минута"
+#~ msgid "The comment was deleted successfully."
+#~ msgstr "Коментар је обрисан у потпуности."
+#~ msgid "The comment was edited successfully."
+#~ msgstr "Коментар је успешно измењен."
+#~ msgid "The source ip of this comment was marked as spammer."
+#~ msgstr "Долазећа интернет адреса је означена као спамер."
+#~ msgid "Enter here your secret sentence"
+#~ msgstr "Унеси скривену сентенцу"
+#~ msgid "Hide users list"
+#~ msgstr "Сакри листу корисника"
+#~ msgid ""
+#~ "Check this if you want to hide users list from document header in the "
+#~ "javascript function. It permit to not expose your users list from a "
+#~ "\"view source\"."
+#~ msgstr ""
+#~ "Означи ако желиш да сакријеш листу корисника у заглављу -функција  јава "
+#~ "скрипте.Ово омогућава да не прикажете листу корисника из \"view source\"."
+#~ msgid "Data"
+#~ msgstr "Подаци"
+#~ msgid "(showing the last <b>%s</b> messages)"
+#~ msgstr "(приказује последњих <b>%s</b> порука)"
+#~ msgid ""
+#~ "Reminder: You MUST have at LEAST one comment in your shoutbox at all "
+#~ "times. This is not live. New comments made while viewing this page will "
+#~ "not magically appear like they do in the real thing."
+#~ msgstr ""
+#~ "Упамтите: МОРАТЕ увек имати БАР ЈЕДНУ поруку у shoutbox-у, иначе није "
+#~ "видљив. "
+#~ msgid "Your secret sentence"
+#~ msgstr "Ваша скривена сентенца"
+#~ msgid "Your shoutbox is blank. Add a message!"
+#~ msgstr "Нисте ништа написали! Морате унети текст!"
+
