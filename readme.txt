@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 1.5
 Tested up to: 2.8.4
-Stable tag: trunk
+Stable tag: 4.4
 
 A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
 
@@ -36,8 +36,7 @@ Features:
 
 1. Upload the folder `pierres-wordspew` to your `/wp-content/plugins/` directory
 2. Activate the plugin through the "Plugins" menu in WordPress
-3. Use the Widget interface to place the shoutbox where you want it. Otherwise, if you use an old version of WP (before 2.x) call the function (usually in sidebar.php) by this way : 
-`<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
+3. Use the Widget interface to place the shoutbox where you want it. Otherwise, if you use an old version of WP (before 2.x) call the function (usually in sidebar.php) by this way : `<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
  
 
 == Frequently Asked Questions ==
