@@ -10,7 +10,7 @@ A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat f
 
 == Description ==
 
-The shoutbox add a chat functionality to your blog and permit to easily interact with your users/visitors. It uses the Fade Anything Technique for extra glamour
+The shoutbox add a chat functionality to your blog and permit to easily interact with your users/visitors. It uses the Fade Anything Technique for extra glamour.
 
 Features:
 --------
