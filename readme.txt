@@ -34,8 +34,8 @@ Features:
 
 == Installation ==
 
-1. Upload the folder `pierres-wordspew` to your `/wp-content/plugins/` directory
-2. Activate the plugin through the "Plugins" menu in WordPress
+1. Upload the folder `pierres-wordspew` to your `/wp-content/plugins/` directory,
+2. Activate the plugin through the "Plugins" menu in WordPress,
 3. Use the Widget interface to place the shoutbox where you want it. Otherwise, if you use an old version of WP (before 2.x) call the function (usually in sidebar.php) by this way : `<?php if(function_exists(jal_get_shoutbox)) { jal_get_shoutbox(); } ?>`
  
 
