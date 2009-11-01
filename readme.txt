@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 1.5
 Tested up to: 2.8.4
-Stable tag: 4.40
+Stable tag: trunk
 
 A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
 
