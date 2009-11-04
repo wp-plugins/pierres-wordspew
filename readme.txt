@@ -135,6 +135,10 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 4.5 =
+* Added the possibility to select precisely who will be able to **use** the shoutbox. Selected users will be able to see and participate to chat, other users will simply view the discussion.
+* **TO ALL** : Think to verify **who is able to post messages in the shoutbox**, because in the update process, only "Subscribers" will be able to do it. You'll, perhaps, have to change it ;).
+
 = 4.40 =
 * Added Portuguese and Polish translations. Thanks to [eLias](http://www.jokerpt.com/) for Portuguese and [Kamil](http://blumare.pl/) for Polish :).
 * You have now the possibility to empty the selected archive in the admin interface.

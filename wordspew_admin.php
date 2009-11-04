@@ -4,11 +4,11 @@ Plugin Name: Pierre's Wordspew
 Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
-Version: 4.40
+Version: 4.5
 Author URI: http://pierre.dommiers.com/
 */
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "4.40";
+$jal_version = "4.5";
 
 include_once ('common.php');
 include_once ('usersonline.php');
@@ -122,7 +122,7 @@ global $jal_table_prefix, $wpdb, $user_level, $wp_version;
 			'name_color' => (get_option('shoutbox_name_color')!="") ? get_option('shoutbox_name_color') : '0066CC',
 			'use_url' => (get_option('shoutbox_use_url')=="true") ? 1 : 0,
 			'use_textarea' => (get_option('shoutbox_use_textarea')=="true") ? 1 : 0,
-			'registered_only' => (get_option('shoutbox_registered_only')!="") ? intval(get_option('shoutbox_registered_only')) : 0,
+			'registered_only' => -1,
 			'use_sound' => (get_option('shoutbox_sound')!="") ? intval(get_option('shoutbox_sound')) : 0,
 			'xhtml' => (get_option('shoutbox_XHTML')!="") ? intval(get_option('shoutbox_XHTML')) : 0,
 			'show_user_online' => (get_option('shoutbox_online')!="") ? intval(get_option('shoutbox_online')) : 0,
@@ -322,10 +322,7 @@ global $wpdb, $user_level, $jal_table_prefix, $nb, $jal_version, $wp_roles, $wp_
 	<br/><?php _e('If you use the term:',wordspew);?> @pages(linked) <?php _e('It meens that you want to use a specific shoutbox on <b>EACH</b> page.',wordspew);?>
 	<br/><?php _e('You can use these 2 keywords with :',wordspew);?> <b>@pages, @single, @archives</b> (<?php printf(__('only %s, here',wordspew),'rubric');?>), <b>@category</b>.
 	<br/><?php _e('Finally, if you want to use the shoutbox in a page template you\'ve done by yourself, enter : ',wordspew);?> @page[<?php _e('The name of your page',wordspew);?>].
-	
-	
 	</div>
-
 	</div>
 	</fieldset>
 	<br />
@@ -383,6 +380,27 @@ global $wpdb, $user_level, $jal_table_prefix, $nb, $jal_version, $wp_roles, $wp_
 	<span id="From_List" style="font-weight:bold"><noscript><?php _e('Please activate Javascript...',wordspew);?></noscript></span>
 	<?php _e('in the list above,<br/>it will take precedence over the next option',wordspew);?> (<em><?php _e('Who can <b>see the shoutbox archives</b>',wordspew);?></em>).</div>
 	</div>
+	
+	<?php _e('Who can <b>use the shoutbox</b>',wordspew);?>: <select id="registered_only" name="registered_only">
+	<?php
+	if($wp_roles) {
+		$array_box=array();
+		foreach($wp_roles->role_names as $roledex => $rolename) {
+			$role = $wp_roles->get_role($roledex);
+			$role_user_level = array_reduce(array_keys($role->capabilities), array('WP_User', 'level_reduction'), 0);
+			if(!in_array($role_user_level, $array_box)) {
+				array_push($array_box, $role_user_level);
+				$selected=($shout_opt['registered_only']==$role_user_level) ? ' selected="true"' : '';
+				echo '<option value="'.$role_user_level.'"'.$selected.'>'.$rolename.' ('.__("level",wordspew) .' '. $role_user_level.')</option>
+	';
+			}
+		}
+		$selected=($shout_opt['registered_only']==-1) ? ' selected="true"' : '';
+		echo '<option value="-1"'.$selected.'>'.__("Everybody",wordspew).'</option>';
+	}
+	?>
+	</select>
+	<div class="SousRub"><?php _e('Choose, here, users able to <strong>post messages</strong> in your shoutbox. Other users will simply view the discussion.',wordspew);?></div>
 
 	<?php
 	_e('Who can <b>see the shoutbox archives</b>',wordspew);?>: 
@@ -429,12 +447,8 @@ global $wpdb, $user_level, $jal_table_prefix, $nb, $jal_version, $wp_roles, $wp_
 	?>
 	</select>
 	<div class="SousRub"><?php _e('Choose who is able to see the differents themes of your shoutbox',wordspew);?>.</div>
+
 <?php }; ?>
-
-
-	<div id="div_Registered_Only"><?php _e('Only allow registered users',wordspew);?>: <input type="checkbox" id="registered_only" name="registered_only" onclick="disable_enable('registered_only', 'level_for_shoutbox', false);"<?php 
-	if($shout_opt['registered_only'] == '1') echo ' checked="checked" '; ?>/>
-	<div class="SousRub"><?php _e('This will only let your registered users use the form that allows one to type messages. Users who are NOT logged in will be able to watch the chat and a message saying they must be logged in to comment.',wordspew);?></div></div>
 
 	<hr/>
 
@@ -598,7 +612,7 @@ global $wpdb, $jal_table_prefix, $user_level;
 
 	$shout_opt['use_url'] 			= ($_GET['use_url']) ? 1 : 0;
 	$shout_opt['use_textarea'] 		= ($_GET['use_textarea']) ? 1 : 0;
-	$shout_opt['registered_only']	= ($_GET['registered_only']) ? 1 : 0;
+	$shout_opt['registered_only']	= ($_GET['registered_only']!="") ? intval($_GET['registered_only']) : -1;
 	$shout_opt['use_sound'] 		= ($_GET['use_sound']) ? 1 : 0;
 	$shout_opt['xhtml']				= ($_GET['XHTML']) ? 1 : 0;
 	$shout_opt['show_user_online']	= ($_GET['Show_Users']) ? 1 : 0;

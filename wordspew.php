@@ -495,7 +495,7 @@ if ($user_level >= $show_to_level || $current==1) {
 
 	// Will only add the last message div if it is looping for the first time
 	$jal_first_time = true;
-	$registered_only = ($shout_opt['registered_only'] == '1') ? TRUE : FALSE;
+	$registered_only = (intval($user_level) >= $shout_opt['registered_only']) ? false : true;
 
 	$rand1=mt_rand(0,10);
 	$rand2=mt_rand(0,10);
@@ -612,7 +612,7 @@ if ($user_level >= $show_to_level || $current==1) {
 <?php
 	$hashtext = $_SESSION['hashtext'];
 
-	if (!$registered_only || ($registered_only && $user_ID)) {
+	if (!$registered_only) {
 	$display_name=($_COOKIE['jalUserName']) ? $_COOKIE['jalUserName'] : __("Guest_",wordspew).rand(0,5000);
 	$display_name=str_replace("\'", "'", $display_name);
 	?>
@@ -684,7 +684,7 @@ else {
 	}
 ?>
 	<form id="chatForm" action="">
-	<p align="center"><?php _e('You must be a registered user to participate in this chat',wordspew); ?></p>
+	<p align="center"><?php _e('You don\'t have sufficient rights to participate to this chat',wordspew); ?></p>
 	<input type="hidden" name="shoutboxOp" id="shoutboxOp" value="<?php echo $total; ?>"/>
 	<input type="hidden" id="shoutboxname" value="<?php echo __("Guest_",wordspew).rand(0,5000); ?>"/>
 	<input type="hidden" id="shoutboxU"/>

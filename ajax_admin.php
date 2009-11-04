@@ -35,7 +35,6 @@ else if(typeof window.attachEvent != 'undefined') {
 function initJavaScript() {
 	disable_enable("Show_Users", "HideUsers", true);
 	disable_enable("level_for_shoutbox", "registered_only", false);
-	disable_enable("registered_only", "level_for_shoutbox", false);
 	disable_enable("Use_Theme", "Show_themes_to", true);
 	from=true;
 
@@ -66,16 +65,12 @@ if(document.getElementById(objCheckbox) && document.getElementById(objTextfield)
 
 		if(document.getElementById(objCheckbox).value==-1) {
 			document.getElementById("Info").style.display="none";
-			document.getElementById("div_Registered_Only").style.display=""
 			}
 		else {
-			if(look > arch) {
+			if(look > arch)
 				document.getElementById("Info").style.display="";
-			}
-			else {
+			else
 				document.getElementById("Info").style.display="none";
-			}
-			document.getElementById("div_Registered_Only").style.display="none";
 			}
 		}
 	else
