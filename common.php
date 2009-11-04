@@ -82,14 +82,14 @@ function verifyName($name) {
    $loggedUsers = (!is_array($_SESSION['LoggedUsers'])) ? explode(',',$_SESSION['LoggedUsers']) : $_SESSION['LoggedUsers'];
    return in_array(strtolower($name), array_map('strtolower', $loggedUsers));
 }
-$myvaleur=0;
+$myval=0;
 function where_shout($where, $myBool) {
-global $shout_where, $myvaleur;
+global $shout_where, $myval;
 
-if($myvaleur==1) return true;
-if($myvaleur==2) return false;
+if($myval==1) return true;
+if($myval==2) return false;
 
-$myvaleur=1;
+$myval=1;
 	if($where!="") {
 		$where=strtolower($where);
 		$shout_where="";
@@ -106,11 +106,11 @@ $myvaleur=1;
 			if(strpos($where,"@page[")!==false) {
 				$myBoolPage=in_array(strtolower("@page[".$TitrePage."]"), explode(', ',$where));
 				if($myBoolPage && $myBool) {
-					$myvaleur=2; 
+					$myval=2; 
 					return true;
 				}
 				elseif(!in_array(strtolower($TitrePage), explode(', ',$where)) && strpos($where,"@pages")===false) {
-					$myvaleur=2;
+					$myval=2;
 					return false;
 				}
 			}
@@ -136,7 +136,7 @@ $myvaleur=1;
 			$shout_where=single_post_title('',false);
 			$myBoolPage=in_array(strtolower($shout_where), explode(', ',$where));
 			if($myBoolPage) return true;
-			$myvaleur=2;
+			$myval=2;
 			return false;
 		}
 	}

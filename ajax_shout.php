@@ -162,6 +162,7 @@ function ResetChrono() {
 	}
 	jal_timeout = jal_org_timeout;
 }
+
 function appendSmiley(text) {
 	chatbarText.value+=' '+text;
 	chatbarText.focus();
@@ -348,6 +349,7 @@ function delChild(id) {
 	var enfant = document.getElementById("comment-new"+id); 
 	var anciennoeud = outputList.removeChild(enfant);
 }
+
 // Piece of code from "TinyMCE Advanced" plugin. Thanks to -> Andrew Ozz : http://www.laptoptips.ca/
 function onBlurEditableSelectInput () {
 MyCat=document.getElementById("shout_cat_theme");
