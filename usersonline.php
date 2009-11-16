@@ -23,7 +23,7 @@ function jal_get_useronline_engine($usertimeout = 60) {
 	@mysql_query("SET NAMES utf8", $conn);
 
 	// Search Bots
-	$bots = array('Google' => 'googlebot', 'MSN' => 'msnbot', 'Alex' => 'ia_archiver', 'Lycos' => 'lycos', 'Ask Jeeves' => 'askjeeves', 'Altavista' => 'scooter', 'AllTheWeb' => 'fast-webcrawler', 'Inktomi' => 'slurp@inktomi', 'Turnitin.com' => 'turnitinbot');
+	$bots = array('Google' => 'googlebot', 'Bing' => 'msnbot', 'Alex' => 'ia_archiver', 'Lycos' => 'lycos', 'Ask Jeeves' => 'askjeeves', 'Altavista' => 'scooter', 'AllTheWeb' => 'fast-webcrawler', 'Inktomi' => 'slurp@inktomi', 'Turnitin.com' => 'turnitinbot');
 
 	// Useronline Settings
 	$timeoutseconds = $usertimeout;
@@ -123,7 +123,7 @@ if($_SESSION['Show_Users']==1) {
 	$b = $array["bots"];
 
 	/* desired verbiage: */
-	/* "Pierre, Framboise and 2 guests online.  Google, Inktomi are crawling the site." */
+	/* "Pierre, Framboise and 2 guests online.  Google is crawling the site." */
 	/* "Pierre, Framboise and 1 guest online.  Google, Inktomi are crawling the site." */
 
 	/* thus we get an array with nicknames and a string describing the number of guests */

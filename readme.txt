@@ -3,7 +3,7 @@ Contributors: Pierre Sudarovich
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8487949
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 1.5
-Tested up to: 2.8.4
+Tested up to: 2.8.5
 Stable tag: trunk
 
 A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
@@ -134,6 +134,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 
 == Changelog ==
+
+= 4.51 =
+* Changed MSN to Bing to reflect the new name of Microsoft bot.
 
 = 4.50 =
 * Added the possibility to select precisely who will be able to **use** the shoutbox. Selected users will be able to see and participate to chat, other users will simply view the discussion.
