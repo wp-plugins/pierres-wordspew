@@ -10,7 +10,6 @@ if (!isset($table_prefix)) {
 	$html = str_replace ("<?php", "", $html);
 	eval($html);
 }
-$jal_table_prefix = $table_prefix;
 
 // Register globals - Thanks Karan et Etienne
 $jal_lastID    = isset($_GET['jal_lastID']) ? $_GET['jal_lastID'] : "";
@@ -23,6 +22,7 @@ $jalGetChat    = isset($_GET['jalGetChat']) ? $_GET['jalGetChat'] : "";
 $jalSendChat   = isset($_GET['jalSendChat']) ? $_GET['jalSendChat'] : "";
 $mode=isset($_POST['mode']) ? $_POST['mode'] : "";
 $delID=isset($_POST['id']) ? $_POST['id'] : "";
+$shout_tb= isset($_GET['tb']) ? $_GET['tb'] : $_SESSION['tb_prefix'];
 
 if (isset($_POST['shout_cat']))
 	$shout_cat=$_POST['shout_cat'];
@@ -33,7 +33,7 @@ else
 
 // function to print the external javascript and css links
 function jal_add_to_head () {
-global $jal_version, $jal_table_prefix, $jal_admin_user_level, $user_ID, $user_email, $user_level, $wpdb, $show, $size, $position, $wp_version, $shout_opt, $user_identity, $user_nickname, $theuser_nickname;
+global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, $wpdb, $show, $size, $position, $wp_version, $shout_opt, $user_identity, $user_nickname, $theuser_nickname, $shout_tb;
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
@@ -92,7 +92,7 @@ if(count_http>limit) {
 }
 theText+=\' \'+theURL;';
 	$spam=get_option('moderation_keys');
-	$_SESSION['badwords']=$spam;
+	$_SESSION['badwords'.$shout_tb]=$spam;
 
 	if($spam!="") {
 		$spam = str_replace("'", "\'", $spam);
@@ -120,14 +120,14 @@ return true;
 			$users = str_replace(", ", ",", $users);
 			$UsersToHide = stripslashes($users);
 
-			$_SESSION['HideUsers']=explode(",",strtolower($UsersToHide));
+			$_SESSION['HideUsers'.$shout_tb]=explode(",",strtolower($UsersToHide));
 			$_SESSION['CurrentUser']=$user_email;
 			$_SESSION['CookieHash']=COOKIEHASH;
 			$_SESSION['LoggedMsg']=__('No, sorry you used the name of a registered user! You have to change it please.',wordspew);
 
 			if(!isset($_SESSION['LoggedUsers'])) {
 				$column = (floatval($wp_version) > '1.5') ? "display_name" : "user_nickname";
-				$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$jal_table_prefix."users");
+				$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$wpdb->users);
 				$_SESSION['LoggedUsers']=$LoggedUsers;
 			}
 		}
@@ -152,8 +152,7 @@ if ($jalGetChat == "yes") {
 
 // Where the shoutbox receives information
 function jal_getData ($jal_lastID, $cat="") {
-global $jal_table_prefix;
-
+global $shout_tb;
 $who=($_SESSION['Show_Users']==0) ? "" : jal_get_useronline_extended();
 
 if(isset($_SESSION['spam_msg'])) {
@@ -165,11 +164,12 @@ else {
 	mysql_select_db(DB_NAME, $conn);
 	@mysql_query("SET CHARACTER SET 'utf8'", $conn);
 	@mysql_query("SET NAMES utf8", $conn);
-	$sql = "SELECT * FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."' AND id > ".$jal_lastID;
+	$sql = "SELECT * FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."' AND id > ".$jal_lastID;
 	$sql.=" ORDER BY id DESC";
 	$results = mysql_query($sql, $conn);
 	$loop = "";
-$first=0;
+	$first=0;
+
 	while ($row = mysql_fetch_array($results)) {
 		$id   = $row[0];
 		$time = jal_time_since($row[1]); if($first==0) $_SESSION['Chrono']=$row[1];
@@ -177,7 +177,7 @@ $first=0;
 		$text = $row[3];
 		$url  = $row[4];
 		$email= ($row[6]!="") ? md5($row[6]) : "";
-		$ip = isset($_SESSION['isAdmin']) ? $row[5] :" ";
+		$ip = isset($_SESSION['isAdmin'.$shout_tb]) ? $row[5] :" ";
 		if(verifyName($name))
 			$user=1;
 		else
@@ -198,7 +198,7 @@ function jal_special_chars ($s) {
 }
 
 function check_ip_address($from, $checkip) {
-global $spam_msg;
+global $spam_msg, $shout_tb;
 
 	$checkip=trim($checkip);
 	if(strpos($checkip,"*") || strpos($checkip,"/")) {
@@ -226,7 +226,7 @@ global $spam_msg;
 }
 
 function CheckSpam($theText,$TheURL) {
-global $spam_msg, $jal_table_prefix, $ip;
+global $spam_msg, $ip, $shout_tb;
 
 $count_http=substr_count($theText,"http");
 if($count_http>1) {
@@ -241,7 +241,7 @@ if($count_content_type>=1) {
 
 $theText.=$TheURL;
 $ip = $_SERVER['REMOTE_ADDR'];
-$spam=$_SESSION['badwords'];
+$spam=$_SESSION['badwords'.$shout_tb];
 $spam=explode("\r\n",strtolower($spam));
 if($spam[0]!="") {
 	for($i=0;$i<@count($spam);$i++) {
@@ -297,7 +297,8 @@ function mySplit ($captures){
 }
 
 function jal_addData($jal_user_name,$jal_user_text,$jal_user_url) {
-global $spam_msg, $jal_table_prefix, $jal_user_val, $jal_user_calc, $jal_user_Control, $ip, $shout_cat;
+global $spam_msg, $jal_user_val, $jal_user_calc, $jal_user_Control, $ip, $shout_cat, $shout_tb;
+	$shout_tb=$_POST['tb'];
 
 	//if the BadCalc variable is not set then it's a bot (direct access to wordspew)
 	if(!isset($_SESSION['BadCalc'])) {
@@ -320,7 +321,7 @@ global $spam_msg, $jal_table_prefix, $jal_user_val, $jal_user_calc, $jal_user_Co
 		exit;
 	}
 
-	$hashtext = $_SESSION['hashtext'];
+	$hashtext = $_SESSION['hashtext'.$shout_tb];
 	$jal_user_calc=md5($jal_user_calc.$hashtext);
 	if($jal_user_calc!=$jal_user_Control) {
 		AddSpam($_SESSION['BadCalc']);
@@ -378,7 +379,7 @@ global $spam_msg, $jal_table_prefix, $jal_user_val, $jal_user_calc, $jal_user_Co
 
 		if($myBolean=="") {
 			if($_SESSION['useCaptcha']=="1") setcookie("jalCaptcha","Ok",time()+60*60*24*30*3,'/');
-			$SQL="INSERT INTO ".$jal_table_prefix."liveshoutbox (time,name,text,url,ipaddr,email,cat) VALUES ('".time()."','";
+			$SQL="INSERT INTO ".mysql_real_escape_string($shout_tb)."liveshoutbox (time,name,text,url,ipaddr,email,cat) VALUES ('".time()."','";
 			$SQL.=mysql_real_escape_string($jal_user_name)."','".mysql_real_escape_string($jal_user_text)."','";
 			$SQL.=mysql_real_escape_string($jal_user_url)."', '".mysql_real_escape_string($ip)."','";
 			$SQL.=mysql_real_escape_string(strtolower($email))."','".mysql_real_escape_string($shout_cat)."')";
@@ -395,14 +396,14 @@ global $spam_msg, $jal_table_prefix, $jal_user_val, $jal_user_calc, $jal_user_Co
 }
 
 function AddSpam($msg) {
-global $jal_table_prefix, $jalSendChat;
+global $jalSendChat, $shout_tb;
 
 	$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	mysql_select_db(DB_NAME, $conn);
 
-	$SQL= mysql_query("SELECT option_value FROM ".$jal_table_prefix."options WHERE option_name='shoutbox_spam'");
+	$SQL= mysql_query("SELECT option_value FROM ".mysql_real_escape_string($shout_tb)."options WHERE option_name='shoutbox_spam'");
 	$nb= mysql_result($SQL, 0)+1;
-	mysql_query("UPDATE ".$jal_table_prefix."options SET option_value='".$nb."' WHERE option_name='shoutbox_spam'",$conn);
+	mysql_query("UPDATE ".mysql_real_escape_string($shout_tb)."options SET option_value='".$nb."' WHERE option_name='shoutbox_spam'",$conn);
 
 	if($jalSendChat=="yes") {
 		$_SESSION['spam_msg']= $msg;
@@ -413,28 +414,28 @@ global $jal_table_prefix, $jalSendChat;
 
 //Maintains the database by deleting past comments
 function jal_deleteOld($cat="") {
-global $jal_table_prefix;
+global $shout_tb;
 	header("Content-Type: text/html; charset=utf-8");
 	$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	mysql_select_db(DB_NAME, $conn);
-	$SQL=mysql_query("SELECT option_value FROM ".$jal_table_prefix."options WHERE option_name = 'shoutbox_nb_comment'");
+	$SQL=mysql_query("SELECT option_value FROM ".mysql_real_escape_string($shout_tb)."options WHERE option_name = 'shoutbox_nb_comment'");
 	$jal_number_of_comments=mysql_result($SQL,0);
 
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 
-	$SQL="SELECT id FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."'";
+	$SQL="SELECT id FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."'";
 	$SQL.=" ORDER BY id DESC LIMIT ".$jal_number_of_comments;
 	$results = mysql_query($SQL,$conn);
 
 	while ($row = mysql_fetch_array($results)) { $id = $row[0]; }
 
 	if ($id) {
-		$SQL="INSERT INTO ".$jal_table_prefix."liveshoutboxarchive (time,name,text,url,ipaddr,email,cat) SELECT ";
-		$SQL.="time,name,text,url,ipaddr,email,cat FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."'";
+		$SQL="INSERT INTO ".$shout_tb."liveshoutboxarchive (time,name,text,url,ipaddr,email,cat) SELECT ";
+		$SQL.="time,name,text,url,ipaddr,email,cat FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."'";
 		$SQL.=" AND id < ".$id;
 		mysql_query($SQL, $conn);
-		$SQL="DELETE FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."' AND id < ".$id;
+		$SQL="DELETE FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat='".mysql_real_escape_string($cat)."' AND id < ".$id;
 		mysql_query($SQL, $conn);
 	}
 }
@@ -447,7 +448,7 @@ return str_replace($bad, $good, $name);
 
 // Prints the html structure for the shoutbox
 function jal_get_shoutbox ($cat="",$comboTheme=1) {
-global $wpdb, $jal_table_prefix, $user_level, $theuser_nickname, $user_url, $user_ID, $jal_admin_user_level, $show, $size, $position, $shout_opt;
+global $wpdb, $user_level, $theuser_nickname, $user_url, $user_ID, $jal_admin_user_level, $show, $size, $position, $shout_opt, $shout_tb;
 
 $HiddenCat="";
 $show_to_level=$shout_opt['level_for_shoutbox'];
@@ -477,7 +478,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	$_SESSION['DLSpam']=__("I DON'T LIKE SPAM !!!",wordspew);
 	$_SESSION['HTTPLimit']=__("Sorry, but you can post only one url by message...",wordspew);
 	$_SESSION['IPLogged']=__("Your IP address have been banned from this blog, if you feel this is in error please contact the webmaster.",wordspew);
-	$_SESSION['hashtext']=$shout_opt['hash'];
+	$_SESSION['hashtext'.$shout_tb]=$shout_opt['hash'];
 	$_SESSION['useURL']=$shout_opt['use_url'];
 	$_SESSION['useCaptcha']=$Captcha; ?>
 <div id="wordspew">
@@ -489,7 +490,7 @@ if ($user_level >= $show_to_level || $current==1) {
 
 	$SQLCat=html_entity_decode($cat,ENT_COMPAT,'UTF-8');
 	$SQLCat=str_replace("'","\'",$SQLCat);
-	$SQL="SELECT * FROM ".$jal_table_prefix."liveshoutbox WHERE cat='".mysql_real_escape_string($SQLCat)."'";
+	$SQL="SELECT * FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat='".mysql_real_escape_string($SQLCat)."'";
 	$SQL.=" ORDER BY id DESC LIMIT ".$jal_number_of_comments;
 	$results = $wpdb->get_results($SQL);
 
@@ -502,7 +503,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	$total=intval($rand1+$rand2);
 
 	if ($shout_opt['use_sound']==1) {
-		$img_sound=($_COOKIE['jalSound']==1 || $_COOKIE['jalSound']=="") ? "sound_1.gif" : "sound_0.gif";
+		$img_sound=($_COOKIE['jalSound'.$shout_tb]==1 || $_COOKIE['jalSound'.$shout_tb]=="") ? "sound_1.gif" : "sound_0.gif";
 		echo '<img src="'. $Actual_URL .'/wp-content/plugins/pierres-wordspew/img/'.$img_sound.'" alt="" onclick="setSound();" id="JalSound" 
 		title="'.__("Click this to turn on/off sound",wordspew).'"/>';
 	}
@@ -579,7 +580,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	
 	$combo='<input type="hidden" name="shout_cat" id="shout_cat" value="'.$HiddenCat.'"/>';
 	if($use_theme==1 && ($comboTheme==1 || $user_level >= $jal_admin_user_level)) {
-		$SQL="SELECT DISTINCT cat FROM ".$jal_table_prefix."liveshoutbox WHERE cat!='' ORDER BY cat";
+		$SQL="SELECT DISTINCT cat FROM ".mysql_real_escape_string($shout_tb)."liveshoutbox WHERE cat!='' ORDER BY cat";
 		$theme = $wpdb->get_results($SQL);
 		$wpdb->show_errors();
 
@@ -610,7 +611,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	</div>
 	<div id="chatInput">
 <?php
-	$hashtext = $_SESSION['hashtext'];
+	$hashtext = $_SESSION['hashtext'.$shout_tb];
 
 	if (!$registered_only) {
 	$display_name=($_COOKIE['jalUserName']) ? $_COOKIE['jalUserName'] : __("Guest_",wordspew).rand(0,5000);
@@ -621,11 +622,11 @@ if ($user_level >= $show_to_level || $current==1) {
 	<?php
 
 	if ($user_level >= $jal_admin_user_level || $curadmin==1) { // If user is allowed to use the admin page
-		$_SESSION['isAdmin']=true;
+		$_SESSION['isAdmin'.$shout_tb]=true;
 		echo '<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin" 
 		onmouseover="ChangeURL(\'shoutboxAdmin\',\''.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin\',\'&amp;shout_cat=\')" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
 	}
-	else unset($_SESSION['isAdmin']);
+	else unset($_SESSION['isAdmin'.$shout_tb]);
 	if ($user_level >= $level_for_archive || current_user_can('level_'.$level_for_archive)==1) {
 		echo '<div style="text-align:right;">
 		<a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" 
@@ -672,6 +673,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	<?php echo $combo; ?>
 
 	<input type="hidden" name="shout_no_js" value="true"/>
+	<input type="hidden" name="tb" value="<?php echo $shout_tb; ?>"/>
 	<div id="SmileyList"></div>
 	<input type="submit" id="submitchat" name="submit" value="<?php _e('Send',wordspew);?>"/>
 	</form>

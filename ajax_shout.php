@@ -94,6 +94,9 @@ var DateExpires = dateExp.toGMTString();
 var oldval, is_new=1;
 var jal_loadtimes;
 var jal_timeout = jal_org_timeout;
+
+var tb_prefix="<?php echo $_SESSION['tb_prefix']; ?>";
+
 var GetChaturl = "<?php echo $PathToPlugin; ?>/wordspew.php?jalGetChat=yes";
 var SendChaturl = "<?php echo $PathToPlugin; ?>/wordspew.php?jalSendChat=yes";
 var httpReceiveChat, httpSendChat;
@@ -115,7 +118,7 @@ shout_theme=document.getElementById('shout_theme');
 	checkStatus('');
 	checkName();
 	checkUrl();
-	jalSound = (jal_getCookie("jalSound")==null || jal_getCookie("jalSound")==1) ? 1 : 0;
+	jalSound = (jal_getCookie("jalSound"+tb_prefix)==null || jal_getCookie("jalSound"+tb_prefix)==1) ? 1 : 0;
 	jal_loadtimes = 1;
 
 // initiates the two objects for sending and receiving data
@@ -136,7 +139,7 @@ shout_theme=document.getElementById('shout_theme');
 	var obj = "";
 	if(show_smiley==1) {
 		ActualSmile="", style="", lib="-";
-		if (jal_getCookie("jalSmiley")==1) {
+		if (jal_getCookie("jalSmiley"+tb_prefix)==1) {
 			style="display:none";
 			lib="+"
 		}
@@ -173,8 +176,8 @@ function ShowHide(parent, enfant) {
 	etatEnfant=document.getElementById(enfant).style.display;
 	document.getElementById(parent).innerHTML=(txtParent=="+") ? "-" : "+";
 	document.getElementById(enfant).style.display=(etatEnfant=="none") ? "" : "none";
-	jalSmiley = (jal_getCookie("jalSmiley")==1) ? 0 : 1;
-	document.cookie = "jalSmiley="+jalSmiley+";expires="+DateExpires+";path=/;";
+	jalSmiley = (jal_getCookie("jalSmiley"+tb_prefix)==1) ? 0 : 1;
+	document.cookie = "jalSmiley"+tb_prefix+"="+jalSmiley+";expires="+DateExpires+";path=/;";
 }
 
 //initiates the first data query
@@ -183,7 +186,7 @@ function receiveChatText() {
 	MyCat=encodeURIComponent(document.getElementById("shout_cat").value);
 
 	if (httpReceiveChat.readyState == 4 || httpReceiveChat.readyState == 0) {
-		httpReceiveChat.open("GET",GetChaturl+'&jal_lastID='+lastID+'&shout_cat='+MyCat+'&rand='+Math.floor(Math.random() * 1000000), true);
+		httpReceiveChat.open("GET",GetChaturl+'&jal_lastID='+lastID+'&shout_cat='+MyCat+'&tb='+tb_prefix+'&rand='+Math.floor(Math.random() * 1000000), true);
 		httpReceiveChat.onreadystatechange = handlehHttpReceiveChat; 
 		httpReceiveChat.send(null);
 		jal_loadtimes++;
@@ -219,8 +222,8 @@ function handlehHttpReceiveChat() {
 
 function setSound() {
 pathToImg="<?php echo $PathToPlugin; ?>/img/";
-jalSound = (jal_getCookie("jalSound")=="" || jal_getCookie("jalSound")==0) ? 1 : 0;
-document.cookie = "jalSound="+jalSound+";expires="+DateExpires+";path=/;";
+jalSound = (jal_getCookie("jalSound"+tb_prefix)=="" || jal_getCookie("jalSound"+tb_prefix)==0) ? 1 : 0;
+document.cookie = "jalSound"+tb_prefix+"="+jalSound+";expires="+DateExpires+";path=/;";
 document.getElementById('JalSound').src=(jalSound==1) ? pathToImg+"sound_1.gif": pathToImg+"sound_0.gif";
 }
 
@@ -317,7 +320,7 @@ function sendComment() {
 	if (currentChatText == '') return;
 	if(CheckSpam(currentName+' '+currentChatText, currentUrl)) {
 		if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-			param = 'n='+ encodeURIComponent(currentName)+'&c='+ encodeURIComponent(currentChatText) +'&u='+ encodeURIComponent(currentUrl)+'&shoutboxOp='+encodeURIComponent(shoutboxOp)+'&shoutboxControl='+encodeURIComponent(shoutboxControl)+'&shout_cat='+encodeURIComponent(MyCat);	
+			param = 'n='+ encodeURIComponent(currentName)+'&tb='+tb_prefix+'&c='+ encodeURIComponent(currentChatText) +'&u='+ encodeURIComponent(currentUrl)+'&shoutboxOp='+encodeURIComponent(shoutboxOp)+'&shoutboxControl='+encodeURIComponent(shoutboxControl)+'&shout_cat='+encodeURIComponent(MyCat);	
 			httpSendChat.open("POST", SendChaturl, true);
 			httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			httpSendChat.onreadystatechange = receiveChatText;
@@ -334,7 +337,7 @@ function deleteComment(id) {
 	AlertMsg+="<?php _e('\'Cancel\' to stop, \'OK\' to delete.',wordspew); ?>";
 	if(confirm(AlertMsg)) {
 		if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-			param = 'mode=del&id='+ encodeURIComponent(id);
+			param = 'mode=del&id='+ encodeURIComponent(id)+'&tb='+tb_prefix;
 			httpSendChat.open("POST", SendChaturl, true);
 			httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			httpSendChat.onreadystatechange = receiveChatText;

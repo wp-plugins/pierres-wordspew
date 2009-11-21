@@ -144,13 +144,13 @@ $myval=1;
 }
 
 function del($id) {
-global $jal_table_prefix;
+$shout_tb=$_POST['tb'];
 $temp="";
-	if($_SESSION['isAdmin']==true) {
+	if($_SESSION['isAdmin'.$shout_tb]==true) {
 		$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 		mysql_select_db(DB_NAME, $conn);
 		if(strpos($_SERVER['HTTP_REFERER'],"wordspew_archive.php")) $temp="archive";
-		mysql_query("DELETE FROM ".$jal_table_prefix."liveshoutbox".$temp." WHERE id = ".intval($id), $conn);
+		mysql_query("DELETE FROM ".$shout_tb."liveshoutbox".$temp." WHERE id = ".intval($id), $conn);
 	}
 }
 

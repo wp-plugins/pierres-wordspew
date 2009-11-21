@@ -14,9 +14,9 @@ function jal_get_IP() {
 }
 
 function jal_get_useronline_engine($usertimeout = 60) {
-	global $jal_table_prefix;
-	$tableuseronline = $jal_table_prefix.'liveshoutbox_useronline';
+global $shout_tb;
 
+	$tableuseronline = $shout_tb.'liveshoutbox_useronline';
 	$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	mysql_select_db(DB_NAME, $conn);
 	@mysql_query("SET CHARACTER SET 'utf8'", $conn);
@@ -51,13 +51,13 @@ function jal_get_useronline_engine($usertimeout = 60) {
 
 	mysql_query("LOCK TABLES $tableuseronline WRITE", $conn);	
 
-	if(!in_array(strtolower($memberonline), $_SESSION['HideUsers'])) {
+	if(!in_array(strtolower($memberonline), $_SESSION['HideUsers'.$shout_tb])) {
 		$sql="UPDATE $tableuseronline SET timestamp = '$timestamp', ip = '".jal_get_IP()."' $where";
 		mysql_query($sql, $conn);
 	}
 	// If No User Insert It
 	if (mysql_affected_rows($conn) == 0) {
-		if(!in_array(strtolower($memberonline), $_SESSION['HideUsers'])) {
+		if(!in_array(strtolower($memberonline), $_SESSION['HideUsers'.$shout_tb])) {
 			$sql="INSERT INTO $tableuseronline VALUES ('$timestamp', '$memberonline', '".jal_get_IP()."', '', '/')";
 			mysql_query($sql,$conn);
 		}
@@ -80,7 +80,7 @@ function jal_get_useronline_engine($usertimeout = 60) {
 		if (array_key_exists($element,$bots)) $detected_bots[] = $element;
 		elseif ($element == "guest") $guests = $guests + 1;
 		else {
-			if(!in_array(strtolower($element), $_SESSION['HideUsers']))
+			if(!in_array(strtolower($element), $_SESSION['HideUsers'.$shout_tb]))
 				$registered_users[] = $element;
 		}
 	}
@@ -105,6 +105,7 @@ function jal_implode_human($glue,$lastglue,$array) {
 }
 
 function jal_get_useronline_extended($usertimeout = 60) {
+global $shout_tb;
 if($_SESSION['Show_Users']==1) {
 	if(!isset($_SESSION['guest'])) {
 		$_SESSION['NoOne']=__('No one online.',wordspew);

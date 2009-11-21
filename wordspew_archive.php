@@ -1,12 +1,6 @@
 <?php
 require_once('../../../wp-blog-header.php');
 include_once ('common.php');
-//expire every 5 minutes
-$offset = 60*5;
-$ExpStr = gmdate("D, d M Y H:i:s",time() + $offset)." GMT";
-header("Cache-Control: max-age=".$offset.", must-revalidate");
-header("Pragma: private");
-header("Expires: ".$ExpStr);
 
 if (!isset($table_prefix)) {
 	$html = implode('', file("../../../wp-config.php"));
@@ -14,14 +8,13 @@ if (!isset($table_prefix)) {
 	$html = str_replace ("<?php", "", $html);
 	eval($html);
 }
-$jal_table_prefix = $table_prefix;
 
 $limit=get_option('shoutbox_nb_comment');
 $offset = intval((isset($_REQUEST['offset']) && $_REQUEST['offset'] > 0) ? $_REQUEST['offset'] : 0);
 $shout_cat=$_GET['shout_cat'];
 
 function jal_get_shoutboxarchive ($cat="") {
-global $wpdb, $jal_table_prefix, $user_nickname, $user_ID, $user_level, $user_identity, $limit, $offset, $wp_version, $shout_cat;
+global $wpdb, $user_nickname, $user_ID, $user_level, $user_identity, $limit, $offset, $wp_version, $shout_cat;
 
 $jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 $shout_opt = get_option('shoutbox_options');
@@ -62,12 +55,12 @@ if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_a
 
 	if(!isset($_SESSION['LoggedUsers'])) {
 		$column = (floatval($wp_version) > '1.5') ? "display_name" : "user_nickname";
-		$LoggedUsers = $wpdb->get_col("SELECT LOWER(".$column.") FROM ".$jal_table_prefix."users");
+		$LoggedUsers = $wpdb->get_col("SELECT LOWER(".$column.") FROM ".$wpdb->users);
 		$_SESSION['LoggedUsers']=$LoggedUsers;
 	}
 
 	$wpdb->hide_errors();
-	$SQL="SELECT SQL_CALC_FOUND_ROWS id, time, name, text, url, ipaddr, email FROM ".$jal_table_prefix."liveshoutboxarchive ";
+	$SQL="SELECT SQL_CALC_FOUND_ROWS id, time, name, text, url, ipaddr, email FROM ".$_SESSION['tb_prefix']."liveshoutboxarchive ";
 	$SQL.="WHERE cat='".mysql_real_escape_string($cat)."' ORDER BY id DESC LIMIT ".$offset.",".$limit;
 	$results = $wpdb->get_results($SQL);
 	$wpdb->show_errors();
@@ -118,14 +111,14 @@ if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_a
 	<th class="name">'.__("Name",wordspew).'</th>
 	<th class="msg">'.__("Message",wordspew).'</th>';
 	if($user_level >= $jal_admin_user_level || $curadm==1) {
-		$_SESSION['isAdmin']=true;
+		$_SESSION['isAdmin'.$_SESSION['tb_prefix']]=true;
 		$link='<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin'.$link_cat.'" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
 		if($Show_IP) {
 			echo '<th class="IP">'.__("IP",wordspew).'</th>';
 		}
 		echo '<td></td>';
 	}
-	else unset($_SESSION['isAdmin']);
+	else unset($_SESSION['isAdmin'.$_SESSION['tb_prefix']]);
 	echo '
 	</tr>				
 	';

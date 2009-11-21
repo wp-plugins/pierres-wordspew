@@ -14,6 +14,7 @@ header('Content-Type: application/x-javascript; charset='.get_option('blog_chars
 ?>
 var SendChaturl = "<?php echo get_bloginfo('wpurl'); ?>/wp-content/plugins/pierres-wordspew/wordspew.php?jalSendChat=yes";
 var httpSendChat;
+var tb_prefix="<?php echo $_SESSION['tb_prefix']; ?>";
 
 if(typeof window.addEventListener != 'undefined') {
 	window.addEventListener('load', initJavaScript, false);
@@ -36,7 +37,7 @@ function deleteComment(id, offset, limit) {
 	AlertMsg+="<?php _e('\'Cancel\' to stop, \'OK\' to delete.',wordspew); ?>";
 	if(confirm(AlertMsg)) {
 		if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-			param = 'mode=del&id='+ encodeURIComponent(id);
+			param = 'mode=del&id='+ encodeURIComponent(id)+'&tb='+tb_prefix;
 			httpSendChat.open("POST", SendChaturl, true);
 			httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			httpSendChat.send(param);

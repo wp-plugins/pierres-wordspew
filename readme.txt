@@ -3,7 +3,7 @@ Contributors: Pierre Sudarovich
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8487949
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 1.5
-Tested up to: 2.8.5
+Tested up to: 2.8.6
 Stable tag: trunk
 
 A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
@@ -28,8 +28,9 @@ Features:
 * everyone will be able to send privates messages to anyone,
 * you'll can choose who will administrate the shoutbox,
 * you can activate/deactivate a "captcha" to help to fight against spam,
-* the shoutbox is actually available in 23 languages
-* a lot of more things
+* the shoutbox is actually available in 25 languages,
+* tested and working on IE6, IE7, IE8, Firefox, Opera, Chrome, Safari,
+* a lot of more things...
 
 
 == Installation ==
@@ -134,6 +135,13 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 
 == Changelog ==
+
+= 5.0 =
+* Wordpress-Mu Compatible !!
+* Added the possibility to archive THEN delete ALL the messages from the shoutbox table by adding a new button in the admin interface,
+* the list of archived messages are now directly accessible from the admin interface,
+* added the possibility to manipulate archives from the admin interface (view or delete),
+* removed the expiration delay from wordspew_archive.php (it was refreshed every 5 minutes before), now the data will always been fresh.
 
 = 4.51 =
 * Changed MSN to Bing to reflect the new name of Microsoft bot.

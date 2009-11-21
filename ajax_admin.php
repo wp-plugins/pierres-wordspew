@@ -21,6 +21,7 @@ var jal_timeout = jal_org_timeout;
 var GetChaturl = "<?php echo $PathToPlugin;?>/wp-content/plugins/pierres-wordspew/wordspew.php?jalGetChat=yes";
 var SendChaturl= "<?php echo $PathToPlugin;?>/wp-content/plugins/pierres-wordspew/wordspew.php?jalSendChat=yes";
 var ModChaturl= "<?php echo $PathToPlugin;?>/wp-content/plugins/pierres-wordspew/wordspew_admin.php";
+var tb_prefix="<?php echo $_SESSION['tb_prefix']; ?>";
 
 if(typeof window.addEventListener != 'undefined') {
 	window.addEventListener('load', initJavaScript, false);
@@ -94,7 +95,7 @@ function receiveChatText() {
 	cat=encodeURIComponent(document.getElementById('cat').value);
 	if (httpReceiveChat.readyState == 4 || httpReceiveChat.readyState == 0) {
 		jal_lastID = parseInt(document.getElementById('jal_lastID').value) - 1;
-		httpReceiveChat.open("GET",GetChaturl+'&jal_lastID='+jal_lastID+'&shout_cat='+cat+'&rand='+Math.floor(Math.random() * 1000000), true);
+		httpReceiveChat.open("GET",GetChaturl+'&jal_lastID='+jal_lastID+'&shout_cat='+cat+'&tb='+tb_prefix+'&rand='+Math.floor(Math.random() * 1000000), true);
 		httpReceiveChat.onreadystatechange = handlehHttpReceiveChat; 
 		httpReceiveChat.send(null);
 		jal_loadtimes++;
@@ -233,12 +234,42 @@ insertO.insertBefore(oLi, insertO.firstChild);
 function CleanBox(theme,lib) {
 document.getElementById("theme").innerHTML=lib;
 document.getElementById("cat").value=theme;
+cur_theme=0;
+Fat.fade_element("theme",30,1000,"#22CC22");
+document.getElementById('theme').className="shout";
 var parent = document.getElementById("outputList");
 document.getElementById('jal_lastID').value=0;
 while (parent.firstChild) {
 	parent.removeChild(parent.firstChild);
 }
 receiveChatText();
+}
+function CountAndGo(theme,lib) {
+	document.getElementById("theme").innerHTML=lib;
+	document.getElementById("cat").value=theme;
+	var parent = document.getElementById("outputList");
+	document.getElementById('jal_lastID').value=0;
+
+	while (parent.firstChild) {
+		parent.removeChild(parent.firstChild);
+	}
+
+	if(cur_theme==0) {
+		cur_theme=lib;
+		Fat.fade_element("theme",30,1000,"#FF0000");
+		document.getElementById('theme').className="archive";
+	}
+	else {
+		if(cur_theme==lib) {
+			document.location=url+encodeURIComponent(theme);
+			cur_theme=0;
+		}
+		else {
+			cur_theme=lib;
+			Fat.fade_element("theme",30,1000,"#FF0000");
+			document.getElementById('theme').className="archive";
+			}
+	}
 }
 
 function deleteComment(id) {
@@ -250,7 +281,7 @@ function deleteComment(id) {
 
 	if(confirm(AlertMsg)) {
 		if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-			param = 'mode=del&id='+ encodeURIComponent(id);
+			param = 'mode=del&id='+ encodeURIComponent(id)+'&tb='+tb_prefix;
 			httpSendChat.open("POST", SendChaturl, true);
 			httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			httpSendChat.onreadystatechange = receiveChatText;
@@ -273,7 +304,7 @@ function EditComment(id) {
 Text=document.getElementById('text_'+id).value;
 IP=document.getElementById('ip_'+id).value;
 	if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-		param = 'mode=edit&id='+ encodeURIComponent(id)+'&text='+encodeURIComponent(Text)+'&ip='+IP;
+		param = 'mode=edit&id='+ encodeURIComponent(id)+'&text='+encodeURIComponent(Text)+'&ip='+IP+'&tb='+tb_prefix;
 		httpSendChat.open("POST", ModChaturl, true);
 		httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 		httpSendChat.onreadystatechange = receiveChatText;
@@ -288,7 +319,7 @@ function BanIP(id,ip) {
 
 	if(confirm(AlertMsg)) {
 		if (httpSendChat.readyState == 4 || httpSendChat.readyState == 0) {
-			param = 'mode=ban&id='+ encodeURIComponent(id)+'&ip='+ip;
+			param = 'mode=ban&id='+ encodeURIComponent(id)+'&ip='+ip+'&tb='+tb_prefix;
 			httpSendChat.open("POST", ModChaturl, true);
 			httpSendChat.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			httpSendChat.onreadystatechange = receiveChatText;
