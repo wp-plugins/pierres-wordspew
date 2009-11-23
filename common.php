@@ -157,7 +157,7 @@ $temp="";
 function shout_get_avatar($email, $size, $position) {
 global $wp_version;
 $avatar = '<div class="ps_'.$position.'">';
-	if (floatval($wp_version) < '2.5') {
+	if (version_compare($wp_version, '2.5', '<')) {
 		$avatar .= get_shout_avatar($email, $size);
 	}
 	else {

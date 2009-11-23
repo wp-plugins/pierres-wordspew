@@ -18,7 +18,7 @@ define('wordspew', 'pierres-wordspew/lang/wordspew');
 if(function_exists('load_plugin_textdomain')) load_plugin_textdomain(wordspew);
 $pathtoSmiley = get_bloginfo('wpurl');
 $PathToPlugin = $pathtoSmiley."/wp-content/plugins/pierres-wordspew";
-$pathtoSmiley.=(floatval($wp_version) > '1.5') ? "/wp-includes/images/smilies/" : "/wp-images/smilies/";
+$pathtoSmiley.=(version_compare($wp_version, '1.5', '>')) ? "/wp-includes/images/smilies/" : "/wp-images/smilies/";
 $shout_opt = get_option('shoutbox_options');
 ?>
 var myBox = new Object();

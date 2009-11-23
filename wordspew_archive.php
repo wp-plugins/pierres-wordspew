@@ -54,7 +54,7 @@ if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_a
 	$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
 
 	if(!isset($_SESSION['LoggedUsers'])) {
-		$column = (floatval($wp_version) > '1.5') ? "display_name" : "user_nickname";
+		$column = (version_compare($wp_version, '1.5', '>')) ? "display_name" : "user_nickname";
 		$LoggedUsers = $wpdb->get_col("SELECT LOWER(".$column.") FROM ".$wpdb->users);
 		$_SESSION['LoggedUsers']=$LoggedUsers;
 	}

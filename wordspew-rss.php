@@ -18,12 +18,12 @@ $shout_opt = get_option('shoutbox_options');
 $shout_cat=(isset($_GET['shout_cat'])) ? $_GET['shout_cat'] : "";
 
 function rss_feed() {
-global $wpdb, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $shout_cat, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
+global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $shout_cat, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
 
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $level_for_theme=$shout_opt['level_for_theme'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(round($wp_version)>=2)? $user_identity : $user_nickname;
+$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
 
@@ -79,11 +79,11 @@ if($verif) { ?>
 </rss>
 <?php }}
 function jal_getRSS ($ID) {
-global $wpdb, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
+global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
 
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(round($wp_version)>=2)? $user_identity : $user_nickname;
+$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
 if ($user_level >= $show_to_level || $current==1) {

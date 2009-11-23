@@ -61,7 +61,7 @@ Nothing ! you just have to clear your browser cache (and tell to your regulars u
 
 
 = Does the shoutbox works with WP-MU? =
-No, sorry
+Yes, since the version 5.0 :)
 
 
 = I'd like to get the shoutbox in my native language. How can i do that? =
@@ -136,6 +136,10 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.1 =
+* Use of `version_compare` cleaner thant `round($wp_version)`
+* correction of a little bug in `wordspew-rss.php` where the variable `$theuser_nickname` was not correctly set.
+
 = 5.0 =
 * Wordpress-Mu Compatible !!
 * Added the possibility to archive THEN delete ALL the messages from the shoutbox table by adding a new button in the admin interface,
@@ -160,7 +164,6 @@ If you use the term : `@pages(rubric)` It meens that you want to use a specific 
 If you use the term : `@pages(linked)` It meens that you want to use a specific shoutbox on **EACH** page.
 You can use these 2 keywords with : `@pages`, `@single`, `@archives` (only rubric, here.) and `@category`.
 Finally, if you want to use the shoutbox in a page template you've done by yourself, enter: `@page[The name of your page]`.
-
 
 = 4.32 =
 * (05 Oct 2009) - First Release.
