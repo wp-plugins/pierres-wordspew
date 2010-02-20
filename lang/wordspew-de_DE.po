@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Pierre's Wordspew\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-22 14:39+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Pierre\n"
+"PO-Revision-Date: 2010-01-08 08:52+0100\n"
+"Last-Translator: Songline <NickRita@Web.de>\n"
 "Language-Team: Christian Opitz - Netzelf <christian.opitz@netzelf.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr "Nachricht wirklich löschen:"
 #: ../ajax_archive.php:36
 #: ../ajax_shout.php:333
 msgid "'Cancel' to stop, 'OK' to delete."
-msgstr ""
+msgstr "'Cancel' um abzubrechen, 'OK' um zu löschen."
 
 #: ../ajax_admin.php:291
 msgid "You're about to ban the following IP address:"
@@ -52,7 +52,7 @@ msgstr "Du bist gerade dabei, die folgende IP zu sperren:"
 
 #: ../ajax_admin.php:292
 msgid "'Cancel' to stop, 'OK' to ban."
-msgstr ""
+msgstr "'Cancel' um abzubrechen, 'OK' um zu löschen."
 
 #: ../ajax_shout.php:63
 #: ../wordspew-rss.php:113
@@ -71,7 +71,7 @@ msgstr "Email"
 
 #: ../ajax_shout.php:144
 msgid "Click here to expand/collapse the smiley's list"
-msgstr "Smiley-Liste ein-/ausklappen"
+msgstr "Smiley-Liste ein-/ausblenden"
 
 #: ../ajax_shout.php:240
 #: ../wordspew-rss.php:63
@@ -132,29 +132,27 @@ msgstr "Minuten"
 
 #: ../common.php:97
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 #: ../common.php:101
 msgid "Frontpage"
-msgstr ""
+msgstr "Frontpage"
 
 #: ../common.php:118
-#, fuzzy
 msgid "Pages"
-msgstr "Gast"
+msgstr "Seiten"
 
 #: ../common.php:123
 msgid "Single"
-msgstr ""
+msgstr "Einzelner Artikel"
 
 #: ../common.php:127
-#, fuzzy
 msgid "Archives"
-msgstr "Archiv"
+msgstr "Archive"
 
 #: ../common.php:132
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: ../usersonline.php:110
 msgid "No one online."
@@ -232,7 +230,7 @@ msgstr "Klicke hier, um den Ton an-/auszuschalten."
 #: ../wordspew_archive.php:112
 #, php-format
 msgid "<div id=\"Show_Spam\">%s spams blocked</div>"
-msgstr "<div id=\"Show_Spam\">%s spams blockiert</div>"
+msgstr "<div id=\"Show_Spam\">%s Spams blockiert</div>"
 
 #: ../wordspew.php:518
 #: ../wordspew.php:570
@@ -289,11 +287,11 @@ msgstr "Name"
 
 #: ../wordspew.php:647
 msgid "Captcha"
-msgstr ""
+msgstr "Captcha"
 
 #: ../wordspew.php:660
 msgid "URL/Email"
-msgstr ""
+msgstr "URL/Email"
 
 #: ../wordspew.php:664
 #: ../wordspew_archive.php:119
@@ -319,16 +317,16 @@ msgstr "Kein Zugriff!"
 #: ../wordspew_admin.php:236
 #, php-format
 msgid "The content of the shoutbox %s has been wiped."
-msgstr ""
+msgstr "Der Inhalt der Shoutbox %s wurde gelöscht."
 
 #: ../wordspew_admin.php:239
 msgid "Live Shoutbox"
-msgstr ""
+msgstr "Live Shoutbox"
 
 #: ../wordspew_admin.php:240
 #, php-format
 msgid "(Actually <font color=\"red\">%s</font> spams blocked)"
-msgstr "(Bisher wurden <font color=\"red\">%s</font> spams geblockt)"
+msgstr "(Bisher wurden <font color=\"red\">%s</font> Spams geblockt)"
 
 #: ../wordspew_admin.php:241
 msgid "When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect"
@@ -458,17 +456,15 @@ msgstr "Captcha verwenden"
 
 #: ../wordspew_admin.php:306
 msgid "Check this if you want to use a captcha (in fact it's a simple addition that users have to resolve before post any new message in the shoutbox)."
-msgstr "Aktiviere diese Option, wenn dem Nutzer eine einfache  Rechenaufgabe gestellt werden, bevor er eine neue Nachricht absenden kann."
+msgstr "Aktiviere diese Option, wenn dem Nutzer eine einfache  Rechenaufgabe gestellt werden soll, bevor er eine neue Nachricht absenden kann."
 
 #: ../wordspew_admin.php:307
-#, fuzzy
 msgid "Use Themes"
-msgstr "Neues Thema"
+msgstr "Thema-Option verwenden"
 
 #: ../wordspew_admin.php:309
-#, fuzzy
 msgid "Check this if you want to use themes."
-msgstr "Aktiviere diese Option, wenn eine Smiley-Liste angezeigt werden soll."
+msgstr "Aktiviere diese Option, wenn Diskussionen zu verschiedenen Themen erlaubt werden sollen."
 
 #: ../wordspew_admin.php:310
 msgid "Use the RSS feed"
@@ -480,7 +476,7 @@ msgstr "Aktiviere diese Option, wenn der Link zum RSS-Feed der Shoutbox angezeig
 
 #: ../wordspew_admin.php:313
 msgid "XHTML strict"
-msgstr ""
+msgstr "Striktes XHTML "
 
 #: ../wordspew_admin.php:315
 msgid "Check this if you want to use XHTML strict"
@@ -488,49 +484,49 @@ msgstr "Aktiviere diese Option, wenn der Doctype XHTML strict unterstützt werde
 
 #: ../wordspew_admin.php:317
 msgid "Use the shoutbox only on:"
-msgstr ""
+msgstr "Zeige die Shoutbox nur auf:"
 
 #: ../wordspew_admin.php:318
 msgid "If you want to use the shoutbox only on some pages, enter here their titles (each entry have to be separated by a comma) otherwise or if you don't understand its usage, let this field empty."
-msgstr ""
+msgstr "Wenn Du die Shoutbox nur auf bestimmten Seiten anzeigen willst, gib hier ihre Titel ein (jeder Eintrag muss durch ein Komma abgetrennt werden). Falls nicht oder falls Du die Funktion nicht verstehst, lasse das Feld leer."
 
 #: ../wordspew_admin.php:318
 msgid "An other possibilities, is to show the shoutbox <b>only on particulars sections</b>. You can use this values:"
-msgstr ""
+msgstr "Eine Andere Möglichkeit ist, die Shoutbox nur <b>auf bestimmten Bereichen</b> zu nutzen. Du kannst folgende Parameter einsetzen:"
 
 #: ../wordspew_admin.php:320
 msgid "And last but not least, you can use 2 kinds of values to be more specific."
-msgstr ""
+msgstr "Schließlich kannst Du die Shoutbox mit 2 verschiedenen Werten sehr flexibel nutzen:"
 
 #: ../wordspew_admin.php:321
 #: ../wordspew_admin.php:322
 msgid "If you use the term:"
-msgstr ""
+msgstr "Wenn Du die Funktion nutzt:"
 
 #: ../wordspew_admin.php:321
 msgid "It meens that you want to use the same specific shoutbox for <b>ALL</b> pages."
-msgstr ""
+msgstr "bedeutet dies, dass Du diese spezielle Shoutbox für <b>ALLE</b> Seiten nutzt."
 
 #: ../wordspew_admin.php:322
 msgid "It meens that you want to use a specific shoutbox on <b>EACH</b> page."
-msgstr ""
+msgstr "bedeutet das, dass Du diese Shoutbox auf <b>jeder bestimmten</b> Seite nutzt."
 
 #: ../wordspew_admin.php:323
 msgid "You can use these 2 keywords with :"
-msgstr ""
+msgstr "Du kannst diese Schlüsselworter nutzen mit"
 
 #: ../wordspew_admin.php:323
 #, php-format
 msgid "only %s, here"
-msgstr ""
+msgstr "hier nur %s, "
 
 #: ../wordspew_admin.php:324
 msgid "Finally, if you want to use the shoutbox in a page template you've done by yourself, enter : "
-msgstr ""
+msgstr "Schließlich, wenn Du die Shoutbox mit einem von Dir erstellten Seiten-Template benutzen möchtest, gib ein:"
 
 #: ../wordspew_admin.php:324
 msgid "The name of your page"
-msgstr ""
+msgstr "Der Name Deiner Seite"
 
 #: ../wordspew_admin.php:334
 msgid "Users options"
@@ -664,28 +660,27 @@ msgid "Delete ALL messages"
 msgstr "Alle Nachrichten löschen"
 
 #: ../wordspew_admin.php:471
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "You are about to delete ALL messages from : %s in the shoutbox.\\n"
 "Are you sure you want to do this?\\n"
 "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
-"Du bist dabei, ALLE Nachrichten in der Shoutbox zu löschen.\\n"
+"Du bist dabei, ALLE Nachrichten von: %s in der Shoutbox zu löschen.\\n"
 "Bist du sicher, dass Du das möchtest?"
 
 #: ../wordspew_admin.php:471
-#, fuzzy
 msgid "Delete ALL ARCHIVED messages"
-msgstr "Alle Nachrichten löschen"
+msgstr "Alle archivierten Nachrichten löschen"
 
 #: ../wordspew_admin.php:472
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "You are about to delete ALL ARCHIVED messages from : %s.\\n"
 "Are you sure you want to do this?\\n"
 "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
-"Du bist dabei, ALLE Nachrichten in der Shoutbox zu löschen.\\n"
+"Du bist dabei, ALLE archivierten Nachrichten von %s zu löschen.\\n"
 "Bist du sicher, dass Du das möchtest?"
 
 #: ../wordspew_admin.php:478
