@@ -140,7 +140,7 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 * Added the possibility to totally deactivate the spam filters.
  
 = 5.1 =
-* Use of `version_compare` cleaner thant `round($wp_version)`
+* Use of `version_compare` cleaner than `round($wp_version)`
 * correction of a little bug in `wordspew-rss.php` where the variable `$theuser_nickname` was not correctly set.
 
 = 5.0 =
