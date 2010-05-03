@@ -137,7 +137,7 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 == Changelog ==
 
 = 5.2 =
-* Added the possibility to totally deactivate the spam filters
+* Added the possibility to totally deactivate the spam filters.
  
 = 5.1 =
 * Use of `version_compare` cleaner thant `round($wp_version)`
