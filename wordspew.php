@@ -37,6 +37,7 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
+	$_SESSION['use_spam_filters'] = isset($shout_opt['use_filters']) ? $shout_opt['use_filters'] : 1;
 	if(where_shout($shout_opt['where'],1)) {
 		$show_to_level=$shout_opt['level_for_shoutbox'];
 		$user_level=isset($user_level) ? $user_level : -1;
@@ -75,7 +76,9 @@ var show_avatar='.$show.', avatar_position="'.$position.'", avatar_size='.$size.
 var var_XHTML='.intval($shout_opt['xhtml']).', show_smiley='.$shout_opt['show_smiley'].', shout_user="'.$the_nickname.'";
 var jal_org_timeout='.$shout_opt['update_seconds'].', fade_length='.$shout_opt['fade_length'].', fade_from="'.$shout_opt['fade_from'].'", fade_to="'.$shout_opt['fade_to'].'";
 
-function CheckSpam(theText,theURL) {
+function CheckSpam(theText,theURL) {';
+if($_SESSION['use_spam_filters']==1) {
+echo '
 theMsg=document.getElementById(\'chatbarText\').value;
 theMsg=theMsg.toLowerCase();
 count_http=theMsg.split("http").length;
@@ -108,9 +111,11 @@ for (var i = 0; i < spam.length; i++) {
 		return false;
 		break;
 	}
+}';
 }
+echo '
 return true;
-	}
+}
 //]]>
 </script>
 <script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/fade.php"></script>
@@ -227,7 +232,7 @@ global $spam_msg, $shout_tb;
 
 function CheckSpam($theText,$TheURL) {
 global $spam_msg, $ip, $shout_tb;
-
+if($_SESSION['use_spam_filters']==0) return true;
 $count_http=substr_count($theText,"http");
 if($count_http>1) {
 	$spam_msg=$_SESSION['HTTPLimit'];

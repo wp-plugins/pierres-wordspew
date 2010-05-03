@@ -5,11 +5,11 @@ Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Author URI: http://pierre.dommiers.com/
-Version: 5.1
+Version: 5.2
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.1";
+$jal_version = "5.2";
 
 include_once ('common.php');
 include_once ('usersonline.php');
@@ -149,6 +149,7 @@ global $wpdb, $user_level, $wp_version;
 			'level_for_theme' => 10,
 			'cssDate' => time(),
 			'use_theme' => 0,
+			'use_filters' => 1,
 			'where' => ''
 		);
 		ksort ($shout_opt);
@@ -324,6 +325,9 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 	<?php _e('XHTML strict',wordspew);?>: <input type="checkbox" name="XHTML"<?php 
 	if($shout_opt['xhtml'] == '1') echo ' checked="checked" '; ?>/>
 	<div class="SousRub"><?php _e('Check this if you want to use XHTML strict',wordspew);?></div>
+	<b><?php _e('Use spam filters',wordspew);?></b>: <input type="checkbox" id="Use_Filters" name="Use_Filters" 
+	<?php if($shout_opt['use_filters'] == '1' || !isset($shout_opt['use_filters'])) echo ' checked="checked" '; ?>/>
+	<div class="SousRub"><?php _e('Check this if you want to use filters against spams',wordspew);?></div>
 
 	<?php _e('Use the shoutbox only on:',wordspew);?> <input type="text" name="where" value="<?php echo $shout_opt['where']; ?>" style="width: 600px;"/>
 	<div class="SousRub"><?php _e('If you want to use the shoutbox only on some pages, enter here their titles (each entry have to be separated by a comma) otherwise or if you don\'t understand its usage, let this field empty.',wordspew);?><br/><?php _e('An other possibilities, is to show the shoutbox <b>only on particulars sections</b>. You can use this values:',wordspew);?>
@@ -462,7 +466,7 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 <?php }; ?>
 
 	<hr/>
-
+	
 	<?php _e('Show users online',wordspew);?>: <input type="checkbox" id="Show_Users" name="Show_Users" 
 	onClick="disable_enable('Show_Users', 'HideUsers', true);"<?php if($shout_opt['show_user_online'] == '1') echo ' checked="checked" '; ?>/>
 	<div class="SousRub"><?php _e('Check this if you want to show, in real time, users online',wordspew);?></div>
@@ -645,6 +649,7 @@ global $wpdb, $user_level, $shout_tb;
 	$shout_opt['use_captcha']		= ($_POST['Captcha']) ? 1 : 0;
 	$shout_opt['use_rss']			= ($_POST['Use_RSS']) ? 1 : 0;
 	$shout_opt['use_theme']			= ($_POST['Use_Theme']) ? 1 : 0;
+	$shout_opt['use_filters']		= ($_POST['Use_Filters']) ? 1 : 0;
 
 	if($CSS) $shout_opt['cssDate']=time();
 
