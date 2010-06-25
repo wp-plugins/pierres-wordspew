@@ -5,11 +5,11 @@ Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Author URI: http://pierre.dommiers.com/
-Version: 5.2
+Version: 5.3
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.2";
+$jal_version = "5.3";
 
 include_once ('common.php');
 include_once ('usersonline.php');

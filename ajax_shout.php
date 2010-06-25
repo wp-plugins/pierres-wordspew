@@ -14,8 +14,6 @@ header("Pragma: private");
 header("Expires: ".$ExpStr);
 header('Content-Type: application/x-javascript; charset='.get_option('blog_charset'));
 
-define('wordspew', 'pierres-wordspew/lang/wordspew');
-if(function_exists('load_plugin_textdomain')) load_plugin_textdomain(wordspew);
 $pathtoSmiley = get_bloginfo('wpurl');
 $PathToPlugin = $pathtoSmiley."/wp-content/plugins/pierres-wordspew";
 $pathtoSmiley.=(version_compare($wp_version, '1.5', '>')) ? "/wp-includes/images/smilies/" : "/wp-images/smilies/";

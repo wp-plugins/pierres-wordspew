@@ -509,7 +509,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	$total=intval($rand1+$rand2);
 
 	if ($shout_opt['use_sound']==1) {
-		$img_sound=($_COOKIE['jalSound'.$shout_tb]==1 || $_COOKIE['jalSound'.$shout_tb]=="") ? "sound_1.gif" : "sound_0.gif";
+		$img_sound=(!isset($_COOKIE['jalSound'.$shout_tb]) || $_COOKIE['jalSound'.$shout_tb]==1 || $_COOKIE['jalSound'.$shout_tb]=="") ? "sound_1.gif" : "sound_0.gif";
 		echo '<img src="'. $Actual_URL .'/wp-content/plugins/pierres-wordspew/img/'.$img_sound.'" alt="" onclick="setSound();" id="JalSound" 
 		title="'.__("Click this to turn on/off sound",wordspew).'"/>';
 	}
@@ -620,7 +620,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	$hashtext = $_SESSION['hashtext'.$shout_tb];
 
 	if (!$registered_only) {
-	$display_name=($_COOKIE['jalUserName']) ? $_COOKIE['jalUserName'] : __("Guest_",wordspew).rand(0,5000);
+	$display_name=(isset($_COOKIE['jalUserName'])) ? $_COOKIE['jalUserName'] : __("Guest_",wordspew).rand(0,5000);
 	$display_name=str_replace("\'", "'", $display_name);
 	?>
 	<form id="chatForm" method="post" action="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/wordspew.php">
