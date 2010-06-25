@@ -139,7 +139,7 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 = 5.3 =
 * Compatibility with Wordpress version 3.x
 * favor to the use of `define('WP_DEBUG', true);` some menage have been done in the code, so normally there will be no more warning message during the activation of the plugin under WP 3.x
-* use of wp_register_sidebar_widget and wp_register_widget_control instead of register_sidebar_widget and register_widget_control so there no more backward compatibility with WP under 2.2 release. IMPORTANT !! Like i use this "new" call of register_sidebar_widget and register_widget_control, user will have to re-drop the shoutbox on their sidebar in the widget page of their blog ;)
+* use of wp_register_sidebar_widget and wp_register_widget_control instead of register_sidebar_widget and register_widget_control so there no more backward compatibility with WP under 2.2 release. IMPORTANT !! Like i use this "new" call of register_sidebar_widget and register_widget_control, users will have to re-drop the shoutbox on their sidebars in the widget page of their blog ;)
 
 = 5.2 =
 * Added the possibility to totally deactivate the spam filters.
