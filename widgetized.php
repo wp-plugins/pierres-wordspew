@@ -47,10 +47,10 @@ function widget_wordspew_control() {
 function jal_on_plugins_loaded() {
 	if (function_exists('register_sidebar_widget')) {
 		$widget_ops = array('classname' => 'widget_wordspew', 'description' => __( 'Add a shoutbox on your site', wordspew) );
-		wp_register_sidebar_widget("wordspew", __('Shoutbox', wordspew), 'widget_wordspew', $widget_ops);
+		wp_register_sidebar_widget("shoutbox", __('Shoutbox', wordspew), 'widget_wordspew', $widget_ops);
 	}
 	if (function_exists('wp_register_widget_control')) {
-		wp_register_widget_control("wordspew", __('Shoutbox', wordspew), 'widget_wordspew_control', $widget_ops);
+		wp_register_widget_control("shoutbox", __('Shoutbox', wordspew), 'widget_wordspew_control', $widget_ops);
 	}
 }
 ?>

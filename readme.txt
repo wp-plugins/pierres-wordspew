@@ -136,6 +136,10 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.32 =
+* Little correction in `widgetized.php` to produce XHTML conform code,
+* update of the french translation.
+
 = 5.3 =
 * Compatibility with Wordpress version 3.x
 * favor to the use of `define('WP_DEBUG', true);` some menage have been done in the code, so normally there will be no more warning message during the activation of the plugin under WP 3.x
