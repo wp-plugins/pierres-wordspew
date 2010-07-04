@@ -4,18 +4,20 @@ Plugin Name: Pierre's Wordspew
 Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
-Author URI: http://pierre.dommiers.com/
-Version: 5.32
+Author URI: http://www.monblogamoua.fr/
+Version: 5.35
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.32";
+$jal_version = "5.35";
 
 include_once ('common.php');
 include_once ('usersonline.php');
 
+global $table_prefix;
+
 if (!isset($table_prefix)) {
-	$html = implode('', file("../../../wp-config.php"));
+	$html = implode('', file($_SERVER['DOCUMENT_ROOT']."/wp-config.php"));
 	$html = str_replace ("require_once", "// ", $html);
 	$html = str_replace ("<?php", "", $html);
 	eval($html);
@@ -37,6 +39,7 @@ $mode=isset($_POST['mode']) ? $_POST['mode'] : "";
 $shout_ID=isset($_POST['id']) ? $_POST['id'] : "";
 $shout_IP=isset($_POST['ip']) ? $_POST['ip'] : "";
 $shout_Text=isset($_POST['text']) ? $_POST['text'] : "";
+$_SESSION['Chrono']=isset($_SESSION['Chrono']) ? $_SESSION['Chrono'] : time();
 
 if ($shout_ID!= '' && $mode=="edit") {
 	jal_shout_edit($shout_ID, $shout_IP, $shout_Text); //edit data
@@ -50,8 +53,10 @@ if ($shout_ID!= '' && $mode=="ban") {
 function jal_install_shout () {
 global $wpdb, $user_level, $wp_version;
 
-	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
+	if ($shout_opt) return;
+
+	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 
     get_currentuserinfo();
 	$current=current_user_can('level_'.$jal_admin_user_level);
@@ -542,7 +547,7 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 	if($first_time>=1) echo "<br/>".__("<b>Information:</b> The first click on the desired shoutbox category will select it (if you want to empty its content for example), the second will let you browse to the archive page selected.",wordspew);
 	printf(__('<div id="lastMessage"><span>Last Message</span><br/><div id="responseTime">%s</div>&nbsp;ago</div>',wordspew),jal_time_since($_SESSION['Chrono']));
 
-	$class_id=(strpos($_SERVER['HTTP_REFERER'],"wordspew_archive.php")) ? "archive" : "shout";
+	$class_id=(isset($_SERVER['HTTP_REFERER'])) ? ((strpos($_SERVER['HTTP_REFERER'],"wordspew_archive.php")) ? "archive" : "shout"): "shout";
 	echo '<p id="usersOnline">'.jal_get_useronline_extended().'</p>
 	<div id="theme" class="'.$class_id.'">'.$the_cat.'</div>
 	<hr/>
@@ -591,7 +596,7 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 // To add administration page under Management Section
 function shoutbox_admin_page() {
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
-	add_management_page('Shoutbox Management', 'Live Shoutbox', $jal_admin_user_level, "wordspew_admin", 'jal_shoutbox_admin');
+	add_management_page('Shoutbox Management', 'Live Shoutbox', 'level_'.$jal_admin_user_level, 'wordspew_admin', 'jal_shoutbox_admin');
 }
 function ShoutboxHash($nc, $a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') {
     $l=strlen($a)-1; $r='';
@@ -599,9 +604,9 @@ function ShoutboxHash($nc, $a='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVW
     return $r;
 }
 /* Widget */
-if (function_exists("add_action")) {
+if (function_exists('add_action')) {
 	include ('widgetized.php');
-	add_action("plugins_loaded","jal_on_plugins_loaded");
+	add_action("plugins_loaded", "jal_on_plugins_loaded");
 }
 /* End Widget */
 
@@ -766,8 +771,9 @@ $shout_tb=$_POST['tb'];
 
 if (function_exists('add_action')) {
 	add_action('admin_menu', 'shoutbox_admin_page');
+	add_action('init', 'jal_install_shout');
 	if (strstr($_SERVER['REQUEST_URI'], 'wordspew_admin'))
-	   add_action('admin_head', 'jal_add_to_admin_head');
+		add_action('admin_head', 'jal_add_to_admin_head');
 }
 // If user has updated the admin panel
 if (isset($_POST['jal_admin_options']))
@@ -780,7 +786,4 @@ if (isset($_POST['jal_truncate']) || isset($_POST['jal_truncate_archive']))
 if (isset($_POST['jal_shout_archive']))
     add_action('init', 'jal_shout_archive');
 
-if ((isset($_GET['activate']) && $_GET['activate'] == 'true') || (isset($_GET['activate-multi']) && $_GET['activate-multi'] == 'true')) {
-	add_action('init', 'jal_install_shout');
-}
 ?>

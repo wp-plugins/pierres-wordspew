@@ -1,5 +1,4 @@
 <?php
-
 include_once ('wordspew.php');
 
 function widget_wordspew($args) {

@@ -1,5 +1,4 @@
 <?php
-
 function jal_get_IP() {
 	if (empty($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 		$ip_address = $_SERVER["REMOTE_ADDR"];

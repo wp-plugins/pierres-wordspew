@@ -173,11 +173,10 @@ else {
 	$sql.=" ORDER BY id DESC";
 	$results = mysql_query($sql, $conn);
 	$loop = "";
-	$first=0;
 
 	while ($row = mysql_fetch_array($results)) {
 		$id   = $row[0];
-		$time = jal_time_since($row[1]); if($first==0) $_SESSION['Chrono']=$row[1];
+		$time = jal_time_since($row[1]);
 		$name = $row[2];
 		$text = $row[3];
 		$url  = $row[4];
@@ -190,7 +189,6 @@ else {
 		// append the new id's to the beginning of $loop --- is being used to separate the fields in the output
 		$loop = $id."---".stripslashes($name)."---".stripslashes($text)."---".
 		stripslashes($url)."---".$user."---".$email."---".$time."---".$ip."---".$loop;
-		$first=1;
 	}
 }
 echo jal_time_since($_SESSION['Chrono'])."---".$who."\n".$loop;
@@ -510,8 +508,7 @@ if ($user_level >= $show_to_level || $current==1) {
 
 	if ($shout_opt['use_sound']==1) {
 		$img_sound=(!isset($_COOKIE['jalSound'.$shout_tb]) || $_COOKIE['jalSound'.$shout_tb]==1 || $_COOKIE['jalSound'.$shout_tb]=="") ? "sound_1.gif" : "sound_0.gif";
-		echo '<img src="'. $Actual_URL .'/wp-content/plugins/pierres-wordspew/img/'.$img_sound.'" alt="" onclick="setSound();" id="JalSound" 
-		title="'.__("Click this to turn on/off sound",wordspew).'"/>';
+		echo '<img src="'. $Actual_URL .'/wp-content/plugins/pierres-wordspew/img/'.$img_sound.'" alt="" onclick="setSound();" id="JalSound" title="'.__("Click this to turn on/off sound",wordspew).'"/>';
 	}
 	if($shout_opt['show_spam']==1) {
 		$nb = get_option('shoutbox_spam');
@@ -565,8 +562,7 @@ if ($user_level >= $show_to_level || $current==1) {
 			$avatar=shout_get_avatar($r->email, $size, $position);
 		}
 		if($verif) {
-			echo '<li id="comment-new'.$r->id.'">'.$avatar.'<span title="'.jal_time_since( $r->time ).'" 
-			class="'.$class. sanitize_name($r->name).'">'.stripslashes($url).' : </span>'.convert_smilies(" ".stripslashes($TheText)).$delete.'</li>
+			echo '<li id="comment-new'.$r->id.'">'.$avatar.'<span title="'.jal_time_since( $r->time ).'" class="'.$class. sanitize_name($r->name).'">'.stripslashes($url).' : </span>'.convert_smilies(" ".stripslashes($TheText)).$delete.'</li>
 		';
 		}
 		$jal_first_time = false;
@@ -629,15 +625,11 @@ if ($user_level >= $show_to_level || $current==1) {
 
 	if ($user_level >= $jal_admin_user_level || $curadmin==1) { // If user is allowed to use the admin page
 		$_SESSION['isAdmin'.$shout_tb]=true;
-		echo '<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin" 
-		onmouseover="ChangeURL(\'shoutboxAdmin\',\''.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin\',\'&amp;shout_cat=\')" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
+		echo '<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin" onmouseover="ChangeURL(\'shoutboxAdmin\',\''.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin\',\'&amp;shout_cat=\')" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
 	}
 	else unset($_SESSION['isAdmin'.$shout_tb]);
 	if ($user_level >= $level_for_archive || current_user_can('level_'.$level_for_archive)==1) {
-		echo '<div style="text-align:right;">
-		<a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" 
-		onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a>
-		</div>';
+		echo '<div style="text-align:right;"><a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a></div>';
 	}
 	if (!empty($theuser_nickname)) { /* If they are logged in, then print their nickname */
 	$_SESSION['Logged']="ok"; ?>
