@@ -136,6 +136,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.36 =
+* Replacement of code `$html = implode('', file($_SERVER['DOCUMENT_ROOT']."/wp-config.php"));` who can cause errors if the blog is installed in a subfolder and not in the root folder.
+
 = 5.35 =
 * Correction of code to make it (normally ;)) fully compatible with WP 3.x (no more error during the install or the update process)
 * correction in the code to show normal time since the last event in the shoutbox (before that, `40 years and six month` was shown),
