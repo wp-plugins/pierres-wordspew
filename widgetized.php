@@ -11,7 +11,7 @@ global $user_ID, $user_level, $shout_opt, $shout_where;
 		$user_level=isset($user_level) ? $user_level : -1;
 		$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
-		if ($user_level >= $show_to_level || $current==1) {
+		if ($current==1) {
 		$Woptions = get_option('widget_wordspew');
 		$title = $Woptions['title'];
 		$RSSLink="";

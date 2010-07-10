@@ -1,5 +1,5 @@
 <?php
-require_once('../../../wp-blog-header.php');
+require_once('../../../wp-config.php');
 include_once ('common.php');
 
 if (!isset($table_prefix)) {
@@ -11,13 +11,15 @@ if (!isset($table_prefix)) {
 
 $limit=get_option('shoutbox_nb_comment');
 $offset = intval((isset($_REQUEST['offset']) && $_REQUEST['offset'] > 0) ? $_REQUEST['offset'] : 0);
-$shout_cat=$_GET['shout_cat'];
+$shout_cat=(isset($_GET['shout_cat'])) ? $_GET['shout_cat'] : "";
+$Actual_URL=get_bloginfo('wpurl');
+$shout_opt = get_option('shoutbox_options');
+$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
 
 function jal_get_shoutboxarchive ($cat="") {
-global $wpdb, $user_nickname, $user_ID, $user_level, $user_identity, $limit, $offset, $wp_version, $shout_cat;
+global $wpdb, $user_nickname, $user_ID, $user_level, $user_identity, $limit, $offset, $wp_version, $shout_cat, $Actual_URL, $shout_opt;
 
 $jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
-$shout_opt = get_option('shoutbox_options');
 
 $cat=($cat!="") ? $cat : $shout_cat;
 //get_currentuserinfo(); // Gets logged in user.
@@ -25,7 +27,7 @@ $theuser_nickname=$user_nickname;
 $ActualVersion=round(get_bloginfo('version'));
 if($ActualVersion>=2) $theuser_nickname=$user_identity;
 $XHTML=$shout_opt['xhtml'];
-$Actual_URL=get_bloginfo('wpurl');
+
 $show_to_level=$shout_opt['level_for_shoutbox']; 
 $alt="alternate";
 $link="";
@@ -40,18 +42,17 @@ $level_for_theme=$shout_opt['level_for_theme'];
 $user_level=isset($user_level) ? $user_level : -1;
 $Show_IP=true;
 
-$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
+$current=($level_for_archive==-1 || $show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curarc=($level_for_archive==-1) ? 1 : current_user_can('level_'.$level_for_archive);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
 $curadm=current_user_can('level_'.$jal_admin_user_level);
 
-//if user can see the box, can see archive, can see theme or theme is not set.
-if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_archive || $curarc==1) && ($user_level>=$level_for_theme || $cat=="" || $curthe==1)) {
+//if user can see archive, can see theme or theme is not set.
+if ($current==1 && $curarc==1 && ($cat=="" || $curthe==1)) {
 
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 
-	$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
 
 	if(!isset($_SESSION['LoggedUsers'])) {
 		$column = (version_compare($wp_version, '1.5', '>')) ? "display_name" : "user_nickname";
@@ -69,19 +70,6 @@ if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_a
 	$data	= mysql_fetch_assoc($result);
 	$total=$data['total'];
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head profile="http://gmpg.org/xfn/11">
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<title><?php bloginfo('name'); ?> <?php _e("Archive for the shoutbox",wordspew); ?></title>
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/css.php?dt=<?php echo $dateCSS;?>" type="text/css" />
-	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/fade.php"></script>
-	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/ajax_archive.php"></script>
-</head>
-
-<body class="shoutbox_archive">
 
 <table width="100%" border="0" id="wordspew">
 	<?php
@@ -216,9 +204,32 @@ echo '
 	</tr>
 </table>
 <?php echo $link; ?>
+
+<?php }
+else { ?>
+<p>&nbsp;</p>
+
+<div align="center">
+	<?php _e('Sorry, but you don\'t have sufficient rights to see the archives of the shoutbox.',wordspew); ?><br/>
+	<?php printf(__('You can click <a href="%s">here</a> to go back to the homepage of the site.',wordspew),$Actual_URL);?>
+
+</div>
+<?php }
+} ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<title><?php bloginfo('name'); ?> <?php _e("Archive for the shoutbox",wordspew); ?></title>
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/css.php?dt=<?php echo $dateCSS;?>" type="text/css" />
+	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/fade.php"></script>
+	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/ajax_archive.php"></script>
+</head>
+
+<body class="shoutbox_archive">
+
+<?php jal_get_shoutboxarchive();?>
+
 </body>
 </html>
-<?php }
-else header('location: '.$Actual_URL);
-}
-jal_get_shoutboxarchive(); ?>

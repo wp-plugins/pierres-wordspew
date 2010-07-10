@@ -1,16 +1,7 @@
 <?php
 if (!isset($wpdb)) {
-	require('../../../wp-blog-header.php');
+	require('../../../wp-config.php');
 }
-//expire every 3 minutes
-$offset = 60*3;
-$ExpStr = gmdate("D, d M Y H:i:s",time() + $offset)." GMT";
-header("Cache-Control: max-age=".$offset.", must-revalidate");
-header("Pragma: private");
-header("Expires: ".$ExpStr);
-
-define('wordspew', 'pierres-wordspew/lang/wordspew');
-if(function_exists('load_plugin_textdomain')) load_plugin_textdomain(wordspew);
 
 $id	=  isset($_GET['id']) ? $_GET['id'] : "";
 $jal_wp_url = get_bloginfo('wpurl');
@@ -27,7 +18,7 @@ $theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity :
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
 
-if (($user_level >= $show_to_level || $current==1) && ($user_level>=$level_for_theme || $shout_cat=="" || $curthe==1)) {
+if ($current==1 && ($shout_cat=="" || $curthe==1)) {
 
 @mysql_query("SET CHARACTER SET 'utf8'");
 @mysql_query("SET NAMES utf8");
@@ -38,20 +29,25 @@ $jal_first_time = true;
 header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?>
 '; ?>
-<!-- generator="wordpress/<?php bloginfo_rss('version') ?>" -->
 <rss version="2.0" 
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
 	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/">
-	<channel>
-		<title><?php _e('Wordspew-RSS-Feed for:', wordspew);?> <?php bloginfo_rss('name'); ?></title>
-		<link><?php bloginfo_rss('url') ?></link>
-		<description><?php bloginfo_rss("description") ?></description>
-		<generator>http://wordpress.org/?v=<?php bloginfo_rss('version'); ?></generator>
-		<?php if ($UseRSS=='1') {
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	>
+<channel>
+	<title><?php _e('Wordspew-RSS-Feed for:', wordspew);?> <?php bloginfo_rss('name'); ?></title>
+	<atom:link href="<?php echo $jal_wp_url ?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php" rel="self" type="application/rss+xml" />
+	<link><?php echo $jal_wp_url ?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php</link>
+	<description><?php bloginfo_rss("description") ?></description>
+	<generator>http://wordpress.org/?v=<?php bloginfo_rss('version'); ?></generator>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<?php if ($UseRSS=='1') {
 	foreach ($events as $event) {
-		if ($jal_first_time == true) { ?><pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', gmdate( 'Y-m-d H:i:s', $event->time ), false); ?></pubDate>
-		<language><?php echo get_option('rss_language'); ?></language>
+		if ($jal_first_time == true) { ?><lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', gmdate( 'Y-m-d H:i:s', $event->time ), false); ?></lastBuildDate>
+	<language><?php echo get_option('rss_language'); ?></language>
 <?php $jal_first_time = false; }
 $TheText=$event->text;
 $verif=true;
@@ -66,16 +62,16 @@ if (substr($TheText,0,2)=="@@") {
 	|| ($user_level >= $jal_admin_user_level || current_user_can('level_'.$jal_admin_user_level)==1)) $verif=true;
 }
 if($verif) { ?>
-		<item>
-			<title><?php echo $event->name.' ('.mysql2date('D, d M Y H:i:s', date('Y-m-d H:i:s',$event->time)).')'; ?></title>
-			<link><?php echo $jal_wp_url;?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php?id=<?php echo $event->id; ?></link>
-			<category>Shoutbox</category>
-			<guid isPermaLink="false"><?php echo $jal_wp_url;?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php?id=<?php echo $event->id;?></guid>
-			<description><![CDATA[<?php echo convert_smilies(stripslashes($TheText)); ?>]]></description>
-			<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', gmdate( 'Y-m-d H:i:s', $event->time ), false); ?></pubDate>
-		</item>
+	<item>
+		<title><?php echo $event->name.' ('.mysql2date('D, d M Y H:i:s', date('Y-m-d H:i:s',$event->time)).')'; ?></title>
+		<link><?php echo $jal_wp_url;?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php?id=<?php echo $event->id; ?></link>
+		<category>Shoutbox</category>
+		<guid isPermaLink="false"><?php echo $jal_wp_url;?>/wp-content/plugins/pierres-wordspew/wordspew-rss.php?id=<?php echo $event->id;?></guid>
+		<description><![CDATA[<?php echo convert_smilies(stripslashes($TheText)); ?>]]></description>
+		<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', gmdate( 'Y-m-d H:i:s', $event->time ), false); ?></pubDate>
+	</item>
 <?php }}} ?>
-	</channel>
+</channel>
 </rss>
 <?php }}
 function jal_getRSS ($ID) {
@@ -86,7 +82,7 @@ $user_level=isset($user_level) ? $user_level : -1;
 $theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
-if ($user_level >= $show_to_level || $current==1) {
+if ($current==1) {
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 	$UseRSS=$shout_opt['use_rss'];
@@ -126,7 +122,6 @@ if ($user_level >= $show_to_level || $current==1) {
 <head profile="http://gmpg.org/xfn/11">
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<title><?php _e('Wordspew-RSS-Feed for:', wordspew);?> <?php bloginfo('name'); ?></title>
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen"/>
 </head>
 

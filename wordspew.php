@@ -44,7 +44,7 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 		$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
 		$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
-		if ($user_level >= $show_to_level || $current==1) {
+		if ($current==1) {
 			$jal_wp_url = get_bloginfo('wpurl') . "/";
 			$UseRSS=$shout_opt['use_rss'];
 			$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
@@ -173,22 +173,26 @@ else {
 	$sql.=" ORDER BY id DESC";
 	$results = mysql_query($sql, $conn);
 	$loop = "";
+	$first=0;
 
-	while ($row = mysql_fetch_array($results)) {
-		$id   = $row[0];
-		$time = jal_time_since($row[1]);
-		$name = $row[2];
-		$text = $row[3];
-		$url  = $row[4];
-		$email= ($row[6]!="") ? md5($row[6]) : "";
-		$ip = isset($_SESSION['isAdmin'.$shout_tb]) ? $row[5] :" ";
-		if(verifyName($name))
-			$user=1;
-		else
-			$user=0;
-		// append the new id's to the beginning of $loop --- is being used to separate the fields in the output
-		$loop = $id."---".stripslashes($name)."---".stripslashes($text)."---".
-		stripslashes($url)."---".$user."---".$email."---".$time."---".$ip."---".$loop;
+	if($results) {
+		while ($row = mysql_fetch_array($results)) {
+			$id   = $row[0];
+			$time = jal_time_since($row[1]); if($first==0) $_SESSION['Chrono']=$row[1];
+			$name = $row[2];
+			$text = $row[3];
+			$url  = $row[4];
+			$email= ($row[6]!="") ? md5($row[6]) : "";
+			$ip = isset($_SESSION['isAdmin'.$shout_tb]) ? $row[5] :" ";
+			if(verifyName($name))
+				$user=1;
+			else
+				$user=0;
+			// append the new id's to the beginning of $loop --- is being used to separate the fields in the output
+			$loop = $id."---".stripslashes($name)."---".stripslashes($text)."---".
+			stripslashes($url)."---".$user."---".$email."---".$time."---".$ip."---".$loop;
+			$first=1;
+		}
 	}
 }
 echo jal_time_since($_SESSION['Chrono'])."---".$who."\n".$loop;
@@ -456,19 +460,23 @@ global $wpdb, $user_level, $theuser_nickname, $user_url, $user_ID, $jal_admin_us
 $HiddenCat="";
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $level_for_archive=$shout_opt['level_for_archive'];
+$level_for_archive=($level_for_archive==-1) ? 1 : current_user_can('level_'.$level_for_archive);
 $level_for_theme=$shout_opt['level_for_theme'];
 $user_level=isset($user_level) ? $user_level : -1;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
+$only_registered=$shout_opt['registered_only'];
+$only_registered=($only_registered==-1) ? 1 : current_user_can('level_'.$only_registered);
 $curadmin=current_user_can('level_'.$jal_admin_user_level);
 $use_theme=$shout_opt['use_theme'];
+$lastID =0;
 
 if($cat!="") $HiddenCat=$cat;
 
-if ($user_level >= $show_to_level || $current==1) {
+if ($current==1) {
 
 	if($cat=="") {
-		if(($user_level >= $level_for_theme || $curthe==1) && $use_theme==1)
+		if($curthe==1 && $use_theme==1)
 			$HiddenCat=$cat=str_replace("\\","",$_COOKIE['jalCombo']);
 	}
 
@@ -497,10 +505,9 @@ if ($user_level >= $show_to_level || $current==1) {
 	$SQL.=" ORDER BY id DESC LIMIT ".$jal_number_of_comments;
 	$results = $wpdb->get_results($SQL);
 	$wpdb->show_errors();
-
 	// Will only add the last message div if it is looping for the first time
 	$jal_first_time = true;
-	$registered_only = (intval($user_level) >= $shout_opt['registered_only']) ? false : true;
+	$registered_only = ($only_registered) ? false : true;
 
 	$rand1=mt_rand(0,10);
 	$rand2=mt_rand(0,10);
@@ -586,8 +593,8 @@ if ($user_level >= $show_to_level || $current==1) {
 		$theme = $wpdb->get_results($SQL);
 		$wpdb->show_errors();
 
-		if(($user_level >= $level_for_theme || current_user_can('level_'.$level_for_theme)==1)) {
-			if($theme || ($user_level >= $jal_admin_user_level || $curadmin==1)) {
+		if($curthe==1) {
+			if($theme || $curadmin==1) {
 				$combo.='<div id="shout_theme" style="display:none;"><b>'.__("Theme:",wordspew).'</b><br/>';
 				$combo.='<select name="shout_cat_theme" id="shout_cat_theme" onchange="document.getElementById(\'chatbarText\').focus();" onblur="CleanBox()" 
 				onfocus="oldval=this.options[this.selectedIndex].value">
@@ -628,7 +635,7 @@ if ($user_level >= $show_to_level || $current==1) {
 		echo '<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin" onmouseover="ChangeURL(\'shoutboxAdmin\',\''.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin\',\'&amp;shout_cat=\')" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
 	}
 	else unset($_SESSION['isAdmin'.$shout_tb]);
-	if ($user_level >= $level_for_archive || current_user_can('level_'.$level_for_archive)==1) {
+	if ($level_for_archive==1) {
 		echo '<div style="text-align:right;"><a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a></div>';
 	}
 	if (!empty($theuser_nickname)) { /* If they are logged in, then print their nickname */
@@ -677,7 +684,7 @@ if ($user_level >= $show_to_level || $current==1) {
 	</form>
 <?php }
 else {
-	if ($user_level >= $level_for_archive || current_user_can('level_'.$level_for_archive)==1) {
+	if ($level_for_archive==1) {
 		echo '<div style="text-align:right;">
 		<a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php?shout_cat='.$cat.'">'. __("Archive",wordspew).'</a>
 		</div>';

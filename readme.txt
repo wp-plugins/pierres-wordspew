@@ -136,6 +136,11 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.50 =
+* Correction of some bugs.
+* RSS feeds and Archives didn't show correctly : corrected.
+* Due to the new level (0) of unregistered users in WP 3.x, the options to show the shoutbox, show the archives, use the shoutbox etc. didn't works anymore ; it's now corrected.
+
 = 5.36 =
 * Replacement of code `$html = implode('', file($_SERVER['DOCUMENT_ROOT']."/wp-config.php"));` who can cause errors if the blog is installed in a subfolder and not in the root folder.
 
