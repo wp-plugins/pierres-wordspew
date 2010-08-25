@@ -5,11 +5,11 @@ Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Author URI: http://www.monblogamoua.fr/
-Version: 5.51
+Version: 5.52
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.51";
+$jal_version = "5.52";
 
 include_once ('common.php');
 include_once ('usersonline.php');
@@ -108,7 +108,7 @@ global $wpdb, $user_level, $wp_version;
 			KEY file (location)
 			) CHARACTER SET utf8;
 	";
-	$pathtoFunction = (version_compare($wp_version, '2.3', '>=')) ? "wp-admin/includes/upgrade.php" : "wp-admin/upgrade-functions.php";
+	$pathtoFunction = (version_compare($wp_version, '2.3', '<')) ? "wp-admin/upgrade-functions.php" : "wp-admin/includes/upgrade.php";
 	require_once(ABSPATH . $pathtoFunction);
 	dbDelta($qry);
 
@@ -192,7 +192,7 @@ global $wp_version, $wpdb, $shout_opt, $shout_tb;
 $can_Ban=(current_user_can('manage_options')) ? "true" : "false";
 $shout_opt = get_option('shoutbox_options');
 if(!isset($_SESSION['LoggedUsers'])) {
-	$column = (version_compare($wp_version, '1.5', '>')) ? "display_name" : "user_nickname";
+	$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
 	$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$wpdb->users);
 	$_SESSION['LoggedUsers']=$LoggedUsers;
 	$_SESSION['Show_Users']=$shout_opt['show_user_online'];

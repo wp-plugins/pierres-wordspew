@@ -55,7 +55,7 @@ if ($current==1 && $curarc==1 && ($cat=="" || $curthe==1)) {
 
 
 	if(!isset($_SESSION['LoggedUsers'])) {
-		$column = (version_compare($wp_version, '1.5', '>')) ? "display_name" : "user_nickname";
+		$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
 		$LoggedUsers = $wpdb->get_col("SELECT LOWER(".$column.") FROM ".$wpdb->users);
 		$_SESSION['LoggedUsers']=$LoggedUsers;
 	}

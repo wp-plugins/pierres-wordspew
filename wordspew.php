@@ -41,7 +41,7 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 	if(where_shout($shout_opt['where'],1)) {
 		$show_to_level=$shout_opt['level_for_shoutbox'];
 		$user_level=isset($user_level) ? $user_level : -1;
-		$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
+		$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 		$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
 		if ($current==1) {
@@ -131,7 +131,7 @@ return true;
 			$_SESSION['LoggedMsg']=__('No, sorry you used the name of a registered user! You have to change it please.',wordspew);
 
 			if(!isset($_SESSION['LoggedUsers'])) {
-				$column = (version_compare($wp_version, '1.5', '>')) ? "display_name" : "user_nickname";
+				$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
 				$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$wpdb->users);
 				$_SESSION['LoggedUsers']=$LoggedUsers;
 			}

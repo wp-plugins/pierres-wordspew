@@ -136,6 +136,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.52 =
+* Like some of you use security plugins who hide the value of the `$wp_version` variable, i've done some modifications on pages where I use `version_compare`. BTW you shouldn't have any problem with user nickname or smileys.
+
 = 5.51 =
 * Updated Danish translation. Thanks to [Henrik](http://troels-hansen.net/)
 

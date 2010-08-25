@@ -14,7 +14,7 @@ global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $s
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $level_for_theme=$shout_opt['level_for_theme'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
+$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
 
@@ -79,7 +79,7 @@ global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $s
 
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(version_compare($wp_version, '2.0', '>=')) ? $user_identity : $user_nickname;
+$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
 if ($current==1) {
