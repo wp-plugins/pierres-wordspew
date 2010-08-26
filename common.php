@@ -155,11 +155,7 @@ $temp="";
 }
 
 function shout_get_avatar($email, $size, $position) {
-$avatar = '<div class="ps_'.$position.'">';
-	if (get_option('show_avatars')) {
-		$avatar .= get_avatar($email, $size);
-	}
-$avatar.='</div>';
+$avatar = '<div class="ps_'.$position.'">'. get_avatar($email, $size) .'</div>';
 return $avatar;
 }
 ?>
