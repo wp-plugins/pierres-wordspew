@@ -5,11 +5,11 @@ Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Author URI: http://www.monblogamoua.fr/
-Version: 5.52
+Version: 5.54
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.52";
+$jal_version = "5.54";
 
 include_once ('common.php');
 include_once ('usersonline.php');
@@ -51,7 +51,7 @@ if ($shout_ID!= '' && $mode=="ban") {
 }
 
 function jal_install_shout () {
-global $wpdb, $user_level, $wp_version;
+global $wpdb, $user_level;
 
 	$shout_opt = get_option('shoutbox_options');
 	if ($shout_opt) return;
@@ -108,8 +108,7 @@ global $wpdb, $user_level, $wp_version;
 			KEY file (location)
 			) CHARACTER SET utf8;
 	";
-	$pathtoFunction = (version_compare($wp_version, '2.3', '<')) ? "wp-admin/upgrade-functions.php" : "wp-admin/includes/upgrade.php";
-	require_once(ABSPATH . $pathtoFunction);
+	require_once(ABSPATH . "wp-admin/includes/upgrade.php");
 	dbDelta($qry);
 
 	if ($first_install == "yes") {
@@ -188,12 +187,12 @@ global $wpdb, $user_level, $wp_version;
 
 // In the administration page, add some style and script...
 function jal_add_to_admin_head () {
-global $wp_version, $wpdb, $shout_opt, $shout_tb;
+global $wpdb, $shout_opt, $shout_tb;
+
 $can_Ban=(current_user_can('manage_options')) ? "true" : "false";
 $shout_opt = get_option('shoutbox_options');
 if(!isset($_SESSION['LoggedUsers'])) {
-	$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
-	$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$wpdb->users);
+	$LoggedUsers = $wpdb->get_col("SELECT display_name FROM ".$wpdb->users);
 	$_SESSION['LoggedUsers']=$LoggedUsers;
 	$_SESSION['Show_Users']=$shout_opt['show_user_online'];
 	$users = $shout_opt['hidden_users'];

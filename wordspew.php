@@ -33,7 +33,7 @@ else
 
 // function to print the external javascript and css links
 function jal_add_to_head () {
-global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, $wpdb, $show, $size, $position, $wp_version, $shout_opt, $user_identity, $user_nickname, $theuser_nickname, $shout_tb;
+global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, $wpdb, $show, $size, $position, $shout_opt, $user_identity, $shout_tb;
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
@@ -41,7 +41,6 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 	if(where_shout($shout_opt['where'],1)) {
 		$show_to_level=$shout_opt['level_for_shoutbox'];
 		$user_level=isset($user_level) ? $user_level : -1;
-		$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 		$current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
 		if ($current==1) {
@@ -69,7 +68,7 @@ return s.replace(/^( | )+/, \'\').replace(/( | )+$/, \'\');
 }
 ';
 $isAdmin=($user_level >= $jal_admin_user_level || current_user_can('level_'.$jal_admin_user_level)==1) ? "true" : "false";
-$the_nickname=isset($theuser_nickname) ? $theuser_nickname : str_replace("\'", "'", $_COOKIE['jalUserName']);
+$the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
 
 echo '
 var show_avatar='.$show.', avatar_position="'.$position.'", avatar_size='.$size.', isAdmin='.$isAdmin.';
@@ -131,8 +130,7 @@ return true;
 			$_SESSION['LoggedMsg']=__('No, sorry you used the name of a registered user! You have to change it please.',wordspew);
 
 			if(!isset($_SESSION['LoggedUsers'])) {
-				$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
-				$LoggedUsers = $wpdb->get_col("SELECT ".$column." FROM ".$wpdb->users);
+				$LoggedUsers = $wpdb->get_col("SELECT display_name FROM ".$wpdb->users);
 				$_SESSION['LoggedUsers']=$LoggedUsers;
 			}
 		}

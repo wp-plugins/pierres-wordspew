@@ -155,23 +155,11 @@ $temp="";
 }
 
 function shout_get_avatar($email, $size, $position) {
-global $wp_version;
 $avatar = '<div class="ps_'.$position.'">';
-	if (version_compare($wp_version, '2.5', '<')) {
-		$avatar .= get_shout_avatar($email, $size);
-	}
-	else {
-		if (get_option('show_avatars')) {
-			$avatar .= get_avatar($email, $size);
-		}
+	if (get_option('show_avatars')) {
+		$avatar .= get_avatar($email, $size);
 	}
 $avatar.='</div>';
-	return $avatar;
-}
-function get_shout_avatar($email, $size) {
-	$default = 'http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s='.$size;
-	$avatar = '<img src="http://www.gravatar.com/avatar.php?gravatar_id=';
-	$avatar.= md5(strtolower($email)).'&amp;default='.urlencode($default).'&amp;size='.$size.'" alt=""/>';
-	return $avatar;
+return $avatar;
 }
 ?>

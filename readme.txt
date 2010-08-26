@@ -2,7 +2,7 @@
 Contributors: Pierre Sudarovich
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8487949
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
-Requires at least: 2.2
+Requires at least: 2.5
 Tested up to: 3.0.1
 Stable tag: trunk
 
@@ -135,6 +135,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 
 == Changelog ==
+
+= 5.54 =
+* **IMPORTANT !! the shoutbox requires, now, at least Wordpress 2.5.** I've clean the code and don't use anymore `version_compare` ; it's why the minimum version of WP is now 2.5 ;).
 
 = 5.52 =
 * Like some of you use security plugins who hide the value of the `$wp_version` variable, i've done some modifications on pages where I use `version_compare`. BTW you shouldn't have any problem with user nickname or smileys.

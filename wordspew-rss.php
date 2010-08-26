@@ -9,12 +9,11 @@ $shout_opt = get_option('shoutbox_options');
 $shout_cat=(isset($_GET['shout_cat'])) ? $_GET['shout_cat'] : "";
 
 function rss_feed() {
-global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $shout_cat, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
+global $wpdb, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $shout_cat, $user_identity, $jal_admin_user_level;
 
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $level_for_theme=$shout_opt['level_for_theme'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 $curthe=($level_for_theme==-1) ? 1 : current_user_can('level_'.$level_for_theme);
 
@@ -57,7 +56,7 @@ if (substr($TheText,0,2)=="@@") {
 	$To=substr($TheText,2,$PosSpace-2);
 	$Deb=strlen($To)+2;
 	$TheText='<font color="red">'.__("Private message for", wordspew).' '.$To.':</font> '.substr($TheText,$Deb);
-	$the_nickname=isset($theuser_nickname) ? $theuser_nickname : str_replace("\'", "'", $_COOKIE['jalUserName']);
+	$the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
 	if((strtolower($the_nickname)==strtolower($To)) || (strtolower($the_nickname)==strtolower($event->name)) 
 	|| ($user_level >= $jal_admin_user_level || current_user_can('level_'.$jal_admin_user_level)==1)) $verif=true;
 }
@@ -75,11 +74,10 @@ if($verif) { ?>
 </rss>
 <?php }}
 function jal_getRSS ($ID) {
-global $wpdb, $wp_version, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $user_identity, $user_nickname, $theuser_nickname,$jal_admin_user_level;
+global $wpdb, $table_prefix, $jal_wp_url, $user_ID, $user_level, $shout_opt, $user_identity, $jal_admin_user_level;
 
 $show_to_level=$shout_opt['level_for_shoutbox'];
 $user_level=isset($user_level) ? $user_level : -1;
-$theuser_nickname=(version_compare($wp_version, '2.0', '<')) ? $user_nickname : $user_identity;
 $current=($show_to_level==-1) ? 1 : current_user_can('level_'.$show_to_level);
 
 if ($current==1) {
@@ -100,7 +98,7 @@ if ($current==1) {
 				$To=substr($TheText,2,$PosSpace-2);
 				$Deb=strlen($To)+2;
 				$TheText='<font color="red">'.__("Private message for", wordspew).' '.$To.':</font> '.substr($TheText,$Deb);
-				$the_nickname=isset($theuser_nickname) ? $theuser_nickname : str_replace("\'", "'", $_COOKIE['jalUserName']);
+				$the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
 				if((strtolower($the_nickname)==strtolower($To)) || (strtolower($the_nickname)==strtolower($r->name)) 
 				|| ($user_level >= $jal_admin_user_level || current_user_can('level_'.$jal_admin_user_level)==1)) $verif=true;
 			} 

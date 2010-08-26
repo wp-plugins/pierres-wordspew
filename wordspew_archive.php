@@ -17,15 +17,11 @@ $shout_opt = get_option('shoutbox_options');
 $dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
 
 function jal_get_shoutboxarchive ($cat="") {
-global $wpdb, $user_nickname, $user_ID, $user_level, $user_identity, $limit, $offset, $wp_version, $shout_cat, $Actual_URL, $shout_opt;
+global $wpdb, $user_ID, $user_level, $user_identity, $limit, $offset, $shout_cat, $Actual_URL, $shout_opt;
 
 $jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 
 $cat=($cat!="") ? $cat : $shout_cat;
-//get_currentuserinfo(); // Gets logged in user.
-$theuser_nickname=$user_nickname;
-$ActualVersion=round(get_bloginfo('version'));
-if($ActualVersion>=2) $theuser_nickname=$user_identity;
 $XHTML=$shout_opt['xhtml'];
 
 $show_to_level=$shout_opt['level_for_shoutbox']; 
@@ -55,8 +51,7 @@ if ($current==1 && $curarc==1 && ($cat=="" || $curthe==1)) {
 
 
 	if(!isset($_SESSION['LoggedUsers'])) {
-		$column = (version_compare($wp_version, '1.6', '<')) ? "user_nickname" : "display_name";
-		$LoggedUsers = $wpdb->get_col("SELECT LOWER(".$column.") FROM ".$wpdb->users);
+		$LoggedUsers = $wpdb->get_col("SELECT display_name FROM ".$wpdb->users);
 		$_SESSION['LoggedUsers']=$LoggedUsers;
 	}
 
@@ -144,7 +139,7 @@ if($results) {
 			$To=substr($TheText,2,$PosSpace-2);
 			$Deb=strlen($To)+2;
 			$TheText='<span class="InfoUser">'.__("Private message for", wordspew).' '.$To.':</span>'.substr($TheText,$Deb).'';
-			$the_nickname=isset($theuser_nickname) ? $theuser_nickname : str_replace("\'", "'", $_COOKIE['jalUserName']);
+			$the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
 			if((strtolower($the_nickname)==strtolower($To)) || (strtolower($the_nickname)==strtolower($TheName)) 
 			|| ($user_level >= $jal_admin_user_level || $curadm==1)) $verif=true;
 			else {

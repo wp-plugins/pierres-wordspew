@@ -16,7 +16,7 @@ header('Content-Type: application/x-javascript; charset='.get_option('blog_chars
 
 $pathtoSmiley = get_bloginfo('wpurl');
 $PathToPlugin = $pathtoSmiley."/wp-content/plugins/pierres-wordspew";
-$pathtoSmiley.=(version_compare($wp_version, '1.6', '<')) ? "/wp-images/smilies/" : "/wp-includes/images/smilies/";
+$pathtoSmiley.= "/wp-includes/images/smilies/";
 $shout_opt = get_option('shoutbox_options');
 ?>
 var myBox = new Object();
