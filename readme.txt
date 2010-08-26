@@ -136,6 +136,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.55 =
+* Sorry, I forget to set a variable... So, Admin have to set the captcha too. It's now corrected.
+
 = 5.54 =
 * **IMPORTANT !! the shoutbox requires, now, at least Wordpress 2.5.** I've clean the code and don't use anymore `version_compare` ; it's why the minimum version of WP is now 2.5 ;).
 

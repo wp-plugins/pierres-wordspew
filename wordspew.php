@@ -453,7 +453,7 @@ return str_replace($bad, $good, $name);
 
 // Prints the html structure for the shoutbox
 function jal_get_shoutbox ($cat="",$comboTheme=1) {
-global $wpdb, $user_level, $theuser_nickname, $user_url, $user_ID, $jal_admin_user_level, $show, $size, $position, $shout_opt, $shout_tb;
+global $wpdb, $user_level, $user_identity, $user_url, $user_ID, $jal_admin_user_level, $show, $size, $position, $shout_opt, $shout_tb;
 
 $HiddenCat="";
 $show_to_level=$shout_opt['level_for_shoutbox'];
@@ -550,7 +550,7 @@ if ($current==1) {
 			$To=substr($TheText,2,$PosSpace-2);
 			$Deb=strlen($To)+2;
 			$TheText='<span class="InfoUser">'.__("Private message for", wordspew).' '.$To.':</span>'.substr($TheText,$Deb);
-			$the_nickname=isset($theuser_nickname) ? $theuser_nickname : str_replace("\'", "'", $_COOKIE['jalUserName']);
+			$the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
 			if((strtolower($the_nickname)==strtolower($To)) || (strtolower($the_nickname)==strtolower($r->name)) 
 			|| ($user_level >= $jal_admin_user_level || $curadmin==1)) $verif=true;
 		}
@@ -636,11 +636,11 @@ if ($current==1) {
 	if ($level_for_archive==1) {
 		echo '<div style="text-align:right;"><a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a></div>';
 	}
-	if (!empty($theuser_nickname)) { /* If they are logged in, then print their nickname */
+	if (!empty($user_identity)) { /* If they are logged in, then print their nickname */
 	$_SESSION['Logged']="ok"; ?>
 	<input type="hidden" name="shoutboxOp" id="shoutboxOp" value="<?php echo $total; ?>"/>
-	<label><?php _e('Name',wordspew); ?>: <em><?php echo $theuser_nickname ?></em></label>
-	<input type="hidden" name="shoutboxname" id="shoutboxname" value="<?php echo $theuser_nickname; ?>"/>
+	<label><?php _e('Name',wordspew); ?>: <em><?php echo $user_identity ?></em></label>
+	<input type="hidden" name="shoutboxname" id="shoutboxname" value="<?php echo $user_identity; ?>"/>
 	<input type="hidden" name="shoutboxU" id="shoutboxU" value="<?php if($use_url) { echo $user_url; } ?>"/>
 	<?php } else {
 	unset($_SESSION['Logged']);
