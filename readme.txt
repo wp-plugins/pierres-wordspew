@@ -136,6 +136,13 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.60 =
+* Added the possibility per user to dynamically adjust the height of the shoutbox (the defined size will be kept thanks to the use of a cookie).
+* Correction of a little bug if the username have space(s) in it ; if the field get the focus then loose it, spaces were replaced by sign `+`.
+* Latin script caraters can be now used in the "Username" field (before it shows no name).
+* replacement of the two littles sounds icons (thanks to [runpokertour](http://www.runpokertour.com/)) by two cutest.
+* Update of french and spanish translation.
+
 = 5.55 =
 * Sorry, I forget to set a variable... So, Admin have to set the captcha too. It's now corrected.
 

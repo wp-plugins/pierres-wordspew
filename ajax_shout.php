@@ -107,6 +107,7 @@ chatbarText=document.getElementById('chatbarText');
 jal_lastID=document.getElementById('jal_lastID');
 outputList=document.getElementById("outputList");
 shout_theme=document.getElementById('shout_theme');
+ChangeBoxSize(2);
 
 	if (!chatbarText) { return; }
 	if(shout_theme) shout_theme.style.display="";
@@ -229,7 +230,7 @@ document.getElementById('JalSound').src=(jalSound==1) ? pathToImg+"sound_1.gif":
 function insertNewContent(liName, liText, liUrl, liId, liUser, liEmail, liTime) {
 var myClass="";
 if(liUser==1) myClass="jal_user ";
-myClass+=liName;
+myClass+=liName.replace(" ","");
 verif=true;
 	if (liText.substr(0,2)=="@@") {
 		verif=false;
@@ -456,7 +457,7 @@ function checkName() {
 	jalCookie = jal_getCookie("jalUserName");
 	shout_user=shoutboxname.value;
 	if (jalCookie && shoutboxname.value == '') {
-		shoutboxname.value = jalCookie;
+		shoutboxname.value = jalCookie.replace("+"," ");
 	}
 	else {
 		if(shout_user=='') shoutboxname.value=Old_Sname; 
@@ -468,5 +469,21 @@ function checkUrl() {
 	if(shoutboxU.style.display!="none") {
 		document.cookie = "jalUrl="+shoutboxU.value+";expires="+DateExpires+";path=/;"
 		return;
+	}
+}
+
+function ChangeBoxSize(MyInt) {
+	var obj=document.getElementById('chatoutput');
+	if(MyInt==1) {
+		obj.style.height=(obj.offsetHeight+20)+'px';
+		document.cookie = "jalHeight="+(obj.offsetHeight-14)+";expires="+DateExpires+";path=/;"
+	}
+	else if(MyInt==0) {
+		hauteur=(obj.offsetHeight-48);
+		if(parseInt(hauteur)>0) obj.style.height=hauteur+'px';
+		document.cookie = "jalHeight="+(obj.offsetHeight-14)+";expires="+DateExpires+";path=/;"
+	}
+	else {
+		if(jal_getCookie("jalHeight")) obj.style.height=jal_getCookie("jalHeight")+'px';
 	}
 }

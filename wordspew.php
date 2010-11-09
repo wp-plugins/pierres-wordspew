@@ -199,7 +199,7 @@ echo jal_time_since($_SESSION['Chrono'])."---".$who."\n".$loop;
 function jal_special_chars ($s) {
 	$s = htmlspecialchars($s, ENT_NOQUOTES,'UTF-8');
 	$s = str_replace("\n"," ",$s);
-	return str_replace("---","&minus;-&minus;",$s);
+	return str_replace("---","-+-",$s);
 }
 
 function check_ip_address($from, $checkip) {
@@ -339,6 +339,7 @@ global $spam_msg, $jal_user_val, $jal_user_calc, $jal_user_Control, $ip, $shout_
 	}
 
 	if(CheckSpam($SearchText.' '.$SearchName, $SearchURL)) {
+		$jal_user_name = mb_substr(trim($jal_user_name), 0,18, 'UTF-8');
 		setcookie("jalUserName",$jal_user_name,time()+60*60*24*30*3,'/');
 		setcookie("jalCombo",$shout_cat,time()+60*60*24*30,'/');
 		//the message is cut of after 500 letters
@@ -367,8 +368,6 @@ global $spam_msg, $jal_user_val, $jal_user_calc, $jal_user_Control, $ip, $shout_
 				elseif (isset($_COOKIE['comment_author_email_'.$_SESSION['CookieHash']])) $email=$_COOKIE['comment_author_email_'.$_SESSION['CookieHash']];
 			}
 		}
-
-		$jal_user_name = substr(trim($jal_user_name), 0,18);
 		$jal_user_name=jal_special_chars($jal_user_name);
 
 		$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -633,9 +632,13 @@ if ($current==1) {
 		echo '<a href="'.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin" onmouseover="ChangeURL(\'shoutboxAdmin\',\''.$Actual_URL.'/wp-admin/edit.php?page=wordspew_admin\',\'&amp;shout_cat=\')" id="shoutboxAdmin">'. __("Admin",wordspew).'</a>';
 	}
 	else unset($_SESSION['isAdmin'.$shout_tb]);
+	echo '<div style="text-align:right;">';
 	if ($level_for_archive==1) {
-		echo '<div style="text-align:right;"><a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a></div>';
+		echo '<a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a>| ';
 	}
+	echo '<a style="cursor:pointer;" onClick="ChangeBoxSize(1)" title="'.__("Click here to increase the height of the shoutbox.",wordspew).'">+</a> <a style="cursor:pointer;" onClick="ChangeBoxSize(0)" title="'.__("Click here to decrease the height of the shoutbox.",wordspew).'">-</a>
+	</div>';
+
 	if (!empty($user_identity)) { /* If they are logged in, then print their nickname */
 	$_SESSION['Logged']="ok"; ?>
 	<input type="hidden" name="shoutboxOp" id="shoutboxOp" value="<?php echo $total; ?>"/>
