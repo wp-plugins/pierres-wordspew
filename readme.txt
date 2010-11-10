@@ -1,6 +1,6 @@
 === Pierre's Wordspew ===
 Contributors: Pierre Sudarovich
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8487949
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8UN6MHBCHSQTG
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 2.5
 Tested up to: 3.0.1
@@ -24,7 +24,7 @@ Features:
 * you can configure who will be able to see or use the shoutbox,
 * you can add themes to your shoutbox,
 * you can use gravatar,
-* old messages will be archived (you can selectively chosse who will be able to see the archives),
+* old messages will be archived (you can selectively choose who will be able to see the archives),
 * everyone will be able to send privates messages to anyone,
 * you'll can choose who will administrate the shoutbox,
 * you can activate/deactivate a "captcha" to help to fight against spam,
