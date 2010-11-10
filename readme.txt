@@ -136,6 +136,9 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 5.61 =
+* Little correction on the new attribute `onclick` (for the resize of the shoutbox). I used `onClick` who does not validate as XHTML 1.0... Thanks to [xcopfly](http://xcopfly.com/) who informs me about the bug :).
+
 = 5.60 =
 * Added the possibility per user to dynamically adjust the height of the shoutbox (the defined size will be kept thanks to the use of a cookie).
 * Correction of a little bug if the username have space(s) in it ; if the field get the focus then loose it, spaces were replaced by sign `+`.

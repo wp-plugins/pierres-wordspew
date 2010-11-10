@@ -636,7 +636,7 @@ if ($current==1) {
 	if ($level_for_archive==1) {
 		echo '<a href="'.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php" onmouseover="ChangeURL(\'shoutboxArchive\',\''.$Actual_URL.'/wp-content/plugins/pierres-wordspew/wordspew_archive.php\',\'?shout_cat=\')" id="shoutboxArchive">'.__("Archive",wordspew).'</a>| ';
 	}
-	echo '<a style="cursor:pointer;" onClick="ChangeBoxSize(1)" title="'.__("Click here to increase the height of the shoutbox.",wordspew).'">+</a> <a style="cursor:pointer;" onClick="ChangeBoxSize(0)" title="'.__("Click here to decrease the height of the shoutbox.",wordspew).'">-</a>
+	echo '<a style="cursor:pointer;" onclick="ChangeBoxSize(1)" title="'.__("Click here to increase the height of the shoutbox.",wordspew).'">+</a> <a style="cursor:pointer;" onclick="ChangeBoxSize(0)" title="'.__("Click here to decrease the height of the shoutbox.",wordspew).'">-</a>
 	</div>';
 
 	if (!empty($user_identity)) { /* If they are logged in, then print their nickname */
