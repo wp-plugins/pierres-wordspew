@@ -17,6 +17,10 @@ if (!function_exists('__')) {
 	}
 }
 
+function TransGuil($theString) {
+	return str_replace('"','\"',$theString);
+}
+
 // Time Since function courtesy 
 // http://blog.natbat.co.uk/archive/2003/Jun/14/jal_time_since
 // Works out the time since the entry post, takes a an argument in unix time (seconds)
@@ -144,7 +148,7 @@ $myval=1;
 }
 
 function del($id) {
-$shout_tb=$_POST['tb'];
+global $shout_tb;
 $temp="";
 	if($_SESSION['isAdmin'.$shout_tb]==true) {
 		$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);

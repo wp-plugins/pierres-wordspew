@@ -12,7 +12,7 @@ if (!isset($table_prefix)) {
 }
 
 // Register globals - Thanks Karan et Etienne
-$jal_lastID    = isset($_GET['jal_lastID']) ? $_GET['jal_lastID'] : "";
+$jal_lastID    = isset($_GET['jal_lastID']) ? intval($_GET['jal_lastID']) : "";
 $jal_user_name = isset($_POST['n']) ? $_POST['n'] : "";
 $jal_user_url  = isset($_POST['u']) ? $_POST['u'] : "";
 $jal_user_text = isset($_POST['c']) ? $_POST['c'] : "";
@@ -22,7 +22,7 @@ $jalGetChat    = isset($_GET['jalGetChat']) ? $_GET['jalGetChat'] : "";
 $jalSendChat   = isset($_GET['jalSendChat']) ? $_GET['jalSendChat'] : "";
 $mode=isset($_POST['mode']) ? $_POST['mode'] : "";
 $delID=isset($_POST['id']) ? $_POST['id'] : "";
-$shout_tb= isset($_GET['tb']) ? $_GET['tb'] : $_SESSION['tb_prefix'];
+$shout_tb= $_SESSION['tb_prefix'];
 
 if (isset($_POST['shout_cat']))
 	$shout_cat=$_POST['shout_cat'];
@@ -38,6 +38,7 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	$shout_opt = get_option('shoutbox_options');
 	$_SESSION['use_spam_filters'] = isset($shout_opt['use_filters']) ? $shout_opt['use_filters'] : 1;
+	$_SESSION['banned_msg'] = __('No, sorry you used a banned word!',wordspew);
 	if(where_shout($shout_opt['where'],1)) {
 		$show_to_level=$shout_opt['level_for_shoutbox'];
 		$user_level=isset($user_level) ? $user_level : -1;
@@ -46,8 +47,6 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 		if ($current==1) {
 			$jal_wp_url = get_bloginfo('wpurl') . "/";
 			$UseRSS=$shout_opt['use_rss'];
-			$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
-			$dateJS=filemtime(dirname(__FILE__)."/ajax_shout.php");
 			$ShowRSS="";
 			if ($UseRSS=='1') 
 			$ShowRSS='<link rel="alternate" type="application/rss+xml" title="'. __('Wordspew-RSS-Feed for:', wordspew). ' '
@@ -59,7 +58,10 @@ global $jal_version, $jal_admin_user_level, $user_ID, $user_email, $user_level, 
 echo '
 <!-- Added By Wordspew Plugin, modified by Pierre, version '.$jal_version.' -->'."\n"
 .$ShowRSS.
-'<link rel="stylesheet" href="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/css.php?dt='.$dateCSS.'" type="text/css" />
+'<link rel="stylesheet" href="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/style.css" type="text/css" />
+';
+	include ('css.php');
+echo '
 <script type="text/javascript">
 //<![CDATA[
 var Old_Sname;
@@ -69,11 +71,11 @@ return s.replace(/^( | )+/, \'\').replace(/( | )+$/, \'\');
 ';
 $isAdmin=($user_level >= $jal_admin_user_level || current_user_can('level_'.$jal_admin_user_level)==1) ? "true" : "false";
 $the_nickname=isset($user_identity) ? $user_identity : str_replace("\'", "'", $_COOKIE['jalUserName']);
-
+	include ('js.php');
 echo '
 var show_avatar='.$show.', avatar_position="'.$position.'", avatar_size='.$size.', isAdmin='.$isAdmin.';
 var var_XHTML='.intval($shout_opt['xhtml']).', show_smiley='.$shout_opt['show_smiley'].', shout_user="'.$the_nickname.'";
-var jal_org_timeout='.$shout_opt['update_seconds'].', fade_length='.$shout_opt['fade_length'].', fade_from="'.$shout_opt['fade_from'].'", fade_to="'.$shout_opt['fade_to'].'";
+var fade_length='.$shout_opt['fade_length'].', fade_from="'.$shout_opt['fade_from'].'", fade_to="'.$shout_opt['fade_to'].'";
 
 function CheckSpam(theText,theURL) {';
 if($_SESSION['use_spam_filters']==1) {
@@ -106,7 +108,7 @@ var spam = ['. str_replace(",''", "", $spam) .'];
 TextToScan=theText.toLowerCase();
 for (var i = 0; i < spam.length; i++) {
 	if(TextToScan.indexOf(spam[i])!=-1) {
-		alert("'. __('No, sorry you used a banned word!',wordspew) .'\n-> "+spam[i].toUpperCase());
+		alert("'. $_SESSION['banned_msg'] .'\n-> "+spam[i].toUpperCase());
 		return false;
 		break;
 	}
@@ -117,8 +119,8 @@ return true;
 }
 //]]>
 </script>
-<script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/fade.php"></script>
-<script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/ajax_shout.php?dt='.$dateJS.'"></script>
+<script type="text/javascript" src="'.$jal_wp_url.'wp-content/plugins/pierres-wordspew/ajax_shout.js"></script>
+<!-- End Wordspew Plugin -->
 ';
 			$users = $shout_opt['hidden_users'];
 			$users = str_replace(", ", ",", $users);
@@ -260,7 +262,7 @@ if($spam[0]!="") {
 		}
 		$pos=strpos($theText,$str);
 		if(is_int($pos)) {
-			$spam_msg=$_SESSION['DLSpam'];
+			$spam_msg=$_SESSION['banned_msg'];
 			return false;
 			break;
 		}
@@ -303,7 +305,6 @@ function mySplit ($captures){
 
 function jal_addData($jal_user_name,$jal_user_text,$jal_user_url) {
 global $spam_msg, $jal_user_val, $jal_user_calc, $jal_user_Control, $ip, $shout_cat, $shout_tb;
-	$shout_tb=$_POST['tb'];
 
 	//if the BadCalc variable is not set then it's a bot (direct access to wordspew)
 	if(!isset($_SESSION['BadCalc'])) {
@@ -679,7 +680,6 @@ if ($current==1) {
 	<?php echo $combo; ?>
 
 	<input type="hidden" name="shout_no_js" value="true"/>
-	<input type="hidden" name="tb" value="<?php echo $shout_tb; ?>"/>
 	<div id="SmileyList"></div>
 	<input type="submit" id="submitchat" name="submit" value="<?php _e('Send',wordspew);?>"/>
 	</form>

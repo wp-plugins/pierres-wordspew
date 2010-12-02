@@ -5,11 +5,11 @@ Plugin URI: http://wordpress.org/extend/plugins/pierres-wordspew/
 Description: A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page! It uses the Fade Anything Technique for extra glamour
 Author: Andrew Sutherland, Modified by Pierre
 Author URI: http://www.monblogamoua.fr/
-Version: 5.61
+Version: 6.0
 */
 
 // Version of this plugin. Not very useful for you, but for the dev
-$jal_version = "5.61";
+$jal_version = "6.0";
 
 include_once ('common.php');
 include_once ('usersonline.php');
@@ -34,6 +34,7 @@ if($_SESSION['Cur_URL']!=$_SERVER['REQUEST_URI']) {
 }
 
 $shout_cat=isset($_POST['cat']) ? $_POST['cat'] : "";
+$shout_tb=$_SESSION['tb_prefix'];
 
 $mode=isset($_POST['mode']) ? $_POST['mode'] : "";
 $shout_ID=isset($_POST['id']) ? $_POST['id'] : "";
@@ -51,7 +52,7 @@ if ($shout_ID!= '' && $mode=="ban") {
 }
 
 function jal_install_shout () {
-global $wpdb, $user_level;
+global $wpdb, $user_level, $shout_tb;
 
 	$shout_opt = get_option('shoutbox_options');
 	if ($shout_opt) return;
@@ -68,11 +69,11 @@ global $wpdb, $user_level;
 
   	while ($row = mysql_fetch_row($result)) { $tables[] = $row[0]; }
 
-    if (!in_array($_SESSION['tb_prefix']."liveshoutbox", $tables)) {
+    if (!in_array($shout_tb."liveshoutbox", $tables)) {
     	$first_install = "yes";
     }
 
-	$qry="CREATE TABLE ".$_SESSION['tb_prefix']."liveshoutbox (
+	$qry="CREATE TABLE ".$shout_tb."liveshoutbox (
 			id mediumint(7) NOT NULL AUTO_INCREMENT,
 			time bigint(11) DEFAULT '0' NOT NULL,
 			name tinytext NOT NULL,
@@ -84,7 +85,7 @@ global $wpdb, $user_level;
 			UNIQUE KEY id (id)
 			) CHARACTER SET utf8;
 
-		CREATE TABLE ".$_SESSION['tb_prefix']."liveshoutboxarchive (
+		CREATE TABLE ".$shout_tb."liveshoutboxarchive (
 			id mediumint(7) NOT NULL AUTO_INCREMENT,
 			time bigint(11) DEFAULT '0' NOT NULL,
 			name tinytext NOT NULL,
@@ -96,7 +97,7 @@ global $wpdb, $user_level;
 			UNIQUE KEY id (id)
 			) CHARACTER SET utf8;
 
-		CREATE TABLE ".$_SESSION['tb_prefix']."liveshoutbox_useronline (
+		CREATE TABLE ".$shout_tb."liveshoutbox_useronline (
 			timestamp int(15) NOT NULL default '0',
 			username varchar(50) NOT NULL default '',
 			ip varchar(40) NOT NULL default '',
@@ -115,14 +116,14 @@ global $wpdb, $user_level;
 		$welcome_text = __('Congratulations, you just completed the installation of this shoutbox.',wordspew);
 		@mysql_query("SET CHARACTER SET 'utf8'");
 		@mysql_query("SET NAMES utf8");
-		$wpdb->query("INSERT INTO ".$_SESSION['tb_prefix']."liveshoutbox (time,name,text) VALUES ('".time()."','Pierre','".$welcome_text."')");
+		$wpdb->query("INSERT INTO ".$shout_tb."liveshoutbox (time,name,text) VALUES ('".time()."','Pierre','".$welcome_text."')");
 	}
 	else {
-		$wpdb->query("ALTER TABLE ".$_SESSION['tb_prefix']."liveshoutbox CHARACTER SET utf8");
-		$wpdb->query("ALTER TABLE ".$_SESSION['tb_prefix']."liveshoutbox MODIFY `text` TEXT NOT NULL, CHARACTER SET utf8");
-		$wpdb->query("ALTER TABLE ".$_SESSION['tb_prefix']."liveshoutbox MODIFY `name` TINYTEXT NOT NULL, CHARACTER SET utf8");
-		$wpdb->query("ALTER TABLE ".$_SESSION['tb_prefix']."liveshoutbox_useronline CHARACTER SET utf8");
-		$wpdb->query("ALTER TABLE ".$_SESSION['tb_prefix']."liveshoutbox_useronline MODIFY `username` VARCHAR(50) NOT NULL, CHARACTER SET utf8");
+		$wpdb->query("ALTER TABLE ".$shout_tb."liveshoutbox CHARACTER SET utf8");
+		$wpdb->query("ALTER TABLE ".$shout_tb."liveshoutbox MODIFY `text` TEXT NOT NULL, CHARACTER SET utf8");
+		$wpdb->query("ALTER TABLE ".$shout_tb."liveshoutbox MODIFY `name` TINYTEXT NOT NULL, CHARACTER SET utf8");
+		$wpdb->query("ALTER TABLE ".$shout_tb."liveshoutbox_useronline CHARACTER SET utf8");
+		$wpdb->query("ALTER TABLE ".$shout_tb."liveshoutbox_useronline MODIFY `username` VARCHAR(50) NOT NULL, CHARACTER SET utf8");
 	}
 
 	if (!$shout_opt) {
@@ -151,7 +152,6 @@ global $wpdb, $user_level;
 			'avatar_size' => 16,
 			'avatar_position' => 'left',
 			'level_for_theme' => 10,
-			'cssDate' => time(),
 			'use_theme' => 0,
 			'use_filters' => 1,
 			'where' => ''
@@ -159,25 +159,25 @@ global $wpdb, $user_level;
 		ksort ($shout_opt);
 		add_option ('shoutbox_options', $shout_opt);
 		//DELETE... old fields
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_fade_from'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_fade_to'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_update_seconds'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_fade_length'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_text_color'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_name_color'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_use_url'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_use_textarea'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_registered_only'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_sound'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_XHTML'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_online'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_Smiley'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_Show_Spam'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_Captcha'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_hash'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_HideUsers'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_UseRSS'");
-		$wpdb->query("DELETE FROM ".$_SESSION['tb_prefix']."options WHERE option_name='shoutbox_Show_to_Register'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_fade_from'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_fade_to'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_update_seconds'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_fade_length'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_text_color'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_name_color'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_use_url'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_use_textarea'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_registered_only'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_sound'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_XHTML'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_online'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_Smiley'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_Show_Spam'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_Captcha'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_hash'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_HideUsers'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_UseRSS'");
+		$wpdb->query("DELETE FROM ".$shout_tb."options WHERE option_name='shoutbox_Show_to_Register'");
 	}
 
 	add_option('shoutbox_spam', '0','','yes');
@@ -191,6 +191,7 @@ global $wpdb, $shout_opt, $shout_tb;
 
 $can_Ban=(current_user_can('manage_options')) ? "true" : "false";
 $shout_opt = get_option('shoutbox_options');
+
 if(!isset($_SESSION['LoggedUsers'])) {
 	$LoggedUsers = $wpdb->get_col("SELECT display_name FROM ".$wpdb->users);
 	$_SESSION['LoggedUsers']=$LoggedUsers;
@@ -204,13 +205,16 @@ if(!isset($_SESSION['LoggedUsers'])) {
 <script type="text/javascript">
 //<![CDATA[
 <?php
+include ('js.php');
+include ('js_admin.php');
+
 echo 'var can_Ban='.$can_Ban.', cur_theme=0, url="'.get_bloginfo('wpurl').'/wp-content/plugins/pierres-wordspew/wordspew_archive.php?shout_cat=";
 ';
 ?>
 //]]>
 </script>
-<script type="text/javascript" src="<?php echo get_bloginfo('wpurl');?>/wp-content/plugins/pierres-wordspew/fade.php"></script>
-<script type="text/javascript" src="<?php echo get_bloginfo('wpurl');?>/wp-content/plugins/pierres-wordspew/ajax_admin.php"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo('wpurl');?>/wp-content/plugins/pierres-wordspew/ajax_shout.js"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo('wpurl');?>/wp-content/plugins/pierres-wordspew/ajax_admin.js"></script>
 <style type="text/css">
 input[name=jal_delete]:hover, #jal_truncate_all:hover, #jal_truncate_all_archive:hover, #jal_shout_archive:hover, input[name=jal_ban]:hover { background: #c22; color: #fff; cursor: pointer; }
 input[name=jal_edit]:hover, #jal_admin_options:hover { background: #2c2; color: #fff; cursor: pointer; }
@@ -256,7 +260,7 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 	<?php printf(__('(Actually <font color="red">%s</font> spams blocked)',wordspew),$nb);?></h2>
 	<p><?php _e('When you update the Times and Colors, you may need to refresh/empty cache before you see the changes take effect',wordspew);?></p>
 	<p><?php 
-	$results = $wpdb->get_var("SELECT id FROM ".$_SESSION['tb_prefix']."liveshoutbox ORDER BY id DESC LIMIT 1");
+	$results = $wpdb->get_var("SELECT id FROM ".$shout_tb."liveshoutbox ORDER BY id DESC LIMIT 1");
 	if($results) printf(__('There have been <b>%s</b> messages in this shoutbox',wordspew),$results);?>&nbsp;</p>
 	<form name="shoutbox_options" action="edit.php?page=wordspew_admin" method="post" id="shoutbox_options"> 
 	<fieldset>
@@ -517,14 +521,14 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 	$SQLCat=html_entity_decode($shout_cat,ENT_COMPAT,'UTF-8');
-	$SQL="SELECT * FROM ".$_SESSION['tb_prefix']."liveshoutbox WHERE cat='".mysql_real_escape_string($SQLCat)."' ORDER BY id DESC LIMIT ". $jal_number_of_comments;
+	$SQL="SELECT * FROM ".$shout_tb."liveshoutbox WHERE cat='".mysql_real_escape_string($SQLCat)."' ORDER BY id DESC LIMIT ". $jal_number_of_comments;
 	$results = $wpdb->get_results($SQL);
 	$jal_first_time = true; // Will only add the last message div if it is looping for the first time
 
 	echo '<form action="edit.php?page=wordspew_admin" method="get">
 	';
 	echo '<b>'.__("Theme:",wordspew).'</b>';	
-	$SQL="SELECT DISTINCT cat FROM ".$_SESSION['tb_prefix']."liveshoutbox ORDER BY cat";
+	$SQL="SELECT DISTINCT cat FROM ".$shout_tb."liveshoutbox ORDER BY cat";
 	$theme = $wpdb->get_results($SQL);
 
 	foreach( $theme as $theme_name ) {
@@ -533,7 +537,7 @@ global $wpdb, $user_level, $nb, $jal_version, $wp_roles, $wp_version, $shout_opt
 	}
 	$the_cat=($shout_cat=="") ? __("Miscellaneous",wordspew) : str_replace(" "," ",stripslashes($shout_cat));
 
-	$SQL="SELECT DISTINCT cat FROM ".$_SESSION['tb_prefix']."liveshoutboxarchive ORDER BY cat";
+	$SQL="SELECT DISTINCT cat FROM ".$shout_tb."liveshoutboxarchive ORDER BY cat";
 	$theme = $wpdb->get_results($SQL);
 	$first_time=0;
 
@@ -618,7 +622,6 @@ global $wpdb, $user_level, $shout_tb;
 
     // Security
     get_currentuserinfo();
-	$CSS=false;
 	$current=current_user_can('level_'.$jal_admin_user_level);
     if ($user_level <  $jal_admin_user_level && $current!=1) die(__("Cheatin' uh ?"));
 
@@ -639,9 +642,6 @@ global $wpdb, $user_level, $shout_tb;
 	$shout_opt['text_color']	=$_POST['text_color'];
 	$shout_opt['name_color']	=$_POST['name_color'];
 
-	if($oldOption['fade_from']!=$shout_opt['fade_from'] || $oldOption['fade_to']!=$shout_opt['fade_to'] ||
-	$oldOption['text_color']!=$shout_opt['text_color'] || $oldOption['name_color']!=$shout_opt['name_color']) $CSS=true;
-
 	$shout_opt['use_url'] 			= ($_POST['use_url']) ? 1 : 0;
 	$shout_opt['use_textarea'] 		= ($_POST['use_textarea']) ? 1 : 0;
 	$shout_opt['registered_only']	= ($_POST['registered_only']!="") ? intval($_POST['registered_only']) : -1;
@@ -654,8 +654,6 @@ global $wpdb, $user_level, $shout_tb;
 	$shout_opt['use_rss']			= ($_POST['Use_RSS']) ? 1 : 0;
 	$shout_opt['use_theme']			= ($_POST['Use_Theme']) ? 1 : 0;
 	$shout_opt['use_filters']		= ($_POST['Use_Filters']) ? 1 : 0;
-
-	if($CSS) $shout_opt['cssDate']=time();
 
 	if(isset($_POST['HideUsers'])) {
 		$shout_opt['hidden_users']	= $_POST['HideUsers'];
@@ -690,7 +688,7 @@ global $wpdb, $user_level, $shout_tb;
 }
 
 function jal_shout_truncate() {
-global $wpdb, $user_level;
+global $wpdb, $user_level, $shout_tb;
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	// Security
@@ -702,12 +700,12 @@ global $wpdb, $user_level;
 	@mysql_query("SET NAMES utf8");
 	$thetable="liveshoutbox";
 	if(isset($_POST['jal_truncate_archive'])) $thetable.="archive";
-	$SQL="DELETE FROM ".$_SESSION['tb_prefix'].$thetable." WHERE cat='".mysql_real_escape_string($_POST['cat'])."'";
+	$SQL="DELETE FROM ".$shout_tb.$thetable." WHERE cat='".mysql_real_escape_string($_POST['cat'])."'";
 	$wpdb->query($SQL);
 }
 
 function jal_shout_archive() {
-global $wpdb, $user_level;
+global $wpdb, $user_level, $shout_tb;
 
 	$jal_admin_user_level = (get_option('shoutbox_admin_level')!="") ? get_option('shoutbox_admin_level') : 10;
 	// Security
@@ -721,15 +719,15 @@ global $wpdb, $user_level;
 	@mysql_query("SET CHARACTER SET 'utf8'");
 	@mysql_query("SET NAMES utf8");
 
-	$SQL ="INSERT INTO ".$_SESSION['tb_prefix']."liveshoutboxarchive (time,name,text,url,ipaddr,email,cat) SELECT time,name,text,url,ipaddr,email,cat FROM ".$_SESSION['tb_prefix']."liveshoutbox WHERE cat='".mysql_real_escape_string($_POST['cat'])."';";
+	$SQL ="INSERT INTO ".$shout_tb."liveshoutboxarchive (time,name,text,url,ipaddr,email,cat) SELECT time,name,text,url,ipaddr,email,cat FROM ".$shout_tb."liveshoutbox WHERE cat='".mysql_real_escape_string($_POST['cat'])."';";
 	mysql_query($SQL, $conn);
 
-	$SQL="DELETE FROM ".$_SESSION['tb_prefix']."liveshoutbox WHERE cat='".mysql_real_escape_string($_POST['cat'])."'";
+	$SQL="DELETE FROM ".$shout_tb."liveshoutbox WHERE cat='".mysql_real_escape_string($_POST['cat'])."'";
 	mysql_query($SQL, $conn);
 }
 
 function jal_shout_edit($id, $ip, $text) {
-$shout_tb=$_POST['tb'];
+global $shout_tb;
 	if($_SESSION['isAdmin'.$shout_tb]==true) {
 		$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 		mysql_select_db(DB_NAME, $conn);
@@ -744,7 +742,7 @@ $shout_tb=$_POST['tb'];
 }
 
 function jal_shout_spam($id, $ip) {
-$shout_tb=$_POST['tb'];
+global $shout_tb;
 	if($_SESSION['isAdmin'.$shout_tb]==true) {
 		$conn = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 		mysql_select_db(DB_NAME, $conn);

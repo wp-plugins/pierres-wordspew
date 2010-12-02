@@ -14,7 +14,6 @@ $offset = intval((isset($_REQUEST['offset']) && $_REQUEST['offset'] > 0) ? $_REQ
 $shout_cat=(isset($_GET['shout_cat'])) ? $_GET['shout_cat'] : "";
 $Actual_URL=get_bloginfo('wpurl');
 $shout_opt = get_option('shoutbox_options');
-$dateCSS=(filemtime(dirname(__FILE__)."/css.php")+$shout_opt['cssDate']);
 
 function jal_get_shoutboxarchive ($cat="") {
 global $wpdb, $user_ID, $user_level, $user_identity, $limit, $offset, $shout_cat, $Actual_URL, $shout_opt;
@@ -106,6 +105,7 @@ if ($current==1 && $curarc==1 && ($cat=="" || $curthe==1)) {
 	</tr>				
 	';
 if($results) {
+	setlocale(LC_ALL,WPLANG.".UTF8");
 	foreach( $results as $r ) {
 		$alt=($alt==" alternate") ? "" : " alternate";
 		$target="";
@@ -159,9 +159,9 @@ if($results) {
 		if ($show == '1' && $TheMail!="") {
 			$avatar=shout_get_avatar($TheMail, $size, "left");
 		}
-		setlocale(LC_ALL,WPLANG.".UTF8");
+
 echo '<tr class="bg'.$alt.'" id="comment-new'.$r->id.'"><td class="date">'.strftime("%A %d %B %Y", $r->time).' <br/>'
-.strftime("%H:%I", $r->time).'</td>
+.strftime("%H:%M", $r->time).'</td>
 <td class="name">'.$avatar.'<span class="'.$class. sanitize_name($TheName).'">'.stripslashes($url).'</span></td>
 <td class="msg">'.convert_smilies(stripslashes($TheText)).'</td>';
 		if($user_level >= $jal_admin_user_level || $curadm==1) {
@@ -217,9 +217,15 @@ else { ?>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<title><?php bloginfo('name'); ?> <?php _e("Archive for the shoutbox",wordspew); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/css.php?dt=<?php echo $dateCSS;?>" type="text/css" />
-	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/fade.php"></script>
-	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/ajax_archive.php"></script>
+	<link rel="stylesheet" href="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/style.css" type="text/css" />
+	<?php include ('css.php'); ?>
+	<script type="text/javascript">
+	//<![CDATA[
+	<?php include ('js.php'); ?>
+	//]]>
+	</script>
+	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/ajax_shout.js"></script>
+	<script type="text/javascript" src="<?php echo $Actual_URL; ?>/wp-content/plugins/pierres-wordspew/ajax_archive.js"></script>
 </head>
 
 <body class="shoutbox_archive">

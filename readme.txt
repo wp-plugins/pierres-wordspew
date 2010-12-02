@@ -136,6 +136,14 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 
 == Changelog ==
 
+= 6.0 =
+* **Security correction !!** and it concerns all older release, so please update your shoutbox with this release.
+* Optimization of code for js and css parts. All dynamic datas are stored in php and all static in js and css files. it should optimize the loading time and response of the shoutbox.
+* In `wordspew_archive.php` there were an old bug with the time shown with the `strftime` function. Corrected.
+* The variable of the wordpress table prefix is not shown anymore (for security reason too).
+* I merged the two files `ajax_shout.php` and `fade.php` in a unique `ajax_shout.js` so there will be less http requests and shorter responses times.
+* **I wish to really thanks [Kevin Fernandez](http://www.howgeek.com/) who discover the security flaw.**
+
 = 5.61 =
 * Little correction on the new attribute `onclick` (for the resize of the shoutbox). I used `onClick` who does not validate as XHTML 1.0... Thanks to [xcopfly](http://xcopfly.com/) who informs me about the bug :).
 
