@@ -3,7 +3,7 @@ Contributors: Pierre Sudarovich
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8UN6MHBCHSQTG
 Tags: Chat, Shoutbox, Wordspew, Ajax, Spam
 Requires at least: 2.5
-Tested up to: 3.0.1
+Tested up to: 3.0.2
 Stable tag: trunk
 
 A plugin that creates a live shoutbox, using AJAX as a backend. Users can chat freely from your blog without refreshing the page!
@@ -137,7 +137,7 @@ if you use WP-PostRatings and the shoutbox you've got some incompatibility issue
 == Changelog ==
 
 = 6.0 =
-* **Security correction !!** and it concerns all older release, so please update your shoutbox with this release.
+* **Security fix !!** and it concerns all older release, so please update your shoutbox with this release.
 * Optimization of code for js and css parts. All dynamic datas are stored in php and all static in js and css files. it should optimize the loading time and response of the shoutbox.
 * In `wordspew_archive.php` there were an old bug with the time shown with the `strftime` function. Corrected.
 * The variable of the wordpress table prefix is not shown anymore (for security reason too).
