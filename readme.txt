@@ -225,3 +225,9 @@ Finally, if you want to use the shoutbox in a page template you've done by yours
 
 = 4.32 =
 * (05 Oct 2009) - First Release.
+
+
+== Upgrade Notice ==
+
+= 6.0 =
+This version fixes a security related bug. Please, upgrade immediately.
